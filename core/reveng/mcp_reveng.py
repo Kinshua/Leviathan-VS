@@ -61,8 +61,12 @@ def _find_tool(name: str) -> str:
 def _run_tool(cmd: List[str], timeout: int = 600) -> Dict:
     try:
         proc = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=timeout,
-            encoding="utf-8", errors="replace",
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            encoding="utf-8",
+            errors="replace",
         )
         return {
             "success": proc.returncode == 0,
@@ -72,7 +76,10 @@ def _run_tool(cmd: List[str], timeout: int = 600) -> Dict:
     except subprocess.TimeoutExpired:
         return {"success": False, "error": f"Timeout after {timeout}s"}
     except FileNotFoundError:
-        return {"success": False, "error": f"Tool not found: {cmd[0]}. Install it first."}
+        return {
+            "success": False,
+            "error": f"Tool not found: {cmd[0]}. Install it first.",
+        }
     except Exception as e:
         return {"success": False, "error": str(e)}
 
@@ -85,11 +92,20 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "binary": {"type": "string", "description": "Path to binary file"},
-                "mode": {"type": "string", "description": "Mode: disasm (-d), all (-D), headers (-x), reloc (-r), symbols (-t), source (-S)"},
-                "section": {"type": "string", "description": "Specific section (e.g. .text, .plt, .got)"},
+                "mode": {
+                    "type": "string",
+                    "description": "Mode: disasm (-d), all (-D), headers (-x), reloc (-r), symbols (-t), source (-S)",
+                },
+                "section": {
+                    "type": "string",
+                    "description": "Specific section (e.g. .text, .plt, .got)",
+                },
                 "start_addr": {"type": "string", "description": "Start address (hex)"},
                 "stop_addr": {"type": "string", "description": "Stop address (hex)"},
-                "intel": {"type": "boolean", "description": "Use Intel syntax instead of AT&T"},
+                "intel": {
+                    "type": "boolean",
+                    "description": "Use Intel syntax instead of AT&T",
+                },
             },
             "required": ["binary"],
         },
@@ -101,8 +117,14 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "binary": {"type": "string", "description": "Path to ELF binary"},
-                "mode": {"type": "string", "description": "Mode: headers (-h), sections (-S), segments (-l), symbols (-s), dynamic (-d), relocs (-r), notes (-n), all (-a)"},
-                "wide": {"type": "boolean", "description": "Wide output (don't truncate)"},
+                "mode": {
+                    "type": "string",
+                    "description": "Mode: headers (-h), sections (-S), segments (-l), symbols (-s), dynamic (-d), relocs (-r), notes (-n), all (-a)",
+                },
+                "wide": {
+                    "type": "boolean",
+                    "description": "Wide output (don't truncate)",
+                },
             },
             "required": ["binary"],
         },
@@ -116,10 +138,19 @@ TOOLS = [
                 "binary": {"type": "string", "description": "Binary to trace"},
                 "args": {"type": "string", "description": "Arguments for the binary"},
                 "pid": {"type": "integer", "description": "PID to attach to"},
-                "filter": {"type": "string", "description": "Library call filter pattern"},
-                "count": {"type": "boolean", "description": "Count calls and report summary"},
+                "filter": {
+                    "type": "string",
+                    "description": "Library call filter pattern",
+                },
+                "count": {
+                    "type": "boolean",
+                    "description": "Count calls and report summary",
+                },
                 "output": {"type": "string", "description": "Output file"},
-                "follow_forks": {"type": "boolean", "description": "Follow forked processes"},
+                "follow_forks": {
+                    "type": "boolean",
+                    "description": "Follow forked processes",
+                },
             },
             "required": ["binary"],
         },
@@ -133,12 +164,24 @@ TOOLS = [
                 "binary": {"type": "string", "description": "Binary to trace"},
                 "args": {"type": "string", "description": "Arguments for the binary"},
                 "pid": {"type": "integer", "description": "PID to attach to"},
-                "filter": {"type": "string", "description": "Syscall filter (e.g. open,read,write,network)"},
-                "count": {"type": "boolean", "description": "Count syscalls and report summary"},
+                "filter": {
+                    "type": "string",
+                    "description": "Syscall filter (e.g. open,read,write,network)",
+                },
+                "count": {
+                    "type": "boolean",
+                    "description": "Count syscalls and report summary",
+                },
                 "output": {"type": "string", "description": "Output file"},
-                "follow_forks": {"type": "boolean", "description": "Follow forked processes"},
+                "follow_forks": {
+                    "type": "boolean",
+                    "description": "Follow forked processes",
+                },
                 "timestamps": {"type": "boolean", "description": "Show timestamps"},
-                "strings_length": {"type": "integer", "description": "Max string length to print"},
+                "strings_length": {
+                    "type": "integer",
+                    "description": "Max string length to print",
+                },
             },
             "required": ["binary"],
         },
@@ -149,7 +192,10 @@ TOOLS = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "input_file": {"type": "string", "description": "Input DEX or APK file"},
+                "input_file": {
+                    "type": "string",
+                    "description": "Input DEX or APK file",
+                },
                 "output": {"type": "string", "description": "Output JAR file"},
                 "force": {"type": "boolean", "description": "Force overwrite output"},
             },
@@ -163,7 +209,10 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "binary": {"type": "string", "description": "Path to PE file"},
-                "mode": {"type": "string", "description": "Mode: info (general), imports, exports, sections, resources, strings, all"},
+                "mode": {
+                    "type": "string",
+                    "description": "Mode: info (general), imports, exports, sections, resources, strings, all",
+                },
             },
             "required": ["binary"],
         },
@@ -175,8 +224,14 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "file": {"type": "string", "description": "Office document to analyze"},
-                "tool": {"type": "string", "description": "Tool: olevba (macro extraction), oleid (indicators), rtfobj (RTF objects), oleobj (OLE objects), mraptor (macro risk)"},
-                "decode": {"type": "boolean", "description": "Decode obfuscated strings"},
+                "tool": {
+                    "type": "string",
+                    "description": "Tool: olevba (macro extraction), oleid (indicators), rtfobj (RTF objects), oleobj (OLE objects), mraptor (macro risk)",
+                },
+                "decode": {
+                    "type": "boolean",
+                    "description": "Decode obfuscated strings",
+                },
             },
             "required": ["file"],
         },
@@ -188,8 +243,14 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "binary": {"type": "string", "description": "Path to binary file"},
-                "action": {"type": "string", "description": "Action: pack, unpack (-d), test (-t), list (-l)"},
-                "level": {"type": "integer", "description": "Compression level 1-9 (9=best, slowest)"},
+                "action": {
+                    "type": "string",
+                    "description": "Action: pack, unpack (-d), test (-t), list (-l)",
+                },
+                "level": {
+                    "type": "integer",
+                    "description": "Compression level 1-9 (9=best, slowest)",
+                },
                 "output": {"type": "string", "description": "Output file"},
                 "force": {"type": "boolean", "description": "Force operation"},
             },
@@ -205,7 +266,10 @@ TOOLS = [
                 "file": {"type": "string", "description": "File to analyze"},
                 "deep_scan": {"type": "boolean", "description": "Deep scan mode"},
                 "json_output": {"type": "boolean", "description": "JSON output"},
-                "recursive": {"type": "boolean", "description": "Recursive analysis (for archives)"},
+                "recursive": {
+                    "type": "boolean",
+                    "description": "Recursive analysis (for archives)",
+                },
             },
             "required": ["file"],
         },
@@ -218,11 +282,20 @@ TOOLS = [
             "properties": {
                 "file": {"type": "string", "description": "File to analyze"},
                 "extract": {"type": "boolean", "description": "Extract embedded files"},
-                "matryoshka": {"type": "boolean", "description": "Recursive extraction (matryoshka mode)"},
+                "matryoshka": {
+                    "type": "boolean",
+                    "description": "Recursive extraction (matryoshka mode)",
+                },
                 "entropy": {"type": "boolean", "description": "Entropy analysis"},
                 "signature": {"type": "boolean", "description": "Signature scan only"},
-                "output_dir": {"type": "string", "description": "Output directory for extraction"},
-                "raw": {"type": "string", "description": "Raw bytes search pattern (hex)"},
+                "output_dir": {
+                    "type": "string",
+                    "description": "Output directory for extraction",
+                },
+                "raw": {
+                    "type": "string",
+                    "description": "Raw bytes search pattern (hex)",
+                },
             },
             "required": ["file"],
         },
@@ -233,13 +306,25 @@ TOOLS = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "rules": {"type": "string", "description": "YARA rules file or directory"},
-                "target": {"type": "string", "description": "File or directory to scan"},
-                "recursive": {"type": "boolean", "description": "Scan directories recursively"},
+                "rules": {
+                    "type": "string",
+                    "description": "YARA rules file or directory",
+                },
+                "target": {
+                    "type": "string",
+                    "description": "File or directory to scan",
+                },
+                "recursive": {
+                    "type": "boolean",
+                    "description": "Scan directories recursively",
+                },
                 "strings": {"type": "boolean", "description": "Show matching strings"},
                 "count": {"type": "boolean", "description": "Show match count only"},
                 "tag": {"type": "string", "description": "Filter rules by tag"},
-                "timeout": {"type": "integer", "description": "Scan timeout in seconds"},
+                "timeout": {
+                    "type": "integer",
+                    "description": "Scan timeout in seconds",
+                },
             },
             "required": ["rules", "target"],
         },
@@ -251,10 +336,22 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "file": {"type": "string", "description": "Binary file to analyze"},
-                "format": {"type": "string", "description": "Output format: default, json, vverbose"},
-                "rules_dir": {"type": "string", "description": "Custom rules directory"},
-                "signatures": {"type": "string", "description": "Custom signatures path"},
-                "tag": {"type": "string", "description": "Filter by tag/ATT&CK technique"},
+                "format": {
+                    "type": "string",
+                    "description": "Output format: default, json, vverbose",
+                },
+                "rules_dir": {
+                    "type": "string",
+                    "description": "Custom rules directory",
+                },
+                "signatures": {
+                    "type": "string",
+                    "description": "Custom signatures path",
+                },
+                "tag": {
+                    "type": "string",
+                    "description": "Filter by tag/ATT&CK technique",
+                },
             },
             "required": ["file"],
         },
@@ -266,10 +363,22 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "file": {"type": "string", "description": "Binary file to analyze"},
-                "min_length": {"type": "integer", "description": "Minimum string length (default: 4)"},
-                "encoding": {"type": "string", "description": "Encoding: s (7-bit), S (8-bit), l (16-bit LE), b (16-bit BE), L (32-bit LE), B (32-bit BE)"},
-                "offset": {"type": "boolean", "description": "Show file offset of each string"},
-                "radix": {"type": "string", "description": "Offset radix: o (octal), d (decimal), x (hex)"},
+                "min_length": {
+                    "type": "integer",
+                    "description": "Minimum string length (default: 4)",
+                },
+                "encoding": {
+                    "type": "string",
+                    "description": "Encoding: s (7-bit), S (8-bit), l (16-bit LE), b (16-bit BE), L (32-bit LE), B (32-bit BE)",
+                },
+                "offset": {
+                    "type": "boolean",
+                    "description": "Show file offset of each string",
+                },
+                "radix": {
+                    "type": "string",
+                    "description": "Offset radix: o (octal), d (decimal), x (hex)",
+                },
             },
             "required": ["file"],
         },
@@ -297,10 +406,22 @@ TOOLS = [
                 "file": {"type": "string", "description": "File to dump"},
                 "length": {"type": "integer", "description": "Number of bytes to dump"},
                 "offset": {"type": "integer", "description": "Start offset"},
-                "cols": {"type": "integer", "description": "Columns per line (default: 16)"},
-                "bits": {"type": "boolean", "description": "Show in binary instead of hex"},
-                "include": {"type": "boolean", "description": "Output as C include array"},
-                "plain": {"type": "boolean", "description": "Plain hex dump (no formatting)"},
+                "cols": {
+                    "type": "integer",
+                    "description": "Columns per line (default: 16)",
+                },
+                "bits": {
+                    "type": "boolean",
+                    "description": "Show in binary instead of hex",
+                },
+                "include": {
+                    "type": "boolean",
+                    "description": "Output as C include array",
+                },
+                "plain": {
+                    "type": "boolean",
+                    "description": "Plain hex dump (no formatting)",
+                },
             },
             "required": ["file"],
         },
@@ -312,11 +433,26 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "binary": {"type": "string", "description": "Path to binary file"},
-                "dynamic": {"type": "boolean", "description": "Show dynamic symbols only (-D)"},
-                "defined_only": {"type": "boolean", "description": "Show only defined symbols"},
-                "undefined_only": {"type": "boolean", "description": "Show only undefined symbols (-u)"},
-                "demangle": {"type": "boolean", "description": "Demangle C++ symbol names"},
-                "sort_by_size": {"type": "boolean", "description": "Sort by symbol size"},
+                "dynamic": {
+                    "type": "boolean",
+                    "description": "Show dynamic symbols only (-D)",
+                },
+                "defined_only": {
+                    "type": "boolean",
+                    "description": "Show only defined symbols",
+                },
+                "undefined_only": {
+                    "type": "boolean",
+                    "description": "Show only undefined symbols (-u)",
+                },
+                "demangle": {
+                    "type": "boolean",
+                    "description": "Demangle C++ symbol names",
+                },
+                "sort_by_size": {
+                    "type": "boolean",
+                    "description": "Sort by symbol size",
+                },
             },
             "required": ["binary"],
         },
@@ -328,7 +464,14 @@ async def dispatch_tool(name: str, args: Dict) -> str:
     if name == "objdump_disasm":
         cmd = [_find_tool("objdump")]
         mode = args.get("mode", "disasm")
-        mode_map = {"disasm": "-d", "all": "-D", "headers": "-x", "reloc": "-r", "symbols": "-t", "source": "-S"}
+        mode_map = {
+            "disasm": "-d",
+            "all": "-D",
+            "headers": "-x",
+            "reloc": "-r",
+            "symbols": "-t",
+            "source": "-S",
+        }
         cmd.append(mode_map.get(mode, "-d"))
         if args.get("intel"):
             cmd.extend(["-M", "intel"])
@@ -345,8 +488,16 @@ async def dispatch_tool(name: str, args: Dict) -> str:
     elif name == "readelf_analyze":
         cmd = [_find_tool("readelf")]
         mode = args.get("mode", "all")
-        mode_map = {"headers": "-h", "sections": "-S", "segments": "-l", "symbols": "-s",
-                     "dynamic": "-d", "relocs": "-r", "notes": "-n", "all": "-a"}
+        mode_map = {
+            "headers": "-h",
+            "sections": "-S",
+            "segments": "-l",
+            "symbols": "-s",
+            "dynamic": "-d",
+            "relocs": "-r",
+            "notes": "-n",
+            "all": "-a",
+        }
         cmd.append(mode_map.get(mode, "-a"))
         if args.get("wide"):
             cmd.append("-W")
@@ -447,7 +598,7 @@ try:
                 exports.append({{'name': exp.name.decode('utf-8','ignore') if exp.name else '', 'ordinal': exp.ordinal, 'address': hex(exp.address)}})
         result['exports'] = exports
     if '{mode}' in ('strings', 'all'):
-        result['strings_count'] = len(pe.get_strings())  
+        result['strings_count'] = len(pe.get_strings())
     print(json.dumps(result, indent=2))
 except Exception as e:
     print(json.dumps({{'error': str(e)}}))
@@ -461,7 +612,13 @@ except Exception as e:
 
     elif name == "oletools_analyze":
         tool = args.get("tool", "olevba")
-        tool_map = {"olevba": "olevba", "oleid": "oleid", "rtfobj": "rtfobj", "oleobj": "oleobj", "mraptor": "mraptor"}
+        tool_map = {
+            "olevba": "olevba",
+            "oleid": "oleid",
+            "rtfobj": "rtfobj",
+            "oleobj": "oleobj",
+            "mraptor": "mraptor",
+        }
         cmd = [_find_tool(tool_map.get(tool, "olevba")), args["file"]]
         if tool == "olevba" and args.get("decode"):
             cmd.append("--decode")
@@ -613,11 +770,15 @@ async def handle_message(msg: Dict) -> Optional[Dict]:
     method = msg.get("method", "")
     mid = msg.get("id")
     if method == "initialize":
-        return {"jsonrpc": "2.0", "id": mid, "result": {
-            "protocolVersion": "2024-11-05",
-            "capabilities": {"tools": {"listChanged": False}},
-            "serverInfo": {"name": SERVER_NAME, "version": VERSION},
-        }}
+        return {
+            "jsonrpc": "2.0",
+            "id": mid,
+            "result": {
+                "protocolVersion": "2024-11-05",
+                "capabilities": {"tools": {"listChanged": False}},
+                "serverInfo": {"name": SERVER_NAME, "version": VERSION},
+            },
+        }
     if method == "notifications/initialized":
         return None
     if method == "tools/list":
@@ -625,13 +786,23 @@ async def handle_message(msg: Dict) -> Optional[Dict]:
     if method == "tools/call":
         params = msg.get("params", {})
         try:
-            result_text = await dispatch_tool(params.get("name", ""), params.get("arguments", {}))
+            result_text = await dispatch_tool(
+                params.get("name", ""), params.get("arguments", {})
+            )
         except Exception as exc:
             result_text = json.dumps({"error": str(exc)})
-        return {"jsonrpc": "2.0", "id": mid, "result": {"content": [{"type": "text", "text": result_text}]}}
+        return {
+            "jsonrpc": "2.0",
+            "id": mid,
+            "result": {"content": [{"type": "text", "text": result_text}]},
+        }
     if method == "ping":
         return {"jsonrpc": "2.0", "id": mid, "result": {}}
-    return {"jsonrpc": "2.0", "id": mid, "error": {"code": -32601, "message": f"Method not found: {method}"}}
+    return {
+        "jsonrpc": "2.0",
+        "id": mid,
+        "error": {"code": -32601, "message": f"Method not found: {method}"},
+    }
 
 
 def _write_msg(data: Dict):
@@ -644,6 +815,7 @@ def _write_msg(data: Dict):
 async def main_loop():
     if sys.platform == "win32":
         import msvcrt
+
         msvcrt.setmode(sys.stdin.fileno(), os.O_BINARY)
         msvcrt.setmode(sys.stdout.fileno(), os.O_BINARY)
     buf = b""

@@ -441,7 +441,8 @@ async def dispatch_tool(name: str, args: Dict) -> str:
         if action == "list":
             api_url = args.get("api_url", "https://127.0.0.1:1337")
             token = args.get("api_token", "")
-            import urllib.request, ssl
+            import ssl
+            import urllib.request
             ctx = ssl.create_default_context()
             ctx.check_hostname = False
             ctx.verify_mode = ssl.CERT_NONE
