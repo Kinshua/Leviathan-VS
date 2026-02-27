@@ -16,17 +16,18 @@
 """
 
 import os
-import sys
 import shutil
+import sys
 import textwrap
-
 
 # ============================================================================
 # ANSI COLORS
 # ============================================================================
 
+
 class C:
     """Cores ANSI para terminal."""
+
     RST = "\033[0m"
     BOLD = "\033[1m"
     DIM = "\033[2m"
@@ -62,6 +63,7 @@ def enable_ansi():
         os.system("")
         try:
             import ctypes
+
             kernel32 = ctypes.windll.kernel32
             kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
         except Exception:
@@ -80,12 +82,36 @@ CATEGORIES = [
         "color": C.GREEN,
         "desc": "Instrumentacao dinamica, decompilacao APK, emuladores Android",
         "servers": [
-            {"name": "ADB", "tools": 42, "desc": "Android Debug Bridge — shell, install, logcat, screenshot, port forward, tcpdump"},
-            {"name": "Frida", "tools": 28, "desc": "Instrumentacao dinamica — bypass SSL/root/emulator, hook Java/Native, XXTEA extract"},
-            {"name": "Objection", "tools": 20, "desc": "Exploracao mobile runtime — bypass SSL, dump keystore, patch APK, listar activities"},
-            {"name": "JADX", "tools": 16, "desc": "Decompilacao APK — busca crypto, keys, URLs, permissions, native libs"},
-            {"name": "Androguard", "tools": 15, "desc": "Analise estatica Python APK — xrefs, security audit, comparacao de versoes"},
-            {"name": "APKTool", "tools": 12, "desc": "Decode/rebuild/sign APK — patch smali, inject code, rebuild resources"},
+            {
+                "name": "ADB",
+                "tools": 42,
+                "desc": "Android Debug Bridge — shell, install, logcat, screenshot, port forward, tcpdump",
+            },
+            {
+                "name": "Frida",
+                "tools": 28,
+                "desc": "Instrumentacao dinamica — bypass SSL/root/emulator, hook Java/Native, XXTEA extract",
+            },
+            {
+                "name": "Objection",
+                "tools": 20,
+                "desc": "Exploracao mobile runtime — bypass SSL, dump keystore, patch APK, listar activities",
+            },
+            {
+                "name": "JADX",
+                "tools": 16,
+                "desc": "Decompilacao APK — busca crypto, keys, URLs, permissions, native libs",
+            },
+            {
+                "name": "Androguard",
+                "tools": 15,
+                "desc": "Analise estatica Python APK — xrefs, security audit, comparacao de versoes",
+            },
+            {
+                "name": "APKTool",
+                "tools": 12,
+                "desc": "Decode/rebuild/sign APK — patch smali, inject code, rebuild resources",
+            },
         ],
     },
     {
@@ -95,10 +121,26 @@ CATEGORIES = [
         "color": C.BLUE,
         "desc": "Controle total de emuladores Android — instancias, root, GPS, device profiles",
         "servers": [
-            {"name": "LDPlayer", "tools": 89, "desc": "Emulador principal — 89 tools incluindo Frida integrado, clones, randomizacao"},
-            {"name": "Nox", "tools": 22, "desc": "NoxPlayer — NoxConsole CLI, macros, root toggle, GPS spoofing"},
-            {"name": "MEmu", "tools": 19, "desc": "MEmu Play — memuc CLI, clones, GPS, perfis de device"},
-            {"name": "BlueStacks", "tools": 17, "desc": "BlueStacks — HD-Player, instancias multiplas, ADB connect"},
+            {
+                "name": "LDPlayer",
+                "tools": 89,
+                "desc": "Emulador principal — 89 tools incluindo Frida integrado, clones, randomizacao",
+            },
+            {
+                "name": "Nox",
+                "tools": 22,
+                "desc": "NoxPlayer — NoxConsole CLI, macros, root toggle, GPS spoofing",
+            },
+            {
+                "name": "MEmu",
+                "tools": 19,
+                "desc": "MEmu Play — memuc CLI, clones, GPS, perfis de device",
+            },
+            {
+                "name": "BlueStacks",
+                "tools": 17,
+                "desc": "BlueStacks — HD-Player, instancias multiplas, ADB connect",
+            },
         ],
     },
     {
@@ -108,9 +150,21 @@ CATEGORIES = [
         "color": C.MAGENTA,
         "desc": "Engenharia reversa de binarios — disassembly, decompile, strings, crypto",
         "servers": [
-            {"name": "Ghidra", "tools": 15, "desc": "Analise headless — decompile, xrefs, strings, exports, JNI bridges"},
-            {"name": "Radare2", "tools": 16, "desc": "Analise binaria CLI — disasm, patch, decompile, search bytes"},
-            {"name": "RevEng", "tools": 16, "desc": "Engenharia reversa — objdump, readelf, binwalk, yara, capa, pefile, oletools"},
+            {
+                "name": "Ghidra",
+                "tools": 15,
+                "desc": "Analise headless — decompile, xrefs, strings, exports, JNI bridges",
+            },
+            {
+                "name": "Radare2",
+                "tools": 16,
+                "desc": "Analise binaria CLI — disasm, patch, decompile, search bytes",
+            },
+            {
+                "name": "RevEng",
+                "tools": 16,
+                "desc": "Engenharia reversa — objdump, readelf, binwalk, yara, capa, pefile, oletools",
+            },
         ],
     },
     {
@@ -120,10 +174,26 @@ CATEGORIES = [
         "color": C.CYAN,
         "desc": "Captura, analise e interceptacao de trafego de rede",
         "servers": [
-            {"name": "Wireshark", "tools": 23, "desc": "Captura & analise — DNS, HTTP, TLS, credentials, protocol hierarchy"},
-            {"name": "MITMProxy", "tools": 14, "desc": "Proxy MITM — intercept HTTPS, modify requests, scripts, HAR export"},
-            {"name": "Scapy", "tools": 15, "desc": "Packet crafting — SYN scan, ARP scan, fuzzing, custom packets"},
-            {"name": "NetAttack", "tools": 16, "desc": "Ataques de rede/MITM — bettercap, ettercap, hping3, sslstrip, snort, dnschef"},
+            {
+                "name": "Wireshark",
+                "tools": 23,
+                "desc": "Captura & analise — DNS, HTTP, TLS, credentials, protocol hierarchy",
+            },
+            {
+                "name": "MITMProxy",
+                "tools": 14,
+                "desc": "Proxy MITM — intercept HTTPS, modify requests, scripts, HAR export",
+            },
+            {
+                "name": "Scapy",
+                "tools": 15,
+                "desc": "Packet crafting — SYN scan, ARP scan, fuzzing, custom packets",
+            },
+            {
+                "name": "NetAttack",
+                "tools": 16,
+                "desc": "Ataques de rede/MITM — bettercap, ettercap, hping3, sslstrip, snort, dnschef",
+            },
         ],
     },
     {
@@ -133,9 +203,21 @@ CATEGORIES = [
         "color": C.ORANGE,
         "desc": "Testes de seguranca web — scan, fuzzing, injection, XSS, SSRF",
         "servers": [
-            {"name": "Nuclei", "tools": 17, "desc": "Scanner suite — nuclei + sqlmap + nmap + ffuf + nikto + subfinder"},
-            {"name": "Burp Suite", "tools": 15, "desc": "Web security — active scan, spider, intruder, repeater via REST API"},
-            {"name": "WebApp", "tools": 14, "desc": "Seguranca web avancada — xsstrike, wfuzz, arjun, dalfox, commix, paramspider"},
+            {
+                "name": "Nuclei",
+                "tools": 17,
+                "desc": "Scanner suite — nuclei + sqlmap + nmap + ffuf + nikto + subfinder",
+            },
+            {
+                "name": "Burp Suite",
+                "tools": 15,
+                "desc": "Web security — active scan, spider, intruder, repeater via REST API",
+            },
+            {
+                "name": "WebApp",
+                "tools": 14,
+                "desc": "Seguranca web avancada — xsstrike, wfuzz, arjun, dalfox, commix, paramspider",
+            },
         ],
     },
     {
@@ -145,9 +227,21 @@ CATEGORIES = [
         "color": C.SKY,
         "desc": "Descoberta de ativos, subdominios, portas, servicos, crawling",
         "servers": [
-            {"name": "Recon", "tools": 14, "desc": "Reconhecimento base — amass, gobuster, masscan, whatweb, dnsrecon, fierce"},
-            {"name": "Adv Recon", "tools": 16, "desc": "Recon avancado — rustscan, autorecon, feroxbuster, katana, wpscan, eyewitness"},
-            {"name": "OSINT", "tools": 14, "desc": "Inteligencia de fontes abertas — shodan, sherlock, maigret, dnstwist, theharvester"},
+            {
+                "name": "Recon",
+                "tools": 14,
+                "desc": "Reconhecimento base — amass, gobuster, masscan, whatweb, dnsrecon, fierce",
+            },
+            {
+                "name": "Adv Recon",
+                "tools": 16,
+                "desc": "Recon avancado — rustscan, autorecon, feroxbuster, katana, wpscan, eyewitness",
+            },
+            {
+                "name": "OSINT",
+                "tools": 14,
+                "desc": "Inteligencia de fontes abertas — shodan, sherlock, maigret, dnstwist, theharvester",
+            },
         ],
     },
     {
@@ -157,10 +251,26 @@ CATEGORIES = [
         "color": C.RED,
         "desc": "Ferramentas de exploracao, payloads, brute-force, cracking",
         "servers": [
-            {"name": "Exploit", "tools": 14, "desc": "Exploracao base — searchsploit, msfvenom, hydra, john, medusa, crackmapexec"},
-            {"name": "Exploit Dev", "tools": 16, "desc": "Dev de exploits — pwntools, angr, checksec, ROPgadget, afl, boofuzz, msfvenom"},
-            {"name": "Hashcat", "tools": 12, "desc": "Cracking de senhas — hashcat, john the ripper, identify hash, wordlists"},
-            {"name": "Wordlist", "tools": 16, "desc": "Geracao de wordlists — cewl, crunch, cupp, john rules, patator, hashid, rsmangler"},
+            {
+                "name": "Exploit",
+                "tools": 14,
+                "desc": "Exploracao base — searchsploit, msfvenom, hydra, john, medusa, crackmapexec",
+            },
+            {
+                "name": "Exploit Dev",
+                "tools": 16,
+                "desc": "Dev de exploits — pwntools, angr, checksec, ROPgadget, afl, boofuzz, msfvenom",
+            },
+            {
+                "name": "Hashcat",
+                "tools": 12,
+                "desc": "Cracking de senhas — hashcat, john the ripper, identify hash, wordlists",
+            },
+            {
+                "name": "Wordlist",
+                "tools": 16,
+                "desc": "Geracao de wordlists — cewl, crunch, cupp, john rules, patator, hashid, rsmangler",
+            },
         ],
     },
     {
@@ -170,8 +280,16 @@ CATEGORIES = [
         "color": C.CORAL,
         "desc": "Command & Control, payloads evasivos, frameworks de ataque",
         "servers": [
-            {"name": "Red Team", "tools": 16, "desc": "C2/payload — sliver, mythic, empire, havoc, covenant, donut, scarecrow, veil"},
-            {"name": "Social Eng", "tools": 14, "desc": "Engenharia social — setoolkit, gophish, evilginx2, beef-xss, wifiphisher"},
+            {
+                "name": "Red Team",
+                "tools": 16,
+                "desc": "C2/payload — sliver, mythic, empire, havoc, covenant, donut, scarecrow, veil",
+            },
+            {
+                "name": "Social Eng",
+                "tools": 14,
+                "desc": "Engenharia social — setoolkit, gophish, evilginx2, beef-xss, wifiphisher",
+            },
         ],
     },
     {
@@ -181,7 +299,11 @@ CATEGORIES = [
         "color": C.LIME,
         "desc": "Ataques wireless, WiFi, Bluetooth, RF scanning",
         "servers": [
-            {"name": "Wireless", "tools": 16, "desc": "WiFi/BLE/RF — aircrack-ng suite, wifite, reaver, bully, bettercap, kismet, cowpatty"},
+            {
+                "name": "Wireless",
+                "tools": 16,
+                "desc": "WiFi/BLE/RF — aircrack-ng suite, wifite, reaver, bully, bettercap, kismet, cowpatty",
+            },
         ],
     },
     {
@@ -191,7 +313,11 @@ CATEGORIES = [
         "color": C.GOLD,
         "desc": "Ataques AD, Kerberos, LDAP, SMB, WinRM, pass-the-hash",
         "servers": [
-            {"name": "Active Directory", "tools": 18, "desc": "AD/Kerberos — bloodhound, impacket (8 tools), netexec, evil-winrm, mimikatz, rubeus, certipy"},
+            {
+                "name": "Active Directory",
+                "tools": 18,
+                "desc": "AD/Kerberos — bloodhound, impacket (8 tools), netexec, evil-winrm, mimikatz, rubeus, certipy",
+            },
         ],
     },
     {
@@ -201,8 +327,16 @@ CATEGORIES = [
         "color": C.TEAL,
         "desc": "Forense digital, analise de memoria, incident response",
         "servers": [
-            {"name": "Forensics", "tools": 14, "desc": "Forense digital — volatility3, yara, binwalk, capa, foremost, bulk_extractor"},
-            {"name": "Stego", "tools": 14, "desc": "Esteganografia — steghide, zsteg, openstego, outguess, snow, stegseek, exiftool"},
+            {
+                "name": "Forensics",
+                "tools": 14,
+                "desc": "Forense digital — volatility3, yara, binwalk, capa, foremost, bulk_extractor",
+            },
+            {
+                "name": "Stego",
+                "tools": 14,
+                "desc": "Esteganografia — steghide, zsteg, openstego, outguess, snow, stegseek, exiftool",
+            },
         ],
     },
     {
@@ -212,7 +346,11 @@ CATEGORIES = [
         "color": C.PURPLE,
         "desc": "Seguranca cloud, containers, IaC, secrets scanning",
         "servers": [
-            {"name": "Cloud", "tools": 14, "desc": "Cloud security — trivy, gitleaks, trufflehog, semgrep, prowler, checkov, syft, grype"},
+            {
+                "name": "Cloud",
+                "tools": 14,
+                "desc": "Cloud security — trivy, gitleaks, trufflehog, semgrep, prowler, checkov, syft, grype",
+            },
         ],
     },
     {
@@ -222,8 +360,16 @@ CATEGORIES = [
         "color": C.WHITE,
         "desc": "Motor de traducao semantica, HTTP toolkit, servidor MCP core",
         "servers": [
-            {"name": "Leviathan", "tools": 7, "desc": "Kraken Engine — encode/decode/check/find_terms/translate_file/reload_rules"},
-            {"name": "HTTP Toolkit", "tools": 0, "desc": "Interceptador Abissal — dispatch, scan, interactive, cURL generation"},
+            {
+                "name": "Leviathan",
+                "tools": 7,
+                "desc": "Kraken Engine — encode/decode/check/find_terms/translate_file/reload_rules",
+            },
+            {
+                "name": "HTTP Toolkit",
+                "tools": 0,
+                "desc": "Interceptador Abissal — dispatch, scan, interactive, cURL generation",
+            },
         ],
     },
 ]
@@ -232,6 +378,7 @@ CATEGORIES = [
 # ============================================================================
 # DISPLAY FUNCTIONS
 # ============================================================================
+
 
 def get_terminal_width():
     """Largura do terminal, fallback 100."""
@@ -281,7 +428,9 @@ def print_categories():
 
     print(f"{C.DIM}{'─' * get_terminal_width()}{C.RST}")
     print(f"    {C.BOLD}{C.YELLOW}[ 0]{C.RST}  🚪  {C.BOLD}{C.YELLOW}SAIR{C.RST}")
-    print(f"    {C.BOLD}{C.CYAN}[99]{C.RST}  📋  {C.BOLD}{C.CYAN}VER TODAS AS FERRAMENTAS{C.RST}")
+    print(
+        f"    {C.BOLD}{C.CYAN}[99]{C.RST}  📋  {C.BOLD}{C.CYAN}VER TODAS AS FERRAMENTAS{C.RST}"
+    )
     print(f"{C.DIM}{'─' * get_terminal_width()}{C.RST}")
     print()
 
@@ -293,13 +442,17 @@ def print_category_detail(cat):
     total_tools = sum(s["tools"] for s in cat["servers"])
     print()
     print(f"{C.DIM}{'─' * w}{C.RST}")
-    print(f"    {cat['icon']}  {C.BOLD}{cat['color']}{cat['name']}{C.RST}  —  {total_tools} ferramentas")
+    print(
+        f"    {cat['icon']}  {C.BOLD}{cat['color']}{cat['name']}{C.RST}  —  {total_tools} ferramentas"
+    )
     print(f"    {C.DIM}{cat['desc']}{C.RST}")
     print(f"{C.DIM}{'─' * w}{C.RST}")
     print()
 
     for s in cat["servers"]:
-        print(f"    {C.BOLD}{cat['color']}■ {s['name']}{C.RST}  {C.DIM}({s['tools']} ferramentas){C.RST}")
+        print(
+            f"    {C.BOLD}{cat['color']}■ {s['name']}{C.RST}  {C.DIM}({s['tools']} ferramentas){C.RST}"
+        )
         # Word wrap a descricao
         wrapped = textwrap.fill(s["desc"], width=w - 10)
         for line in wrapped.split("\n"):
@@ -328,15 +481,21 @@ def print_all_tools():
     for cat in CATEGORIES:
         cat_tools = sum(s["tools"] for s in cat["servers"])
         grand_total += cat_tools
-        print(f"  {cat['icon']}  {C.BOLD}{cat['color']}{cat['name']}{C.RST}  ({cat_tools} ferramentas)")
+        print(
+            f"  {cat['icon']}  {C.BOLD}{cat['color']}{cat['name']}{C.RST}  ({cat_tools} ferramentas)"
+        )
         print(f"  {C.DIM}{'─' * (w - 4)}{C.RST}")
         for s in cat["servers"]:
             server_count += 1
-            print(f"    {cat['color']}▸{C.RST} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {C.DIM}{s['desc']}{C.RST}")
+            print(
+                f"    {cat['color']}▸{C.RST} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {C.DIM}{s['desc']}{C.RST}"
+            )
         print()
 
     print(f"{C.DIM}{'═' * w}{C.RST}")
-    print(f"    {C.BOLD}{C.WHITE}TOTAL: {server_count} servidores MCP  |  {grand_total} ferramentas{C.RST}")
+    print(
+        f"    {C.BOLD}{C.WHITE}TOTAL: {server_count} servidores MCP  |  {grand_total} ferramentas{C.RST}"
+    )
     print(f"{C.DIM}{'═' * w}{C.RST}")
     print()
 
@@ -367,12 +526,16 @@ def copy_to_clipboard(text):
     try:
         if os.name == "nt":
             import subprocess
+
             p = subprocess.Popen(["clip"], stdin=subprocess.PIPE)
             p.communicate(text.encode("utf-8"))
             return True
         else:
             import subprocess
-            p = subprocess.Popen(["xclip", "-selection", "clipboard"], stdin=subprocess.PIPE)
+
+            p = subprocess.Popen(
+                ["xclip", "-selection", "clipboard"], stdin=subprocess.PIPE
+            )
             p.communicate(text.encode("utf-8"))
             return True
     except Exception:
@@ -460,7 +623,9 @@ def context_mode(cat):
     clear()
     print()
     print(f"{C.DIM}{'═' * w}{C.RST}")
-    print(f"    {cat['icon']}  {C.BOLD}{cat['color']}{cat['name']}{C.RST}  —  MODO FOCADO")
+    print(
+        f"    {cat['icon']}  {C.BOLD}{cat['color']}{cat['name']}{C.RST}  —  MODO FOCADO"
+    )
     print(f"{C.DIM}{'═' * w}{C.RST}")
     print()
     print(f"    {C.GREEN}{C.BOLD}{ctx.get('greeting', '')}{C.RST}")
@@ -474,17 +639,25 @@ def context_mode(cat):
     print()
     print(f"    {C.BOLD}Servidores MCP nesta categoria:{C.RST}")
     for s in cat["servers"]:
-        print(f"    {cat['color']}▸{C.RST} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {s['desc']}")
+        print(
+            f"    {cat['color']}▸{C.RST} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {s['desc']}"
+        )
     print()
     print(f"{C.DIM}{'─' * w}{C.RST}")
     print()
-    print(f"    {C.BOLD}{C.GREEN}[C]{C.RST} Copiar prompt de contexto para colar no Copilot")
+    print(
+        f"    {C.BOLD}{C.GREEN}[C]{C.RST} Copiar prompt de contexto para colar no Copilot"
+    )
     print(f"    {C.BOLD}{C.YELLOW}[V]{C.RST} Voltar ao menu")
     print()
 
     while True:
         try:
-            choice = input(f"    {C.BOLD}{cat['color']}LEVIATHAN [{cat['name']}]>{C.RST} ").strip().upper()
+            choice = (
+                input(f"    {C.BOLD}{cat['color']}LEVIATHAN [{cat['name']}]>{C.RST} ")
+                .strip()
+                .upper()
+            )
         except (EOFError, KeyboardInterrupt):
             return
 
@@ -494,7 +667,9 @@ def context_mode(cat):
             prompt = generate_context_prompt(cat)
             if copy_to_clipboard(prompt):
                 print(f"\n    {C.GREEN}{C.BOLD}Prompt copiado para o clipboard!{C.RST}")
-                print(f"    {C.DIM}Cole no chat do Copilot para ativar o modo focado.{C.RST}\n")
+                print(
+                    f"    {C.DIM}Cole no chat do Copilot para ativar o modo focado.{C.RST}\n"
+                )
             else:
                 print(f"\n    {C.YELLOW}Nao foi possivel copiar. Prompt:{C.RST}\n")
                 print(prompt)
@@ -506,6 +681,7 @@ def context_mode(cat):
 # ============================================================================
 # MAIN LOOP
 # ============================================================================
+
 
 def main():
     """Loop principal do launcher."""
@@ -545,7 +721,9 @@ def main():
                 cat = CATEGORIES[idx - 1]
                 context_mode(cat)
             else:
-                print(f"    {C.RED}Numero invalido. Use 1-{len(CATEGORIES)}, 0 ou 99.{C.RST}")
+                print(
+                    f"    {C.RED}Numero invalido. Use 1-{len(CATEGORIES)}, 0 ou 99.{C.RST}"
+                )
                 input(f"    {C.DIM}Pressione ENTER...{C.RST}")
         except ValueError:
             # Busca por nome
@@ -565,7 +743,9 @@ def main():
             if found:
                 context_mode(found)
             else:
-                print(f"    {C.RED}Nao encontrado: '{raw}'. Use numero ou nome da categoria.{C.RST}")
+                print(
+                    f"    {C.RED}Nao encontrado: '{raw}'. Use numero ou nome da categoria.{C.RST}"
+                )
                 input(f"    {C.DIM}Pressione ENTER...{C.RST}")
 
 

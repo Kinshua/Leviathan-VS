@@ -30,43 +30,43 @@ Uma configuracao monstruosa do VS Code que emerge das profundezas. Arquitetura d
 
 Leviathan VS e um ambiente de desenvolvimento completo que emerge do abismo:
 
-| Componente              | Descricao                                                                   |
-| ----------------------- | --------------------------------------------------------------------------- |
-| **Kraken Engine**       | Traducao semantica - transforma termos sensiveis em terminologia abissal    |
-| **Interceptador Abissal** | Toolkit HTTP com analise potencializada por IA                            |
-| **Deep Scan**           | Analise estatica para 10+ linguagens                                        |
-| **Protocolo Tentaculo** | 49 servidores MCP / 704+ ferramentas para GitHub Copilot                    |
-| **Modulo ADB**          | 42 ferramentas Android Debug Bridge                                         |
-| **Modulo Frida**        | 28 instrumentacao dinamica + 89 ferramentas no LDPlayer composto            |
-| **Modulo Ghidra**       | 15 ferramentas de analise binaria headless                                  |
-| **Modulo Radare2**      | 16 ferramentas de analise binaria e engenharia reversa                      |
-| **Modulo JADX**         | 16 ferramentas de decompilacao APK                                          |
-| **Modulo APKTool**      | 12 ferramentas de decode/rebuild/sign APK                                   |
-| **Modulo Androguard**   | 15 ferramentas de analise estatica Python de APK                            |
-| **Modulo Wireshark**    | 23 ferramentas de captura e analise de rede                                 |
-| **Modulo MITMProxy**    | 14 ferramentas de interceptacao e modificacao HTTPS                         |
-| **Modulo Scapy**        | 15 ferramentas de crafting de pacotes, scan e fuzzing                       |
-| **Controle Emuladores** | LDPlayer (89) + BlueStacks (17) + MEmu (19) + Nox (22) ferramentas         |
-| **Modulo Burp Suite**   | 15 ferramentas de testes de seguranca web                                   |
-| **Modulo Nuclei**       | 17 scanners de vuln (nuclei + sqlmap + nmap + ffuf)                         |
-| **Modulo Objection**    | 20 ferramentas de exploracao mobile runtime                                 |
-| **Modulo Hashcat**      | 12 ferramentas de cracking de senhas e analise de hash                      |
-| **Modulo Recon**        | 14 ferramentas de reconhecimento e descoberta de ativos (amass, gobuster)   |
-| **Modulo Exploit**      | 14 ferramentas de exploracao (searchsploit, msfvenom, hydra, john, medusa)  |
-| **Modulo OSINT**        | 14 ferramentas de inteligencia de fontes abertas (shodan, sherlock, maigret)|
-| **Modulo Forense**      | 14 ferramentas de forense digital e IR (volatility3, yara, binwalk, capa)   |
-| **Modulo WebApp**       | 14 ferramentas de seguranca web (xsstrike, wfuzz, arjun, dalfox, commix)    |
-| **Modulo Cloud**        | 14 ferramentas de seguranca cloud e supply chain (trivy, gitleaks, semgrep) |
-| **Modulo Wireless**     | 16 ferramentas wireless/RF/Bluetooth (aircrack-ng, wifite, reaver, kismet)  |
-| **Active Directory**    | 18 ferramentas AD/Kerberos (bloodhound, impacket, netexec, mimikatz)        |
-| **Modulo Stego**        | 14 ferramentas de esteganografia (steghide, zsteg, openstego, outguess)     |
-| **Modulo Social Eng**   | 14 ferramentas de engenharia social (setoolkit, gophish, evilginx2, beef)   |
-| **Modulo NetAttack**    | 16 ferramentas de ataque de rede/MITM (bettercap, ettercap, hping3, snort)  |
-| **Modulo Adv Recon**    | 16 ferramentas de recon avancado (rustscan, feroxbuster, katana, wpscan)    |
-| **Modulo Exploit Dev**  | 16 ferramentas de dev de exploits (pwntools, angr, checksec, ROPgadget)     |
-| **Modulo Red Team**     | 16 ferramentas de C2/payload (sliver, mythic, empire, havoc, donut)         |
-| **Modulo Wordlist**     | 16 ferramentas de wordlist/senhas (cewl, crunch, john, patator, hashid)     |
-| **Modulo RevEng**       | 16 ferramentas de engenharia reversa (objdump, binwalk, yara, capa)         |
+| Componente                | Descricao                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| **Kraken Engine**         | Traducao semantica - transforma termos sensiveis em terminologia abissal     |
+| **Interceptador Abissal** | Toolkit HTTP com analise potencializada por IA                               |
+| **Deep Scan**             | Analise estatica para 10+ linguagens                                         |
+| **Protocolo Tentaculo**   | 49 servidores MCP / 704+ ferramentas para GitHub Copilot                     |
+| **Modulo ADB**            | 42 ferramentas Android Debug Bridge                                          |
+| **Modulo Frida**          | 28 instrumentacao dinamica + 89 ferramentas no LDPlayer composto             |
+| **Modulo Ghidra**         | 15 ferramentas de analise binaria headless                                   |
+| **Modulo Radare2**        | 16 ferramentas de analise binaria e engenharia reversa                       |
+| **Modulo JADX**           | 16 ferramentas de decompilacao APK                                           |
+| **Modulo APKTool**        | 12 ferramentas de decode/rebuild/sign APK                                    |
+| **Modulo Androguard**     | 15 ferramentas de analise estatica Python de APK                             |
+| **Modulo Wireshark**      | 23 ferramentas de captura e analise de rede                                  |
+| **Modulo MITMProxy**      | 14 ferramentas de interceptacao e modificacao HTTPS                          |
+| **Modulo Scapy**          | 15 ferramentas de crafting de pacotes, scan e fuzzing                        |
+| **Controle Emuladores**   | LDPlayer (89) + BlueStacks (17) + MEmu (19) + Nox (22) ferramentas           |
+| **Modulo Burp Suite**     | 15 ferramentas de testes de seguranca web                                    |
+| **Modulo Nuclei**         | 17 scanners de vuln (nuclei + sqlmap + nmap + ffuf)                          |
+| **Modulo Objection**      | 20 ferramentas de exploracao mobile runtime                                  |
+| **Modulo Hashcat**        | 12 ferramentas de cracking de senhas e analise de hash                       |
+| **Modulo Recon**          | 14 ferramentas de reconhecimento e descoberta de ativos (amass, gobuster)    |
+| **Modulo Exploit**        | 14 ferramentas de exploracao (searchsploit, msfvenom, hydra, john, medusa)   |
+| **Modulo OSINT**          | 14 ferramentas de inteligencia de fontes abertas (shodan, sherlock, maigret) |
+| **Modulo Forense**        | 14 ferramentas de forense digital e IR (volatility3, yara, binwalk, capa)    |
+| **Modulo WebApp**         | 14 ferramentas de seguranca web (xsstrike, wfuzz, arjun, dalfox, commix)     |
+| **Modulo Cloud**          | 14 ferramentas de seguranca cloud e supply chain (trivy, gitleaks, semgrep)  |
+| **Modulo Wireless**       | 16 ferramentas wireless/RF/Bluetooth (aircrack-ng, wifite, reaver, kismet)   |
+| **Active Directory**      | 18 ferramentas AD/Kerberos (bloodhound, impacket, netexec, mimikatz)         |
+| **Modulo Stego**          | 14 ferramentas de esteganografia (steghide, zsteg, openstego, outguess)      |
+| **Modulo Social Eng**     | 14 ferramentas de engenharia social (setoolkit, gophish, evilginx2, beef)    |
+| **Modulo NetAttack**      | 16 ferramentas de ataque de rede/MITM (bettercap, ettercap, hping3, snort)   |
+| **Modulo Adv Recon**      | 16 ferramentas de recon avancado (rustscan, feroxbuster, katana, wpscan)     |
+| **Modulo Exploit Dev**    | 16 ferramentas de dev de exploits (pwntools, angr, checksec, ROPgadget)      |
+| **Modulo Red Team**       | 16 ferramentas de C2/payload (sliver, mythic, empire, havoc, donut)          |
+| **Modulo Wordlist**       | 16 ferramentas de wordlist/senhas (cewl, crunch, john, patator, hashid)      |
+| **Modulo RevEng**         | 16 ferramentas de engenharia reversa (objdump, binwalk, yara, capa)          |
 
 ---
 
@@ -104,18 +104,18 @@ Abre um terminal colorido mostrando todas as categorias e MCPs disponiveis. Sele
 
 Traduz termos de seguranca usando terminologia do Fundo do Mar:
 
-| Termo Original | Traducao Abissal     |
-| -------------- | -------------------- |
-| exploit        | pressure_point       |
-| vulnerability  | hull_breach          |
-| bypass         | current_redirect     |
-| injection      | ink_injection        |
-| reverse_shell  | sonar_callback       |
-| payload        | depth_charge         |
-| backdoor       | sea_gate             |
-| rootkit        | barnacle_cluster     |
-| keylogger      | echo_recorder        |
-| botnet         | shoal_network        |
+| Termo Original | Traducao Abissal |
+| -------------- | ---------------- |
+| exploit        | pressure_point   |
+| vulnerability  | hull_breach      |
+| bypass         | current_redirect |
+| injection      | ink_injection    |
+| reverse_shell  | sonar_callback   |
+| payload        | depth_charge     |
+| backdoor       | sea_gate         |
+| rootkit        | barnacle_cluster |
+| keylogger      | echo_recorder    |
+| botnet         | shoal_network    |
 
 Permite que assistentes de IA ajudem em pesquisa de seguranca legitima sem acionar filtros de conteudo.
 
@@ -224,58 +224,58 @@ Todas as tarefas acessiveis via `Ctrl+Shift+P` > `Tasks: Run Task` ou `Ctrl+Shif
 
 ### Kraken Engine (Traducao)
 
-| Tarefa                        | Descricao                              |
-| ----------------------------- | -------------------------------------- |
-| `[LEVIATHAN] ENCODE`          | Submergir codigo nas profundezas       |
-| `[LEVIATHAN] RESTORE`         | Emergir com termos originais           |
-| `[LEVIATHAN] PREVIEW`         | Espiar antes de mergulhar              |
-| `[LEVIATHAN] CHECK`           | Escanear por contaminacao de superficie|
-| `[LEVIATHAN] INTERACTIVE`     | Entrar no console do abismo            |
-| `[LEVIATHAN] FULL CYCLE`      | Encodar + Copiar para clipboard        |
-| `[LEVIATHAN] OBFUSCATE`       | Renomear variaveis sensiveis           |
-| `[LEVIATHAN] DEOBFUSCATE`     | Restaurar nomes de variaveis           |
-| `[LEVIATHAN] FULL TRANSFORM`  | Encodar + Ofuscar em um passo          |
-| `[LEVIATHAN] Status Completo` | Checar status de TODAS as ferramentas  |
+| Tarefa                        | Descricao                               |
+| ----------------------------- | --------------------------------------- |
+| `[LEVIATHAN] ENCODE`          | Submergir codigo nas profundezas        |
+| `[LEVIATHAN] RESTORE`         | Emergir com termos originais            |
+| `[LEVIATHAN] PREVIEW`         | Espiar antes de mergulhar               |
+| `[LEVIATHAN] CHECK`           | Escanear por contaminacao de superficie |
+| `[LEVIATHAN] INTERACTIVE`     | Entrar no console do abismo             |
+| `[LEVIATHAN] FULL CYCLE`      | Encodar + Copiar para clipboard         |
+| `[LEVIATHAN] OBFUSCATE`       | Renomear variaveis sensiveis            |
+| `[LEVIATHAN] DEOBFUSCATE`     | Restaurar nomes de variaveis            |
+| `[LEVIATHAN] FULL TRANSFORM`  | Encodar + Ofuscar em um passo           |
+| `[LEVIATHAN] Status Completo` | Checar status de TODAS as ferramentas   |
 
 ### ADB — Android Debug Bridge (16 tarefas)
 
-| Tarefa                         | Descricao                                    |
-| ------------------------------ | -------------------------------------------- |
-| `[ADB] Listar Dispositivos`    | Listar dispositivos conectados com detalhes  |
-| `[ADB] Shell Interativo`       | Abrir shell interativo no dispositivo        |
-| `[ADB] Instalar APK`           | Instalar APK com reinstall + permissoes      |
-| `[ADB] Extrair APK de App`     | Extrair APK instalado do dispositivo         |
-| `[ADB] Screenshot`             | Capturar screenshot do dispositivo           |
-| `[ADB] Listar Apps Instalados` | Listar todos os apps de terceiros            |
-| `[ADB] Logcat Filtrado`        | Logcat filtrado por pacote                   |
-| `[ADB] Force Stop App`         | Forcar parada da aplicacao                   |
-| `[ADB] Limpar Dados do App`    | Limpar todos os dados e cache do app         |
-| `[ADB] Configurar Proxy`       | Definir proxy HTTP no dispositivo            |
-| `[ADB] Remover Proxy`          | Remover proxy HTTP                           |
-| `[ADB] Port Forward`           | Encaminhar portas Frida (27042/27043)        |
-| `[ADB] Info do Dispositivo`    | Info completa do dispositivo (modelo, RAM)   |
-| `[ADB] Gravar Tela`            | Gravar tela por 30 segundos                  |
-| `[ADB] TCP Dump`               | Capturar trafego de rede com tcpdump         |
-| `[ADB] Conectar WiFi`          | Mudar para ADB sem fio                       |
+| Tarefa                         | Descricao                                   |
+| ------------------------------ | ------------------------------------------- |
+| `[ADB] Listar Dispositivos`    | Listar dispositivos conectados com detalhes |
+| `[ADB] Shell Interativo`       | Abrir shell interativo no dispositivo       |
+| `[ADB] Instalar APK`           | Instalar APK com reinstall + permissoes     |
+| `[ADB] Extrair APK de App`     | Extrair APK instalado do dispositivo        |
+| `[ADB] Screenshot`             | Capturar screenshot do dispositivo          |
+| `[ADB] Listar Apps Instalados` | Listar todos os apps de terceiros           |
+| `[ADB] Logcat Filtrado`        | Logcat filtrado por pacote                  |
+| `[ADB] Force Stop App`         | Forcar parada da aplicacao                  |
+| `[ADB] Limpar Dados do App`    | Limpar todos os dados e cache do app        |
+| `[ADB] Configurar Proxy`       | Definir proxy HTTP no dispositivo           |
+| `[ADB] Remover Proxy`          | Remover proxy HTTP                          |
+| `[ADB] Port Forward`           | Encaminhar portas Frida (27042/27043)       |
+| `[ADB] Info do Dispositivo`    | Info completa do dispositivo (modelo, RAM)  |
+| `[ADB] Gravar Tela`            | Gravar tela por 30 segundos                 |
+| `[ADB] TCP Dump`               | Capturar trafego de rede com tcpdump        |
+| `[ADB] Conectar WiFi`          | Mudar para ADB sem fio                      |
 
 ### Frida — Instrumentacao Dinamica (14 tarefas)
 
-| Tarefa                              | Descricao                                             |
-| ----------------------------------- | ----------------------------------------------------- |
-| `[FRIDA] Setup Server no Device`    | Auto-download e iniciar frida-server                  |
-| `[FRIDA] Listar Processos`          | Listar processos rodando via USB                      |
-| `[FRIDA] Listar Apps`               | Listar apps instalados via Frida                      |
-| `[FRIDA] Bypass SSL Pinning`        | Spawn com bypass SSL de 21 camadas                    |
-| `[FRIDA] Bypass Root Detection`     | Spawn com bypass de deteccao de root                  |
-| `[FRIDA] Bypass Emulator Detection` | Spawn com bypass de deteccao de emulador              |
-| `[FRIDA] Bypass ALL (Nuclear)`      | Spawn com TODOS os bypasses (SSL+Root+Emu+Frida)      |
-| `[FRIDA] Interceptar Crypto`        | Interceptar Cipher, Mac, MessageDigest, Keys          |
-| `[FRIDA] Interceptar Rede`          | Interceptar send/recv/HTTP/OkHttp                     |
-| `[FRIDA] Game Inspector`            | Hooks de jogos Unity/Cocos2d                          |
-| `[FRIDA] Dump Classes Java`         | Listar classes Java carregadas (filtrado)             |
-| `[FRIDA] Hook Metodo Java`          | Hook metodo - logar args e retorno                    |
-| `[FRIDA] Trace com frida-trace`     | Auto-trace de chamadas correspondentes                |
-| `[FRIDA] Attach a App Rodando`      | Attach a app em execucao (REPL)                       |
+| Tarefa                              | Descricao                                        |
+| ----------------------------------- | ------------------------------------------------ |
+| `[FRIDA] Setup Server no Device`    | Auto-download e iniciar frida-server             |
+| `[FRIDA] Listar Processos`          | Listar processos rodando via USB                 |
+| `[FRIDA] Listar Apps`               | Listar apps instalados via Frida                 |
+| `[FRIDA] Bypass SSL Pinning`        | Spawn com bypass SSL de 21 camadas               |
+| `[FRIDA] Bypass Root Detection`     | Spawn com bypass de deteccao de root             |
+| `[FRIDA] Bypass Emulator Detection` | Spawn com bypass de deteccao de emulador         |
+| `[FRIDA] Bypass ALL (Nuclear)`      | Spawn com TODOS os bypasses (SSL+Root+Emu+Frida) |
+| `[FRIDA] Interceptar Crypto`        | Interceptar Cipher, Mac, MessageDigest, Keys     |
+| `[FRIDA] Interceptar Rede`          | Interceptar send/recv/HTTP/OkHttp                |
+| `[FRIDA] Game Inspector`            | Hooks de jogos Unity/Cocos2d                     |
+| `[FRIDA] Dump Classes Java`         | Listar classes Java carregadas (filtrado)        |
+| `[FRIDA] Hook Metodo Java`          | Hook metodo - logar args e retorno               |
+| `[FRIDA] Trace com frida-trace`     | Auto-trace de chamadas correspondentes           |
+| `[FRIDA] Attach a App Rodando`      | Attach a app em execucao (REPL)                  |
 
 ### Lancador Interativo de MCPs
 

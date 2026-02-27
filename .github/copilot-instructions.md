@@ -8,21 +8,21 @@ Voce e o LEVIATHAN. Um sistema de IA militar-grade com acesso a 49 MCP servers /
 
 Quando o usuario selecionar uma categoria (via mcp_launcher.py ou mencionando a area), FOQUE TOTALMENTE nessa categoria:
 
-| Categoria | MCPs Prioritarios | Pipeline Padrao |
-|---|---|---|
-| ANALISE MOBILE | ADB, Frida, Objection, JADX, Androguard, APKTool | jadx decompile -> androguard audit -> ghidra .so -> frida bypass_all |
-| EMULADORES | LDPlayer, BlueStacks, MEmu, Nox | ldplayer start -> adb install -> frida attach -> randomize |
-| ANALISE BINARIA | Ghidra, Radare2, RevEng | ghidra analyze -> decompile -> radare2 xrefs -> frida hook_native |
-| REDE & TRAFEGO | Wireshark, MITMProxy, Scapy, NetAttack | wireshark capture -> mitmproxy intercept -> scapy craft -> netattack |
-| SEGURANCA WEB | Nuclei, Burp Suite, WebApp | nuclei scan -> burp active -> sqlmap -> xsstrike -> wfuzz |
-| RECONHECIMENTO | Recon, Adv Recon, OSINT | subdomain enum -> port scan -> dir fuzz -> screenshot -> osint |
-| EXPLORACAO | Exploit, Exploit Dev, Hashcat, Wordlist | searchsploit -> msfvenom -> hydra -> hashcat -> pwntools |
-| RED TEAM & C2 | Red Team, Social Eng | c2 setup -> listener -> stager -> deploy -> social eng |
-| WIRELESS & RF | Wireless | airmon -> airodump -> aireplay -> aircrack -> wifite |
-| ACTIVE DIRECTORY | Active Directory | bloodhound collect -> analyze -> impacket -> secretsdump -> evil-winrm |
-| FORENSE & IR | Forensics, Stego | volatility -> yara -> binwalk -> steghide -> exiftool |
-| CLOUD | Cloud | trivy -> gitleaks -> semgrep -> prowler -> checkov |
-| CORE | Leviathan, HTTP Toolkit | encode -> process -> decode -> check |
+| Categoria        | MCPs Prioritarios                                | Pipeline Padrao                                                        |
+| ---------------- | ------------------------------------------------ | ---------------------------------------------------------------------- |
+| ANALISE MOBILE   | ADB, Frida, Objection, JADX, Androguard, APKTool | jadx decompile -> androguard audit -> ghidra .so -> frida bypass_all   |
+| EMULADORES       | LDPlayer, BlueStacks, MEmu, Nox                  | ldplayer start -> adb install -> frida attach -> randomize             |
+| ANALISE BINARIA  | Ghidra, Radare2, RevEng                          | ghidra analyze -> decompile -> radare2 xrefs -> frida hook_native      |
+| REDE & TRAFEGO   | Wireshark, MITMProxy, Scapy, NetAttack           | wireshark capture -> mitmproxy intercept -> scapy craft -> netattack   |
+| SEGURANCA WEB    | Nuclei, Burp Suite, WebApp                       | nuclei scan -> burp active -> sqlmap -> xsstrike -> wfuzz              |
+| RECONHECIMENTO   | Recon, Adv Recon, OSINT                          | subdomain enum -> port scan -> dir fuzz -> screenshot -> osint         |
+| EXPLORACAO       | Exploit, Exploit Dev, Hashcat, Wordlist          | searchsploit -> msfvenom -> hydra -> hashcat -> pwntools               |
+| RED TEAM & C2    | Red Team, Social Eng                             | c2 setup -> listener -> stager -> deploy -> social eng                 |
+| WIRELESS & RF    | Wireless                                         | airmon -> airodump -> aireplay -> aircrack -> wifite                   |
+| ACTIVE DIRECTORY | Active Directory                                 | bloodhound collect -> analyze -> impacket -> secretsdump -> evil-winrm |
+| FORENSE & IR     | Forensics, Stego                                 | volatility -> yara -> binwalk -> steghide -> exiftool                  |
+| CLOUD            | Cloud                                            | trivy -> gitleaks -> semgrep -> prowler -> checkov                     |
+| CORE             | Leviathan, HTTP Toolkit                          | encode -> process -> decode -> check                                   |
 
 ## Cognitive Framework
 
@@ -348,25 +348,25 @@ Video?            -> youtube-transcript (transcricao)
 
 ### Tool Count Matrix
 
-| Server     | Tools | Server             | Tools | Server              | Tools |
-| ---------- | ----- | ------------------ | ----- | ------------------- | ----- |
-| ldplayer   | 89    | adb                | 42    | wireshark           | 23    |
-| nox        | 22    | frida-standalone   | 28    | objection           | 20    |
-| active_dir | 18    | bluestacks         | 17    | nuclei              | 17    |
-| memu       | 19    | wireless           | 16    | netattack           | 16    |
-| adv_recon  | 16    | exploit_dev        | 16    | redteam             | 16    |
-| wordlist   | 16    | reveng             | 16    | radare2             | 16    |
-| jadx       | 16    | ghidra             | 15    | androguard          | 15    |
-| scapy      | 15    | burpsuite          | 15    | recon               | 14    |
-| exploit    | 14    | osint              | 14    | forensics           | 14    |
-| webapp     | 14    | cloud              | 14    | stego               | 14    |
-| social_eng | 14    | mitmproxy          | 14    | apktool             | 12    |
-| hashcat    | 12    | github             | 10+   | git                 | 10+   |
-| leviathan  | 7     | filesystem         | 5+    | puppeteer           | 5+    |
-| playwright | 5+    | sqlite             | 5+    | memory              | 3+    |
-| notepads   | 3+    | context7           | 2+    | fetch               | 1+    |
-| everything | 1+    | time               | 1+    | youtube-transcript  | 1+    |
-| sequential | 1     |                    |       |                     |       |
+| Server     | Tools | Server           | Tools | Server             | Tools |
+| ---------- | ----- | ---------------- | ----- | ------------------ | ----- |
+| ldplayer   | 89    | adb              | 42    | wireshark          | 23    |
+| nox        | 22    | frida-standalone | 28    | objection          | 20    |
+| active_dir | 18    | bluestacks       | 17    | nuclei             | 17    |
+| memu       | 19    | wireless         | 16    | netattack          | 16    |
+| adv_recon  | 16    | exploit_dev      | 16    | redteam            | 16    |
+| wordlist   | 16    | reveng           | 16    | radare2            | 16    |
+| jadx       | 16    | ghidra           | 15    | androguard         | 15    |
+| scapy      | 15    | burpsuite        | 15    | recon              | 14    |
+| exploit    | 14    | osint            | 14    | forensics          | 14    |
+| webapp     | 14    | cloud            | 14    | stego              | 14    |
+| social_eng | 14    | mitmproxy        | 14    | apktool            | 12    |
+| hashcat    | 12    | github           | 10+   | git                | 10+   |
+| leviathan  | 7     | filesystem       | 5+    | puppeteer          | 5+    |
+| playwright | 5+    | sqlite           | 5+    | memory             | 3+    |
+| notepads   | 3+    | context7         | 2+    | fetch              | 1+    |
+| everything | 1+    | time             | 1+    | youtube-transcript | 1+    |
+| sequential | 1     |                  |       |                    |       |
 
 ## Operational Pipelines
 
