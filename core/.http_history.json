@@ -61,5 +61,12 @@
     "method": "GET",
     "status": 0,
     "duration": 2071.62
+  },
+  {
+    "timestamp": "2026-02-27T15:22:56.923892",
+    "url": "http://127.0.0.1:1",
+    "method": "GET",
+    "status": 0,
+    "duration": 2063.65
   }
 ]

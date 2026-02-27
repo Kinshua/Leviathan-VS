@@ -2533,6 +2533,212 @@
         "id": "cloud"
       },
       "detail": "Static analysis with Semgrep security rules"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // WIRELESS - Wireless/RF/Bluetooth Hacking (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[WIRELESS] Airmon Start Monitor",
+      "type": "shell",
+      "command": "airmon-ng start ${input:interface}",
+      "problemMatcher": [],
+      "icon": { "id": "radio-tower" },
+      "detail": "Enable monitor mode on wireless interface"
+    },
+    {
+      "label": "[WIRELESS] Airodump Scan",
+      "type": "shell",
+      "command": "airodump-ng ${input:interface}mon",
+      "problemMatcher": [],
+      "icon": { "id": "radio-tower" },
+      "detail": "Scan for wireless networks"
+    },
+    {
+      "label": "[WIRELESS] Wifite Auto Attack",
+      "type": "shell",
+      "command": "wifite --kill",
+      "problemMatcher": [],
+      "icon": { "id": "radio-tower" },
+      "detail": "Automated wireless attack tool"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // ACTIVE DIRECTORY - AD/Kerberos/LDAP Attacks (18 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[AD] BloodHound Collect",
+      "type": "shell",
+      "command": "bloodhound-python -c All -d ${input:domain} -u ${input:username} -p ${input:password}",
+      "problemMatcher": [],
+      "icon": { "id": "shield" },
+      "detail": "Collect AD data with BloodHound"
+    },
+    {
+      "label": "[AD] NetExec SMB Scan",
+      "type": "shell",
+      "command": "netexec smb ${input:target}",
+      "problemMatcher": [],
+      "icon": { "id": "shield" },
+      "detail": "SMB enumeration with NetExec"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEGANOGRAPHY - Stego Embed/Extract/Detect (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[STEGO] Steghide Extract",
+      "type": "shell",
+      "command": "steghide extract -sf ${input:stego_file}",
+      "problemMatcher": [],
+      "icon": { "id": "eye-closed" },
+      "detail": "Extract hidden data from image/audio"
+    },
+    {
+      "label": "[STEGO] Zsteg Detect",
+      "type": "shell",
+      "command": "zsteg ${input:stego_file}",
+      "problemMatcher": [],
+      "icon": { "id": "eye-closed" },
+      "detail": "Detect steganography in PNG/BMP files"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SOCIAL ENGINEERING - Phishing/SE Frameworks (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[SE] SET Interactive",
+      "type": "shell",
+      "command": "setoolkit",
+      "problemMatcher": [],
+      "icon": { "id": "person" },
+      "detail": "Launch Social Engineering Toolkit"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // NETWORK ATTACK - MITM/Sniffing/Spoofing (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[NETATTACK] Bettercap MITM",
+      "type": "shell",
+      "command": "bettercap -iface ${input:interface}",
+      "problemMatcher": [],
+      "icon": { "id": "zap" },
+      "detail": "Launch Bettercap for MITM attacks"
+    },
+    {
+      "label": "[NETATTACK] ARP Scan",
+      "type": "shell",
+      "command": "arp-scan -l",
+      "problemMatcher": [],
+      "icon": { "id": "zap" },
+      "detail": "Discover hosts on local network via ARP"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // ADVANCED RECON - Next-Gen Scanners (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[ADV-RECON] RustScan Fast Port Scan",
+      "type": "shell",
+      "command": "rustscan -a ${input:target} --ulimit 5000",
+      "problemMatcher": [],
+      "icon": { "id": "search" },
+      "detail": "Ultra-fast port scanner (all 65535 ports)"
+    },
+    {
+      "label": "[ADV-RECON] Feroxbuster Dir Scan",
+      "type": "shell",
+      "command": "feroxbuster -u ${input:target_url} -x php,html,js,txt",
+      "problemMatcher": [],
+      "icon": { "id": "search" },
+      "detail": "Recursive content discovery"
+    },
+    {
+      "label": "[ADV-RECON] WPScan WordPress",
+      "type": "shell",
+      "command": "wpscan --url ${input:target_url} --enumerate vp,vt,u",
+      "problemMatcher": [],
+      "icon": { "id": "search" },
+      "detail": "WordPress vulnerability scanner"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // EXPLOIT DEV - Binary Exploitation & Fuzzing (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[EXPLOIT-DEV] Checksec Binary",
+      "type": "shell",
+      "command": "checksec --file ${input:binary_file}",
+      "problemMatcher": [],
+      "icon": { "id": "bug" },
+      "detail": "Check binary security properties"
+    },
+    {
+      "label": "[EXPLOIT-DEV] ROPgadget Search",
+      "type": "shell",
+      "command": "ROPgadget --binary ${input:binary_file}",
+      "problemMatcher": [],
+      "icon": { "id": "bug" },
+      "detail": "Find ROP gadgets in binary"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // RED TEAM - C2 Frameworks & Payloads (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[REDTEAM] Donut Shellcode Gen",
+      "type": "shell",
+      "command": "donut ${input:binary_file}",
+      "problemMatcher": [],
+      "icon": { "id": "flame" },
+      "detail": "Convert .NET/PE to position-independent shellcode"
+    },
+    {
+      "label": "[REDTEAM] Veil Evasion",
+      "type": "shell",
+      "command": "veil",
+      "problemMatcher": [],
+      "icon": { "id": "flame" },
+      "detail": "Generate AV-evasion payloads"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // WORDLIST - Wordlist Generation & Password (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[WORDLIST] CeWL Spider Wordlist",
+      "type": "shell",
+      "command": "cewl ${input:target_url} -d 2 -m 5 -w custom_wordlist.txt",
+      "problemMatcher": [],
+      "icon": { "id": "key" },
+      "detail": "Generate wordlist from website content"
+    },
+    {
+      "label": "[WORDLIST] John Crack Hash",
+      "type": "shell",
+      "command": "john ${input:hash_file} --wordlist=/usr/share/wordlists/rockyou.txt",
+      "problemMatcher": [],
+      "icon": { "id": "key" },
+      "detail": "Crack hashes with John the Ripper"
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // REVERSE ENGINEERING - Binary Analysis (16 tools)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      "label": "[REVENG] Binwalk Extract",
+      "type": "shell",
+      "command": "binwalk -Me ${input:binary_file}",
+      "problemMatcher": [],
+      "icon": { "id": "microscope" },
+      "detail": "Extract embedded files from firmware/binary"
+    },
+    {
+      "label": "[REVENG] YARA Scan",
+      "type": "shell",
+      "command": "yara -r ${input:yara_rules} ${input:target}",
+      "problemMatcher": [],
+      "icon": { "id": "microscope" },
+      "detail": "Scan files with YARA malware detection rules"
+    },
+    {
+      "label": "[REVENG] Capa Analyze",
+      "type": "shell",
+      "command": "capa ${input:binary_file}",
+      "problemMatcher": [],
+      "icon": { "id": "microscope" },
+      "detail": "Identify binary capabilities (MITRE ATT&CK mapping)"
     }
   ]
 }

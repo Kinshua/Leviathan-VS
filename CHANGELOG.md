@@ -3,6 +3,31 @@
 All notable changes to Leviathan-VS will be documented in this file.
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [16.0.0] - 2026-02-27
+
+### Added
+- **10 new MCP servers** — 160 new tools across 10 security categories:
+  - `core/wireless/mcp_wireless.py` — 16 Wireless/RF/Bluetooth tools (aircrack-ng suite, wifite, reaver, wash, bully, bettercap wifi/ble, kismet, cowpatty, wifipumpkin3, airgeddon)
+  - `core/active_directory/mcp_ad.py` — 18 Active Directory/Kerberos tools (bloodhound, impacket suite x8, netexec smb/ldap/winrm, evil-winrm, mimikatz, rubeus, bloodyAD, certipy)
+  - `core/stego/mcp_stego.py` — 14 Steganography tools (steghide, zsteg, openstego, outguess, snow, stegseek, stegcracker, exiftool)
+  - `core/social_eng/mcp_social_eng.py` — 14 Social Engineering tools (setoolkit, gophish, evilginx2, beef-xss, modlishka, wifiphisher, blackeye, zphisher)
+  - `core/netattack/mcp_netattack.py` — 16 Network Attack/MITM tools (bettercap, ettercap, hping3, arp-scan, netdiscover, mitm6, sslscan, tcpdump, socat, snort, dnschef, sslstrip)
+  - `core/adv_recon/mcp_adv_recon.py` — 16 Advanced Recon tools (rustscan, autorecon, feroxbuster, dirsearch, katana, wpscan, eyewitness, sublist3r, wapiti, httprobe, hakrawler, gau, waybackurls, unfurl, meg)
+  - `core/exploit_dev/mcp_exploit_dev.py` — 16 Exploit Development tools (gdb, pwntools, angr, checksec, ROPgadget, one_gadget, msf-pattern, spike, boofuzz, afl, radamsa, ropper, patchelf, msfvenom, shellcraft)
+  - `core/redteam/mcp_redteam.py` — 16 Red Team/C2 tools (sliver, mythic, empire, havoc, covenant, armitage, macro_pack, donut, scarecrow, shellter, veil, nim payloads)
+  - `core/wordlist/mcp_wordlist.py` — 16 Wordlist/Password tools (cewl, crunch, cupp, hash-identifier, hashid, ophcrack, patator, mentalist, kwprocessor, princeprocessor, john, wordlistctl, username-anarchy, rsmangler)
+  - `core/reveng/mcp_reveng.py` — 16 Reverse Engineering tools (objdump, readelf, ltrace, strace, dex2jar, pefile, oletools, upx, detect-it-easy, binwalk, yara, capa, strings, file, xxd, nm)
+- 25+ new VS Code tasks for all 10 new MCP categories
+- All 10 servers registered in `.vscode/mcp.json` with proper `cwd` and `-m` module paths
+- `__init__.py` for all 10 new packages
+- Deep research integration from hexstrike-ai (150+ tools reference), Kali Linux tools database, and GitHub security MCP ecosystem
+
+### Changed
+- Version bump 15.5.0 → 16.0.0
+- MCP server count 39 → 49, tool count 544+ → 704+
+- Project now integrates tools from: aircrack-ng, impacket, BloodHound, Metasploit, Sliver C2, Mythic, Empire, Havoc, angr, pwntools, AFL, YARA, capa, and 100+ more
+- `.vscode/tasks.json` expanded with tasks for wireless, AD, stego, social eng, netattack, adv recon, exploit dev, redteam, wordlist, and reverse engineering
+
 ## [15.5.0] - 2026-02-26
 
 ### Added

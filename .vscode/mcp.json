@@ -564,6 +564,156 @@
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // WIRELESS - Wireless/RF/Bluetooth Hacking (16 tools)
+        // aircrack-ng suite, wifite, reaver, bettercap wifi/ble, kismet, cowpatty
+        // ═══════════════════════════════════════════════════════════════════════
+        "wireless": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.wireless.mcp_wireless"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // ACTIVE DIRECTORY - AD/Kerberos/LDAP Attacks (18 tools)
+        // bloodhound, impacket suite, netexec, evil-winrm, mimikatz, rubeus
+        // ═══════════════════════════════════════════════════════════════════════
+        "active_directory": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.active_directory.mcp_ad"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // STEGANOGRAPHY - Stego Embed/Extract/Detect (14 tools)
+        // steghide, zsteg, openstego, outguess, snow, stegseek, exiftool
+        // ═══════════════════════════════════════════════════════════════════════
+        "stego": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.stego.mcp_stego"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // SOCIAL ENGINEERING - Phishing/SE Frameworks (14 tools)
+        // setoolkit, gophish, evilginx2, beef-xss, modlishka, wifiphisher
+        // ═══════════════════════════════════════════════════════════════════════
+        "social_eng": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.social_eng.mcp_social_eng"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // NETWORK ATTACK - MITM/Sniffing/Spoofing/IDS (16 tools)
+        // bettercap, ettercap, hping3, arp-scan, mitm6, sslscan, snort
+        // ═══════════════════════════════════════════════════════════════════════
+        "netattack": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.netattack.mcp_netattack"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // ADVANCED RECON - Next-Gen Scanners & Crawlers (16 tools)
+        // rustscan, autorecon, feroxbuster, dirsearch, katana, wpscan, eyewitness
+        // ═══════════════════════════════════════════════════════════════════════
+        "adv_recon": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.adv_recon.mcp_adv_recon"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // EXPLOIT DEV - Binary Exploitation & Fuzzing (16 tools)
+        // gdb, pwntools, angr, checksec, ROPgadget, afl, boofuzz, msfvenom
+        // ═══════════════════════════════════════════════════════════════════════
+        "exploit_dev": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.exploit_dev.mcp_exploit_dev"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // RED TEAM - C2 Frameworks & Payload Gen (16 tools)
+        // sliver, mythic, empire, havoc, covenant, donut, scarecrow, veil
+        // ═══════════════════════════════════════════════════════════════════════
+        "redteam": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.redteam.mcp_redteam"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // WORDLIST - Wordlist Gen & Password Cracking (16 tools)
+        // cewl, crunch, cupp, john, hashid, ophcrack, patator, kwprocessor
+        // ═══════════════════════════════════════════════════════════════════════
+        "wordlist": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.wordlist.mcp_wordlist"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // REVERSE ENGINEERING - Binary Analysis & Malware RE (16 tools)
+        // objdump, readelf, binwalk, yara, capa, oletools, pefile, upx
+        // ═══════════════════════════════════════════════════════════════════════
+        "reveng": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.reveng.mcp_reveng"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
         }
     }
 }
