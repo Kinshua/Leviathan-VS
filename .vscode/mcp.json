@@ -1,8 +1,8 @@
 {
     "mcpServers": {
         // ════════════════════════════════════════════════════════════════════════
-        // LEVIATHAN VS v15.4 - COGNITIVE DESTRUCTION MCP CONFIGURATION
-        // 33 MCP Servers / 460+ Tools / AI at Maximum / Zero Limitations
+        // LEVIATHAN VS v15.5 - COGNITIVE DESTRUCTION MCP CONFIGURATION
+        // 39 MCP Servers / 544+ Tools / AI at Maximum / Zero Limitations
         // Updated: February 2026
         // ════════════════════════════════════════════════════════════════════════
         // ═══════════════════════════════════════════════════════════════════════
@@ -469,6 +469,96 @@
             "args": [
                 "-m",
                 "core.hashcat.mcp_hashcat"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // RECON - Reconnaissance & Asset Discovery (14 tools)
+        // amass, gobuster, masscan, whatweb, dnsrecon, wafw00f, fierce, theHarvester
+        // ═══════════════════════════════════════════════════════════════════════
+        "recon": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.recon.mcp_recon"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // EXPLOIT - Exploitation & Post-Exploitation (14 tools)
+        // searchsploit, msfvenom, hydra, john, medusa, responder, enum4linux
+        // ═══════════════════════════════════════════════════════════════════════
+        "exploit": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.exploit.mcp_exploit"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // OSINT - Open Source Intelligence (14 tools)
+        // shodan, maigret, sherlock, holehe, dnstwist, spiderfoot, phoneinfoga
+        // ═══════════════════════════════════════════════════════════════════════
+        "osint": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.osint.mcp_osint"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // FORENSICS - Digital Forensics & Incident Response (14 tools)
+        // volatility3, yara, binwalk, capa, foremost, bulk_extractor, exiftool
+        // ═══════════════════════════════════════════════════════════════════════
+        "forensics": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.forensics.mcp_forensics"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // WEBAPP - Web Application Security Testing (14 tools)
+        // xsstrike, wfuzz, arjun, gospider, commix, dalfox, jwt_tool, nosqlmap
+        // ═══════════════════════════════════════════════════════════════════════
+        "webapp": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.webapp.mcp_webapp"
+            ],
+            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "env": {
+                "PYTHONIOENCODING": "utf-8"
+            }
+        },
+        // ═══════════════════════════════════════════════════════════════════════
+        // CLOUD - Cloud Security & Supply Chain (14 tools)
+        // trivy, gitleaks, trufflehog, semgrep, checkov, prowler, grype, syft
+        // ═══════════════════════════════════════════════════════════════════════
+        "cloud": {
+            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "args": [
+                "-m",
+                "core.cloud.mcp_cloud"
             ],
             "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
             "env": {

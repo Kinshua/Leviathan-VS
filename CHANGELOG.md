@@ -3,6 +3,27 @@
 All notable changes to Leviathan-VS will be documented in this file.
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [15.5.0] - 2026-02-26
+
+### Added
+- **6 new MCP servers** — 84 new tools across 6 security categories:
+  - `core/recon/mcp_recon.py` — 14 reconnaissance tools (amass, gobuster, masscan, whatweb, dnsrecon, wafw00f, fierce, theHarvester, assetfinder)
+  - `core/exploit/mcp_exploit.py` — 14 exploitation tools (searchsploit, msfvenom, msfconsole, hydra, john, medusa, responder, enum4linux)
+  - `core/osint/mcp_osint.py` — 14 OSINT tools (shodan, maigret, sherlock, holehe, dnstwist, recon-ng, spiderfoot, phoneinfoga, ghunt)
+  - `core/forensics/mcp_forensics.py` — 14 forensics tools (volatility3, yara, binwalk, capa, foremost, bulk_extractor, exiftool, strings)
+  - `core/webapp/mcp_webapp.py` — 14 web app security tools (xsstrike, wfuzz, arjun, gospider, commix, dalfox, jwt_tool, nosqlmap, ssrfmap, crlfuzz)
+  - `core/cloud/mcp_cloud.py` — 14 cloud security tools (trivy, gitleaks, trufflehog, semgrep, checkov, prowler, kube-hunter, grype, syft)
+- 17 new VS Code tasks for new MCP categories (recon, exploit, osint, forensics, webapp, cloud)
+- All 6 servers registered in `.vscode/mcp.json` with proper `cwd` and `-m` module paths
+- `__init__.py` for all 6 new packages
+
+### Changed
+- Version bump 14.2.0 → 15.5.0
+- MCP server count 33 → 39, tool count 460+ → 544+
+- README.md badges and module table updated
+- `.vscode/mcp.json` header updated
+- `.github/copilot-instructions.md` identity and tool chains updated
+
 ## [14.2.0] - 2026-02-25
 
 ### Added

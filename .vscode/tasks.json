@@ -2375,6 +2375,164 @@
         "id": "pulse"
       },
       "detail": "Verifica status de TODAS as ferramentas (ADB, Frida, Ghidra, Jadx, tshark, Nuclei, Nmap, Objection, LDPlayer, R2, Hashcat, Scapy, MITMProxy)"
+    },
+    // ═══════════════════════════════════════════════════════════════════════════
+    // RECON - Reconnaissance & Asset Discovery (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      "label": "[RECON] Amass Enum",
+      "type": "shell",
+      "command": "amass enum -d \"${input:scanTarget}\" -o recon_output/amass_results.txt; Write-Host 'Results saved' -ForegroundColor Green",
+      "problemMatcher": [],
+      "icon": {
+        "id": "search"
+      },
+      "detail": "Enumerate subdomains with Amass"
+    },
+    {
+      "label": "[RECON] Gobuster Dir",
+      "type": "shell",
+      "command": "gobuster dir -u \"${input:targetUrl}\" -w /usr/share/wordlists/dirb/common.txt -o recon_output/gobuster_results.txt; Write-Host 'Done' -ForegroundColor Green",
+      "problemMatcher": [],
+      "icon": {
+        "id": "search"
+      },
+      "detail": "Directory brute-force with Gobuster"
+    },
+    {
+      "label": "[RECON] Masscan Quick",
+      "type": "shell",
+      "command": "masscan \"${input:scanTarget}\" -p1-65535 --rate 10000 -oL recon_output/masscan_results.txt; Write-Host 'Done' -ForegroundColor Green",
+      "problemMatcher": [],
+      "icon": {
+        "id": "search"
+      },
+      "detail": "Fast port scan with Masscan"
+    },
+    // ═══════════════════════════════════════════════════════════════════════════
+    // EXPLOIT - Exploitation & Post-Exploitation (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      "label": "[EXPLOIT] Searchsploit",
+      "type": "shell",
+      "command": "searchsploit \"${input:scanTarget}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "bug"
+      },
+      "detail": "Search ExploitDB for known exploits"
+    },
+    {
+      "label": "[EXPLOIT] Hydra SSH Brute",
+      "type": "shell",
+      "command": "hydra -L users.txt -P passwords.txt \"${input:scanTarget}\" ssh -t 4 -o exploit_output/hydra_results.txt; Write-Host 'Done' -ForegroundColor Green",
+      "problemMatcher": [],
+      "icon": {
+        "id": "bug"
+      },
+      "detail": "SSH brute force with Hydra"
+    },
+    // ═══════════════════════════════════════════════════════════════════════════
+    // OSINT - Open Source Intelligence (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      "label": "[OSINT] Sherlock Username",
+      "type": "shell",
+      "command": "sherlock \"${input:scanTarget}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "eye"
+      },
+      "detail": "Hunt username across social networks"
+    },
+    {
+      "label": "[OSINT] Shodan Host",
+      "type": "shell",
+      "command": "shodan host \"${input:scanTarget}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "eye"
+      },
+      "detail": "Query Shodan for host information"
+    },
+    // ═══════════════════════════════════════════════════════════════════════════
+    // FORENSICS - Digital Forensics & IR (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      "label": "[FORENSICS] YARA Scan",
+      "type": "shell",
+      "command": "yara -r \"${input:customFile}\" \"${input:binaryPath}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "microscope"
+      },
+      "detail": "Scan with YARA rules for malware detection"
+    },
+    {
+      "label": "[FORENSICS] Binwalk Analysis",
+      "type": "shell",
+      "command": "binwalk \"${input:binaryPath}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "microscope"
+      },
+      "detail": "Analyze firmware/binary for embedded files"
+    },
+    // ═══════════════════════════════════════════════════════════════════════════
+    // WEBAPP - Web Application Security (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      "label": "[WEBAPP] XSStrike Scan",
+      "type": "shell",
+      "command": "python xsstrike.py -u \"${input:targetUrl}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "globe"
+      },
+      "detail": "Advanced XSS detection with XSStrike"
+    },
+    {
+      "label": "[WEBAPP] Arjun Params",
+      "type": "shell",
+      "command": "arjun -u \"${input:targetUrl}\"",
+      "problemMatcher": [],
+      "icon": {
+        "id": "globe"
+      },
+      "detail": "Discover hidden HTTP parameters"
+    },
+    // ═══════════════════════════════════════════════════════════════════════════
+    // CLOUD - Cloud Security & Supply Chain (14 tools)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      "label": "[CLOUD] Trivy Scan Project",
+      "type": "shell",
+      "command": "trivy fs --scanners vuln,secret,misconfig .",
+      "problemMatcher": [],
+      "icon": {
+        "id": "cloud"
+      },
+      "detail": "Scan project for vulnerabilities, secrets, misconfigs"
+    },
+    {
+      "label": "[CLOUD] Gitleaks Detect",
+      "type": "shell",
+      "command": "gitleaks detect --source . -v",
+      "problemMatcher": [],
+      "icon": {
+        "id": "cloud"
+      },
+      "detail": "Scan git repo for hardcoded secrets"
+    },
+    {
+      "label": "[CLOUD] Semgrep Security",
+      "type": "shell",
+      "command": "semgrep scan --config p/security-audit .",
+      "problemMatcher": [],
+      "icon": {
+        "id": "cloud"
+      },
+      "detail": "Static analysis with Semgrep security rules"
     }
   ]
 }

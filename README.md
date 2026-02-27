@@ -13,15 +13,15 @@
 
 ## The Abyss Awaits - Cognitive AI Configuration
 
-A monstrous VS Code configuration that rises from the depths. Cognitive AI architecture with auto-pipeline triggers, semantic translation engine, HTTP interceptor, 33 MCP security servers with 460+ tools, 4 emulator controllers, extension affinity optimization, and 160+ extensions forged in the darkness of the deep sea.
+A monstrous VS Code configuration that rises from the depths. Cognitive AI architecture with auto-pipeline triggers, semantic translation engine, HTTP interceptor, 39 MCP security servers with 544+ tools, 4 emulator controllers, extension affinity optimization, and 160+ extensions forged in the darkness of the deep sea.
 
-![Version](https://img.shields.io/badge/version-15.4.0-0d1117?style=for-the-badge&labelColor=161b22)
+![Version](https://img.shields.io/badge/version-15.5.0-0d1117?style=for-the-badge&labelColor=161b22)
 ![Python](https://img.shields.io/badge/python-3.14-1f6feb?style=for-the-badge&labelColor=0d1117)
 ![License](https://img.shields.io/badge/license-MIT-238636?style=for-the-badge&labelColor=0d1117)
 ![Extensions](https://img.shields.io/badge/extensions-160+-8957e5?style=for-the-badge&labelColor=0d1117)
 ![Rules](https://img.shields.io/badge/translation_rules-640+-f85149?style=for-the-badge&labelColor=0d1117)
-![MCP Tools](https://img.shields.io/badge/MCP_tools-460+-ff6600?style=for-the-badge&labelColor=0d1117)
-![Tasks](https://img.shields.io/badge/VS_Code_tasks-138-00ccff?style=for-the-badge&labelColor=0d1117)
+![MCP Tools](https://img.shields.io/badge/MCP_tools-544+-ff6600?style=for-the-badge&labelColor=0d1117)
+![Tasks](https://img.shields.io/badge/VS_Code_tasks-155-00ccff?style=for-the-badge&labelColor=0d1117)
 ![AI](https://img.shields.io/badge/AI_cognitive-max-cc00ff?style=for-the-badge&labelColor=0d1117)
 
 ---
@@ -35,7 +35,7 @@ Leviathan VS is a complete development environment that emerges from the abyss:
 | **Kraken Engine**       | Semantic translation - transforms sensitive terms into deep sea terminology |
 | **Abyssal Interceptor** | HTTP toolkit with AI-powered analysis                                       |
 | **Deep Scan**           | Static analysis for 10+ languages                                           |
-| **Tentacle Protocol**   | 33 MCP servers / 460+ tools for GitHub Copilot                              |
+| **Tentacle Protocol**   | 39 MCP servers / 544+ tools for GitHub Copilot                              |
 | **ADB Module**          | 42 Android Debug Bridge tools                                               |
 | **Frida Module**        | 28 dynamic instrumentation + 89 tools in LDPlayer composite                 |
 | **Ghidra Module**       | 15 headless binary analysis tools                                           |
@@ -51,6 +51,12 @@ Leviathan VS is a complete development environment that emerges from the abyss:
 | **Nuclei Module**       | 17 vuln scanners (nuclei + sqlmap + nmap + ffuf)                            |
 | **Objection Module**    | 20 mobile runtime exploration tools                                         |
 | **Hashcat Module**      | 12 password cracking & hash analysis tools                                  |
+| **Recon Module**        | 14 reconnaissance & asset discovery tools (amass, gobuster, masscan)        |
+| **Exploit Module**      | 14 exploitation tools (searchsploit, msfvenom, hydra, john, medusa)         |
+| **OSINT Module**        | 14 open-source intelligence tools (shodan, sherlock, maigret, dnstwist)     |
+| **Forensics Module**    | 14 digital forensics & IR tools (volatility3, yara, binwalk, capa)          |
+| **WebApp Module**       | 14 web app security tools (xsstrike, wfuzz, arjun, dalfox, commix)          |
+| **Cloud Module**        | 14 cloud security & supply chain tools (trivy, gitleaks, semgrep, prowler)  |
 
 ---
 
