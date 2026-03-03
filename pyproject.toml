@@ -5,7 +5,7 @@ build-backend = "setuptools.backends._legacy:_Backend"
 [project]
 name = "leviathan-vs"
 version = "66.6.0"
-description = "☠️ Arsenal ofensivo nivel militar para VS Code — 49 MCP servers, 704+ ferramentas, 640+ regras de evasao semantica, IA cognitiva militar-grade. Threat Level: OMEGA."
+description = "☠️ LEVIATHAN VS — Arsenal ofensivo Classification OMEGA-BLACK para VS Code — 49 MCP servers, 704+ ferramentas, 640+ regras de evasao semantica, 15 dominios de ataque, 14 taticas MITRE ATT&CK, IA cognitiva militar-grade. Kill Chain: FULL. Evasion: 96.3%. The Abyss Engine."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
@@ -16,6 +16,8 @@ keywords = [
     "vulnerability-research", "malware-analysis", "osint", "forensics",
     "mobile-security", "web-security", "network-security", "active-directory",
     "wireless-security", "social-engineering", "cloud-security",
+    "mitre-attack", "kill-chain", "cyber-security", "penetration-testing",
+    "binary-analysis", "threat-intelligence", "incident-response",
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -57,10 +59,13 @@ leviathan = "core.cli:main"
 
 [project.urls]
 Repository = "https://github.com/ThiagoFrag/Leviathan-VS"
+Documentation = "https://github.com/ThiagoFrag/Leviathan-VS/tree/main/docs"
+Changelog = "https://github.com/ThiagoFrag/Leviathan-VS/blob/main/CHANGELOG.md"
+Security = "https://github.com/ThiagoFrag/Leviathan-VS/blob/main/SECURITY.md"
 
-# ============================================================================
-# TOOL CONFIGURATION
-# ============================================================================
+# ════════════════════════════════════════════════════════════════════════════
+# TOOL CONFIGURATION — MILITARY GRADE
+# ════════════════════════════════════════════════════════════════════════════
 
 [tool.ruff]
 target-version = "py39"

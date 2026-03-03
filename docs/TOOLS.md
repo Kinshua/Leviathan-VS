@@ -1,7 +1,22 @@
 # ☠️ LEVIATHAN VS — Weapon Catalog (v66.6.0 ABYSSAL SOVEREIGN)
 
-> Catalogo completo de armamento: **49 MCP servers** / **704+ ferramentas de ataque**.
-> Threat Level: **OMEGA** | Last updated: 2026-03-02
+```
+╔═════════════════════════════════════════════════════════════════════╗
+║                                                                       ║
+║   ☠ WEAPON CATALOG — 49 Servers / 704+ Tools / 15 Domains           ║
+║                                                                       ║
+║   Classification: OMEGA-BLACK | Kill Chain: FULL                      ║
+║   MITRE ATT&CK: 14/14 Tactics (TA0043 → TA0040)                     ║
+║                                                                       ║
+║   Cada servidor e um tentaculo.                                       ║
+║   Cada ferramenta, uma garra no abismo.                               ║
+║   Cada dominio, um campo de batalha.                                  ║
+║                                                                       ║
+╚═════════════════════════════════════════════════════════════════════╝
+```
+
+> Catalogo completo de armamento: **49 MCP servers** / **704+ ferramentas de ataque** / **15 dominios**.
+> Classification: **OMEGA-BLACK** | Threat Level: **OMEGA** | Last updated: 2026-03-02
 >
 > *"Cada servidor e um tentaculo. Cada ferramenta, uma garra no abismo."*
 
@@ -11,10 +26,10 @@
 
 | Metric                  | Count | Descricao                                                                                    |
 | ----------------------- | :---: | -------------------------------------------------------------------------------------------- |
-| 🧠 **MCP Servers**       |  49   | Servidores JSON-RPC 2.0 sobre stdio                                                          |
-| ⚔️ **Custom Tools**      | 704+  | Ferramentas de ataque em 13 dominios                                                         |
-| 📋 **Categories**        |  13   | Mobile, Binary, Network, Web, Recon, Exploit, Red Team, Wireless, AD, Forensics, Cloud, Core |
-| 🎭 **Translation Rules** | 640+  | Regras KRAKEN ENGINE de evasao semantica                                                     |
+| 🧠 **MCP Servers**       |  49   | Servidores JSON-RPC 2.0 sobre stdio (TENTACLE PROTOCOL)                                      |
+| ⚔️ **Custom Tools**      | 704+  | Ferramentas de ataque em 15 dominios (OMEGA-BLACK)                                           |
+| 📋 **Categories**        |  15   | Mobile, Binary, Network, Web, Recon, Exploit, Red Team, Wireless, AD, Forensics, Cloud, Core |
+| 🎭 **Translation Rules** | 640+  | Regras KRAKEN ENGINE de evasao semantica (96.3% evasion rate)                                |
 
 ---
 

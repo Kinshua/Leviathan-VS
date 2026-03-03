@@ -1,8 +1,23 @@
-# ☠️ LEVIATHAN VS — Task Arsenal Reference (v66.6.0 ABYSSAL SOVEREIGN)
+# ☠️ LEVIATHAN VS — Combat Task Arsenal (v66.6.0 ABYSSAL SOVEREIGN)
+
+```
+╔═════════════════════════════════════════════════════════════════════╗
+║                                                                       ║
+║   ☠ COMBAT TASK ARSENAL — Referencia Completa                       ║
+║                                                                       ║
+║   180+ tarefas de combate | 24+ categorias de ataque                 ║
+║   Classification: OMEGA-BLACK | MITRE: 14/14 Tactics                 ║
+║                                                                       ║
+║   Cada tarefa e uma ordem de ataque.                                  ║
+║   Cada categoria, um dominio de guerra.                               ║
+║   Ctrl+Shift+P > Tasks: Run Task > Escolha sua arma.                 ║
+║                                                                       ║
+╚═════════════════════════════════════════════════════════════════════╝
+```
 
 > Auto-generated from `.vscode/tasks.json`.
 > Total: **180+ tarefas de combate** across **24+ categorias de ataque**.
-> Threat Level: **OMEGA** | Last updated: 2026-03-02
+> Classification: **OMEGA-BLACK** | Threat Level: **OMEGA** | Last updated: 2026-03-02
 >
 > *"Cada tarefa e uma ordem de ataque. Cada categoria, um dominio de guerra."*
 

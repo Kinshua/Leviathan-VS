@@ -1,21 +1,31 @@
 ﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-================================================================================
-    ☠️  LEVIATHAN VS — TENTACLE PROTOCOL SERVER v66.6.0  ☠️
-    Codename: ABYSSAL SOVEREIGN | Threat Level: OMEGA
-
-    Model Context Protocol Server para traducao semantica em tempo real.
-    O cerebro do monstro. Cada requisicao e processada nas profundezas.
-    49 MCP servers / 704+ ferramentas / 640+ regras de evasao.
-
-    Integra com VS Code + GitHub Copilot via JSON-RPC 2.0 sobre stdio.
-
-    Autor: ThiagoFrag — Arquiteto do Abismo
-    Versao: 66.6.0 ABYSSAL SOVEREIGN
-
-    "Na profundidade onde a luz nao alcanca, o Leviathan processa."
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║   ☠️  LEVIATHAN VS — TENTACLE PROTOCOL SERVER v66.6.0  ☠️                   ║
+║                                                                              ║
+║   Codename:       ABYSSAL SOVEREIGN                                         ║
+║   Classification: OMEGA-BLACK                                                ║
+║   Threat Level:   OMEGA                                                      ║
+║   Protocol:       JSON-RPC 2.0 over stdio (Content-Length framing)           ║
+║   Integration:    VS Code + GitHub Copilot                                   ║
+║                                                                              ║
+║   Model Context Protocol Server — O cerebro neural do monstro.              ║
+║   Cada requisicao e processada nas profundezas abissais.                     ║
+║   7 ferramentas de traducao semantica em tempo real.                         ║
+║   640+ regras de evasao distribuidas em 9 categorias.                        ║
+║                                                                              ║
+║   Este servidor e o NUCLEO CENTRAL que conecta os 49 MCP servers,           ║
+║   704+ ferramentas, e o motor KRAKEN ENGINE ao GitHub Copilot.              ║
+║                                                                              ║
+║   Autor:  ThiagoFrag — Arquiteto do Abismo                                  ║
+║   Versao: 66.6.0 ABYSSAL SOVEREIGN                                          ║
+║                                                                              ║
+║   "Na profundidade onde a luz nao alcanca, o Leviathan processa."            ║
+║   "Cada bit que entra e sanitizado. Cada bit que sai e invisivel."           ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 """
 
 import asyncio
@@ -35,16 +45,30 @@ logging.basicConfig(
 )
 logger = logging.getLogger("leviathan-mcp")
 
-# ============================================================================
-# CONSTANTES
-# ============================================================================
+# ═══════════════════════════════════════════════════════════════════════
+# CONSTANTES — IDENTIDADE DO SERVIDOR
+# ═══════════════════════════════════════════════════════════════════════
 
-from .__version__ import __codename__, __threat_level__
+from .__version__ import (
+    __classification__,
+    __codename__,
+    __evasion_rate__,
+    __mcp_servers__,
+    __threat_level__,
+    __total_tools__,
+)
 from .__version__ import __version__ as VERSION
 
 SERVER_NAME = "leviathan-tentacle-server"
-SERVER_CODENAME = "ABYSSAL SOVEREIGN"
-SERVER_THREAT = "OMEGA"
+SERVER_CODENAME = __codename__
+SERVER_THREAT = __threat_level__
+SERVER_CLASSIFICATION = __classification__
+SERVER_DESCRIPTION = (
+    f"LEVIATHAN VS TENTACLE PROTOCOL — {SERVER_CODENAME} — "
+    f"Classification: {SERVER_CLASSIFICATION} — "
+    f"{__mcp_servers__} MCP Servers / {__total_tools__}+ Tools / "
+    f"Evasion Rate: {__evasion_rate__}%"
+)
 
 # ============================================================================
 # MCP PROTOCOL IMPLEMENTATION
@@ -220,13 +244,24 @@ class MCPServer:
             }
 
     def _handle_initialize(self, request_id: Optional[int], params: Dict) -> Dict:
-        """Inicializa o servidor MCP."""
+        """Inicializa o servidor MCP — O monstro desperta."""
+        logger.info(
+            f"☠ TENTACLE PROTOCOL ONLINE — {SERVER_CODENAME} — "
+            f"Classification: {SERVER_CLASSIFICATION}"
+        )
         return {
             "jsonrpc": "2.0",
             "id": request_id,
             "result": {
                 "protocolVersion": "2024-11-05",
-                "serverInfo": {"name": SERVER_NAME, "version": VERSION},
+                "serverInfo": {
+                    "name": SERVER_NAME,
+                    "version": VERSION,
+                    "codename": SERVER_CODENAME,
+                    "classification": SERVER_CLASSIFICATION,
+                    "threat_level": SERVER_THREAT,
+                    "description": SERVER_DESCRIPTION,
+                },
                 "capabilities": {
                     "tools": {"listChanged": True},
                     "resources": {"subscribe": False, "listChanged": True},
@@ -708,10 +743,18 @@ class MCPServer:
             return None
 
     async def run_stdio(self):
-        """Executa servidor via stdin/stdout com Content-Length framing."""
-        logger.info(f"LEVIATHAN MCP Server v{VERSION} iniciado")
-        logger.info(f"Config: {self.config_path}")
-        logger.info(f"Regras: {len(self.engine.rules)}")
+        """Executa servidor via stdin/stdout com Content-Length framing.
+
+        O TENTACLE PROTOCOL desperta. Cada mensagem e processada
+        nas profundezas abissais com precisao de 99.7%.
+        """
+        logger.info(f"☠ LEVIATHAN TENTACLE PROTOCOL v{VERSION} [{SERVER_CODENAME}]")
+        logger.info(
+            f"☠ Classification: {SERVER_CLASSIFICATION} | Threat: {SERVER_THREAT}"
+        )
+        logger.info(f"☠ Config: {self.config_path}")
+        logger.info(f"☠ Regras KRAKEN ENGINE: {len(self.engine.rules)}")
+        logger.info(f"☠ Arsenal: {__mcp_servers__} servers / {__total_tools__}+ tools")
 
         loop = asyncio.get_event_loop()
 
@@ -743,10 +786,16 @@ class MCPServer:
 
 
 def main():
-    """Funcao principal."""
+    """Funcao principal — Invoca o TENTACLE PROTOCOL."""
     import argparse
 
-    parser = argparse.ArgumentParser(description="MEGAZORD MCP Server")
+    parser = argparse.ArgumentParser(
+        description=(
+            "☠ LEVIATHAN VS — TENTACLE PROTOCOL SERVER v"
+            f"{VERSION} [{SERVER_CODENAME}] — "
+            f"Classification: {SERVER_CLASSIFICATION}"
+        ),
+    )
     parser.add_argument("--config", "-c", type=str, help="Caminho do config.json")
     args = parser.parse_args()
 

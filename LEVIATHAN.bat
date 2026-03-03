@@ -1,47 +1,88 @@
 @echo off
 chcp 65001 >nul
-title ☠️ LEVIATHAN VS v66.6.0 — ABYSSAL SOVEREIGN — Threat Level OMEGA
+title ☠️ LEVIATHAN VS v66.6.0 — ABYSSAL SOVEREIGN — Classification: OMEGA-BLACK
 color 0C
 
-:menu
+:: ═══════════════════════════════════════════════════════════════
+:: LEVIATHAN VS — TERMINAL WARFARE LAUNCHER v66.6.0
+:: O launcher mais absurdo que ja existiu.
+:: 49 MCPs / 704+ Tools / 640+ Rules / 15 Domains / 14 Tactics
+:: Classification: OMEGA-BLACK | Depth: ∞
+:: ═══════════════════════════════════════════════════════════════
+
+:boot
 cls
 echo.
-echo    [38;5;196m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-echo    ██                                                                       ██
-echo    ██  ██╗     ███████╗██╗   ██╗██╗ █████╗ ████████╗██╗  ██╗ █████╗ ███╗   ██║
-echo    ██  ██║     ██╔════╝██║   ██║██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗████╗  ██║
-echo    ██  ██║     █████╗  ██║   ██║██║███████║   ██║   ███████║███████║██╔██╗ ██║
-echo    ██  ██║     ██╔══╝  ╚██╗ ██╔╝██║██╔══██║   ██║   ██╔══██║██╔══██║██║╚██╗██║
-echo    ██  ███████╗███████╗ ╚████╔╝ ██║██║  ██║   ██║   ██║  ██║██║  ██║██║ ╚████║
-echo    ██  ╚══════╝╚══════╝  ╚═══╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
-echo    ██                                                                       ██
-echo    ██  [38;5;160m▓▓▓  V U L N E R A B I L I T Y   S O V E R E I G N T Y  ▓▓▓[38;5;196m       ██
-echo    ██                                                                       ██
-echo    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[0m
+echo    [38;5;196m█████████████████████████████████████████████████████████████████████████[0m
+echo    [38;5;52m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m
+echo    [38;5;196m██                                                                   ██[0m
+echo    [38;5;196m██  [38;5;160m██╗     ███████╗██╗   ██╗██╗ █████╗ ████████╗██╗  ██╗ █████╗ ███╗   ██║[0m
+echo    [38;5;196m██  [38;5;160m██║     ██╔════╝██║   ██║██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗████╗  ██║[0m
+echo    [38;5;196m██  [38;5;196m██║     █████╗  ██║   ██║██║███████║   ██║   ███████║███████║██╔██╗ ██║[0m
+echo    [38;5;196m██  [38;5;208m██║     ██╔══╝  ╚██╗ ██╔╝██║██╔══██║   ██║   ██╔══██║██╔══██║██║╚██╗██║[0m
+echo    [38;5;196m██  [38;5;220m███████╗███████╗ ╚████╔╝ ██║██║  ██║   ██║   ██║  ██║██║  ██║██║ ╚████║[0m
+echo    [38;5;196m██  [38;5;220m╚══════╝╚══════╝  ╚═══╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚══╝[0m
+echo    [38;5;196m██                                                                   ██[0m
+echo    [38;5;196m██  [38;5;160m▓▓▓▓▓  V U L N E R A B I L I T Y   S O V E R E I G N T Y  ▓▓▓▓▓[0m  [38;5;196m██[0m
+echo    [38;5;196m██                                                                   ██[0m
+echo    [38;5;52m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m
+echo    [38;5;196m█████████████████████████████████████████████████████████████████████████[0m
 echo.
-echo    [38;5;160m╔══════════════════════════════════════════════════════════════╗[0m
-echo    [38;5;160m║[0m  [38;5;196m☢️  THREAT LEVEL: [5m████████████████████[0m [38;5;196mOMEGA  ☢️[0m   [38;5;160m║[0m
-echo    [38;5;160m╚══════════════════════════════════════════════════════════════╝[0m
+echo    [38;5;160m╔══════════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;160m║[0m  [38;5;196m☢️  THREAT LEVEL: [5m██████████████████████████[0m [38;5;196mOMEGA  ☢️[0m       [38;5;160m║[0m
+echo    [38;5;160m║[0m  [38;5;208m☠️  CLASSIFICATION: [38;5;196mOMEGA-BLACK[0m [38;5;240m^| [38;5;82mDEPTH: ∞ FATHOMS[0m          [38;5;160m║[0m
+echo    [38;5;160m║[0m  [38;5;220m⚡  EVASION: [38;5;82m96.3%%[0m [38;5;240m^| [38;5;117mACCURACY: [38;5;82m99.7%%[0m [38;5;240m^| [38;5;141mVECTORS: 12+[0m     [38;5;160m║[0m
+echo    [38;5;160m╚══════════════════════════════════════════════════════════════════╝[0m
 echo.
-echo    [38;5;160mv66.6.0 ABYSSAL SOVEREIGN[0m  ^|  [38;5;208m49 MCPs[0m  ^|  [38;5;82m704+ Tools[0m  ^|  [38;5;141m640+ Regras[0m
-echo.
-echo    [38;5;196m═══════════════════════════════════════════════════════════════[0m
-echo.
-echo    [38;5;196m[1][0m [38;5;208m⚔  SUBMERGIR[0m      — Encodar codigo (KRAKEN ENGINE)
-echo    [38;5;196m[2][0m [38;5;82m🔄 EMERGIR[0m        — Restaurar termos originais
-echo    [38;5;196m[3][0m [38;5;117m👁  RECONHECER[0m    — Preview sem alterar (recon passivo)
-echo    [38;5;196m[4][0m [38;5;220m📊 INTELIGENCIA[0m   — Estatisticas de profundidade
-echo    [38;5;196m[5][0m [38;5;141m💀 ECO ABISSAL[0m    — Historico de operacoes
-echo    [38;5;196m[6][0m [38;5;213m🌊 PROFUNDEZAS[0m    — Modo interativo (operador)
-echo    [38;5;196m[7][0m [38;5;43m🔍 DIAGNOSTICO[0m    — Validar configuracao de guerra
-echo    [38;5;196m[8][0m [38;5;196m☠  MCP ARSENAL[0m    — Seletor de MCPs (49 servers / 704+ tools)
-echo    [38;5;196m[9][0m [38;5;250m🏥 DOCTOR[0m         — Healthcheck de profundidade total
-echo    [38;5;196m[0][0m [38;5;240m↑  SUPERFICIE[0m     — Retornar a superficie
-echo.
-echo    [38;5;196m═══════════════════════════════════════════════════════════════[0m
+echo    [38;5;160mv66.6.0 ABYSSAL SOVEREIGN[0m ^| [38;5;208m49 MCPs[0m ^| [38;5;82m704+ Tools[0m ^| [38;5;141m640+ Rules[0m ^| [38;5;117m15 Domains[0m
 echo.
 
-set /p choice="    [38;5;196m☠️[0m  Escolha sua profundidade [0-9]: "
+:menu
+echo    [38;5;196m═══════════════════════════════════════════════════════════════════[0m
+echo    [38;5;160m                    ☠️  COMMAND CENTER  ☠️[0m
+echo    [38;5;196m═══════════════════════════════════════════════════════════════════[0m
+echo.
+echo    [38;5;196m  ┌─ CORE OPERATIONS ──────────────────────────────────────────┐[0m
+echo    [38;5;196m  │[0m                                                            [38;5;196m│[0m
+echo    [38;5;196m  │[0m  [38;5;196m[1][0m [38;5;208m⚔  SUBMERGIR[0m       — KRAKEN ENGINE: Encodar codigo      [38;5;196m│[0m
+echo    [38;5;196m  │[0m  [38;5;196m[2][0m [38;5;82m🔄 EMERGIR[0m         — Restaurar termos originais         [38;5;196m│[0m
+echo    [38;5;196m  │[0m  [38;5;196m[3][0m [38;5;117m👁  RECONHECER[0m     — Preview passivo (sem alterar)      [38;5;196m│[0m
+echo    [38;5;196m  │[0m  [38;5;196m[4][0m [38;5;220m📊 INTELIGENCIA[0m    — Estatisticas de profundidade       [38;5;196m│[0m
+echo    [38;5;196m  │[0m  [38;5;196m[5][0m [38;5;141m💀 ECO ABISSAL[0m     — Historico de operacoes              [38;5;196m│[0m
+echo    [38;5;196m  │[0m  [38;5;196m[6][0m [38;5;213m🌊 PROFUNDEZAS[0m     — Modo interativo (operador)         [38;5;196m│[0m
+echo    [38;5;196m  │[0m                                                            [38;5;196m│[0m
+echo    [38;5;196m  └────────────────────────────────────────────────────────────┘[0m
+echo.
+echo    [38;5;160m  ┌─ ARSENAL ^& DIAGNOSTICO ─────────────────────────────────────┐[0m
+echo    [38;5;160m  │[0m                                                            [38;5;160m│[0m
+echo    [38;5;160m  │[0m  [38;5;196m[7][0m [38;5;43m🔍 DIAGNOSTICO[0m     — Validar configuracao de guerra     [38;5;160m│[0m
+echo    [38;5;160m  │[0m  [38;5;196m[8][0m [38;5;196m☠  MCP ARSENAL[0m     — 49 servers / 704+ ferramentas      [38;5;160m│[0m
+echo    [38;5;160m  │[0m  [38;5;196m[9][0m [38;5;250m🏥 DOCTOR[0m          — Healthcheck total de profundidade  [38;5;160m│[0m
+echo    [38;5;160m  │[0m                                                            [38;5;160m│[0m
+echo    [38;5;160m  └────────────────────────────────────────────────────────────┘[0m
+echo.
+echo    [38;5;52m  ┌─ VISUAL WARFARE ─────────────────────────────────────────────┐[0m
+echo    [38;5;52m  │[0m                                                            [38;5;52m│[0m
+echo    [38;5;52m  │[0m  [38;5;196m[A][0m [38;5;196m⚡ SCAN[0m             — Threat assessment simulation      [38;5;52m│[0m
+echo    [38;5;52m  │[0m  [38;5;196m[B][0m [38;5;208m🎨 DEMO[0m             — Visual effects showcase           [38;5;52m│[0m
+echo    [38;5;52m  │[0m  [38;5;196m[C][0m [38;5;82m🚀 BOOT[0m             — Nuclear boot sequence             [38;5;52m│[0m
+echo    [38;5;52m  │[0m  [38;5;196m[D][0m [38;5;117m📋 VERSION[0m          — Manifest completo do monstro      [38;5;52m│[0m
+echo    [38;5;52m  │[0m                                                            [38;5;52m│[0m
+echo    [38;5;52m  └────────────────────────────────────────────────────────────┘[0m
+echo.
+echo    [38;5;240m  ┌─ HTTP WARFARE ───────────────────────────────────────────────┐[0m
+echo    [38;5;240m  │[0m                                                            [38;5;240m│[0m
+echo    [38;5;240m  │[0m  [38;5;196m[H][0m [38;5;220m💣 HTTP DISPATCH[0m    — Disparar requisicao (DEPTH CHARGE) [38;5;240m│[0m
+echo    [38;5;240m  │[0m  [38;5;196m[I][0m [38;5;220m🔍 HTTP INTERACTIVE[0m — Modo operador HTTP                [38;5;240m│[0m
+echo    [38;5;240m  │[0m                                                            [38;5;240m│[0m
+echo    [38;5;240m  └────────────────────────────────────────────────────────────┘[0m
+echo.
+echo    [38;5;196m  [0][0m [38;5;240m↑  SUPERFICIE[0m       — Retornar a superficie (sair)
+echo.
+echo    [38;5;196m═══════════════════════════════════════════════════════════════════[0m
+echo.
+
+set /p choice="    [38;5;196m☠️[0m  Escolha sua profundidade [0-9/A-D/H-I]: "
 
 if "%choice%"=="1" goto encode
 if "%choice%"=="2" goto decode
@@ -52,75 +93,182 @@ if "%choice%"=="6" goto interactive
 if "%choice%"=="7" goto validate
 if "%choice%"=="8" goto launcher
 if "%choice%"=="9" goto doctor
+if /i "%choice%"=="A" goto scan
+if /i "%choice%"=="B" goto demo
+if /i "%choice%"=="C" goto bootseq
+if /i "%choice%"=="D" goto version
+if /i "%choice%"=="H" goto http_dispatch
+if /i "%choice%"=="I" goto http_interactive
 if "%choice%"=="0" goto exit
-goto menu
+goto boot
 
 :encode
 echo.
-echo    [38;5;196m[LEVIATHAN][0m [38;5;208m⚔ Submergindo codigo no abismo — KRAKEN ENGINE ativado...[0m
+echo    [38;5;196m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;196m║[0m  [38;5;208m⚔ KRAKEN ENGINE — Submergindo codigo no abismo...[0m          [38;5;196m║[0m
+echo    [38;5;196m║[0m  [38;5;240m640+ regras de evasao ^| 9 categorias ^| Evasion: 96.3%%[0m      [38;5;196m║[0m
+echo    [38;5;196m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py encode
 pause
-goto menu
+goto boot
 
 :decode
 echo.
-echo    [38;5;82m[LEVIATHAN][0m [38;5;82m🔄 Emergindo com termos originais — decodificacao abissal...[0m
+echo    [38;5;82m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;82m║[0m  [38;5;82m🔄 EMERGINDO — Restaurando termos originais...[0m               [38;5;82m║[0m
+echo    [38;5;82m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py restore
 pause
-goto menu
+goto boot
 
 :preview
 echo.
-echo    [38;5;117m[LEVIATHAN][0m [38;5;117m👁 Reconhecimento passivo — escaneando as aguas...[0m
+echo    [38;5;117m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;117m║[0m  [38;5;117m👁 RECON PASSIVO — Escaneando sem alterar...[0m                 [38;5;117m║[0m
+echo    [38;5;117m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py preview
 pause
-goto menu
+goto boot
 
 :stats
 echo.
-echo    [38;5;220m[LEVIATHAN][0m [38;5;220m📊 Relatorio de inteligencia de profundidade...[0m
+echo    [38;5;220m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;220m║[0m  [38;5;220m📊 INTELIGENCIA DE PROFUNDIDADE...[0m                           [38;5;220m║[0m
+echo    [38;5;220m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py stats
 pause
-goto menu
+goto boot
 
 :history
 echo.
-echo    [38;5;141m[LEVIATHAN][0m [38;5;141m💀 Eco do abismo — historico de operacoes...[0m
+echo    [38;5;141m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;141m║[0m  [38;5;141m💀 ECO DO ABISMO — Historico de operacoes...[0m                 [38;5;141m║[0m
+echo    [38;5;141m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py history
 pause
-goto menu
+goto boot
 
 :interactive
 echo.
-echo    [38;5;213m[LEVIATHAN][0m [38;5;213m🌊 Mergulhando nas profundezas — modo operador ativado...[0m
+echo    [38;5;213m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;213m║[0m  [38;5;213m🌊 MODO OPERADOR — Acesso direto as profundezas...[0m          [38;5;213m║[0m
+echo    [38;5;213m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py interactive
 pause
-goto menu
+goto boot
 
 :validate
 echo.
-echo    [38;5;43m[LEVIATHAN][0m [38;5;43m🔍 Validando configuracao do covil abissal...[0m
+echo    [38;5;43m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;43m║[0m  [38;5;43m🔍 VALIDACAO — Verificando configuracao de guerra...[0m         [38;5;43m║[0m
+echo    [38;5;43m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\translator.py validate
 pause
-goto menu
+goto boot
 
 :launcher
 echo.
-echo    [38;5;196m[LEVIATHAN][0m [38;5;196m☠ Abrindo Arsenal MCP — 49 servers / 704+ ferramentas...[0m
+echo    [38;5;196m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;196m║[0m  [38;5;196m☠ MCP ARSENAL — 49 servers / 704+ ferramentas[0m              [38;5;196m║[0m
+echo    [38;5;196m║[0m  [38;5;240mSeletor interativo de servidores MCP[0m                        [38;5;196m║[0m
+echo    [38;5;196m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\mcp_launcher.py
 pause
-goto menu
+goto boot
 
 :doctor
 echo.
-echo    [38;5;250m[LEVIATHAN][0m [38;5;250m🏥 Diagnostico de profundidade — healthcheck total...[0m
+echo    [38;5;250m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;250m║[0m  [38;5;250m🏥 DOCTOR — Healthcheck completo de profundidade...[0m         [38;5;250m║[0m
+echo    [38;5;250m║[0m  [38;5;240mDiagnosticando: Python, configs, MCPs, ferramentas...[0m       [38;5;250m║[0m
+echo    [38;5;250m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
 python core\doctor.py
 pause
-goto menu
+goto boot
+
+:scan
+echo.
+echo    [38;5;196m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;196m║[0m  [38;5;196m⚡ THREAT ASSESSMENT — Simulacao de scan completo[0m           [38;5;196m║[0m
+echo    [38;5;196m║[0m  [38;5;240m8 fases: recon → exploit → exfil → report[0m                   [38;5;196m║[0m
+echo    [38;5;196m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+python -c "from core.cli import cmd_scan; cmd_scan(None)"
+pause
+goto boot
+
+:demo
+echo.
+echo    [38;5;208m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;208m║[0m  [38;5;208m🎨 VISUAL WARFARE DEMO — Showcase de efeitos visuais[0m       [38;5;208m║[0m
+echo    [38;5;208m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+python -c "from core.cli import cmd_demo; cmd_demo(None)"
+pause
+goto boot
+
+:bootseq
+echo.
+echo    [38;5;82m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;82m║[0m  [38;5;82m🚀 NUCLEAR BOOT SEQUENCE — 12 estagios de inicializacao[0m     [38;5;82m║[0m
+echo    [38;5;82m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+python -c "from core.cli import cmd_boot; cmd_boot(None)"
+pause
+goto boot
+
+:version
+echo.
+echo    [38;5;117m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;117m║[0m  [38;5;117m📋 MANIFEST — Identidade completa do monstro[0m                [38;5;117m║[0m
+echo    [38;5;117m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+python -c "from core.cli import cmd_version; cmd_version(None)"
+pause
+goto boot
+
+:http_dispatch
+echo.
+echo    [38;5;220m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;220m║[0m  [38;5;220m💣 DEPTH CHARGE — HTTP Warfare Dispatch[0m                     [38;5;220m║[0m
+echo    [38;5;220m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+set /p target_url="    [38;5;208mURL alvo:[0m "
+python -m core.http_toolkit dispatch --url "%target_url%"
+pause
+goto boot
+
+:http_interactive
+echo.
+echo    [38;5;220m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;220m║[0m  [38;5;220m🔍 HTTP INTERACTIVE — Modo Operador[0m                         [38;5;220m║[0m
+echo    [38;5;220m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+python core\http_toolkit.py interactive
+pause
+goto boot
 
 :exit
+cls
 echo.
-echo    [38;5;160m[LEVIATHAN][0m Retornando a superficie...
-echo    [38;5;240m"O abismo nao esquece quem o visitou."[0m
-timeout /t 2 >nul
-exit
+echo    [38;5;196m╔══════════════════════════════════════════════════════════════╗[0m
+echo    [38;5;196m║[0m                                                              [38;5;196m║[0m
+echo    [38;5;196m║[0m   [38;5;208m☠️  LEVIATHAN VS v66.6.0 — SESSAO ENCERRADA[0m                [38;5;196m║[0m
+echo    [38;5;196m║[0m                                                              [38;5;196m║[0m
+echo    [38;5;196m║[0m   [38;5;240m"O abismo nunca dorme. Ele apenas aguarda."[0m                 [38;5;196m║[0m
+echo    [38;5;196m║[0m                                                              [38;5;196m║[0m
+echo    [38;5;196m║[0m   [38;5;82mATE A PROXIMA IMERSAO, OPERADOR.[0m                            [38;5;196m║[0m
+echo    [38;5;196m║[0m                                                              [38;5;196m║[0m
+echo    [38;5;196m╚══════════════════════════════════════════════════════════════╝[0m
+echo.
+timeout /t 3
+exit /b 0

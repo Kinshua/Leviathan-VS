@@ -1,25 +1,37 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-================================================================================
-    ☠️  LEVIATHAN VS — ABYSS DIAGNOSTIC v66.6.0  ☠️
-    Codename: ABYSSAL SOVEREIGN | Threat Level: OMEGA
-
-    Diagnostico de profundidade. Verifica integridade do abismo:
-    dependencias, configs de guerra, ferramentas de ataque, MCP servers.
-
-    Uso:
-        python core/doctor.py              # diagnostico completo
-        python core/doctor.py --json       # output para automacao
-        python core/doctor.py --fix        # tentar corrigir automaticamente
-
-    Exit codes:
-        0 = Arsenal operacional ✓
-        1 = Falhas criticas detectadas ✗
-        2 = Avisos (operacional com restricoes) !
-
-    "O medico do abismo nao cura. Ele diagnostica antes do ataque."
-================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║   ☠️  LEVIATHAN VS — ABYSS DIAGNOSTIC v66.6.0  ☠️                            ║
+║                                                                              ║
+║   Codename:       ABYSSAL SOVEREIGN                                         ║
+║   Classification: OMEGA-BLACK                                                ║
+║   Module:         Deep Diagnostic Engine                                     ║
+║                                                                              ║
+║   Diagnostico de profundidade extrema. Verifica CADA componente:             ║
+║   - Python version & packages                                                ║
+║   - Core files & config integrity                                            ║
+║   - VS Code configs (.vscode/*.json)                                         ║
+║   - 49 MCP servers (mcp.json validation)                                     ║
+║   - 13+ external tools (adb, frida, ghidra, nmap...)                         ║
+║   - Emulators (LDPlayer, BlueStacks)                                         ║
+║   - Permissions & filesystem access                                          ║
+║                                                                              ║
+║   Uso:                                                                       ║
+║     python core/doctor.py              # diagnostico completo                ║
+║     python core/doctor.py --json       # output JSON (automacao)             ║
+║     python core/doctor.py --fix        # tentar auto-fix                     ║
+║                                                                              ║
+║   Exit codes:                                                                ║
+║     0 = Arsenal 100%% operacional ✓                                          ║
+║     1 = Falhas criticas detectadas ✗                                          ║
+║     2 = Avisos (operacional com restricoes) !                                ║
+║                                                                              ║
+║   "O medico do abismo nao cura. Ele diagnostica antes do ataque."            ║
+║   "Cada check verde e uma arma pronta. Cada vermelho, um ponto cego."        ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 """
 
 import json
@@ -33,7 +45,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from .__version__ import __codename__, __threat_level__
+from .__version__ import __classification__, __codename__, __threat_level__
 from .__version__ import __version__ as VERSION
 
 BASE_DIR = Path(__file__).parent.resolve()
@@ -481,11 +493,13 @@ def run_doctor(json_output: bool = False, fix_mode: bool = False) -> DoctorRepor
 
 
 def print_report(report: DoctorReport):
-    """Imprime o report formatado no terminal."""
+    """Imprime o report formatado no terminal — visual de guerra."""
     _enable_ansi()
-    print(f"\n{_C.BOLD}{_C.CYAN}{'='*60}")
-    print(f"  LEVIATHAN VS — Doctor (Healthcheck)")
-    print(f"{'='*60}{_C.RESET}\n")
+    print(f"\n{_C.BOLD}{_C.CYAN}{'='*65}")
+    print(f"  ☠ LEVIATHAN VS — ABYSS DIAGNOSTIC v{VERSION}")
+    print(f"  Codename: {__codename__} | Classification: {__classification__}")
+    print(f"  Threat Level: {__threat_level__}")
+    print(f"{'='*65}{_C.RESET}\n")
     print(f"  Platform : {report.platform}")
     print(f"  Python   : {report.python_version}")
     print(f"  Project  : {report.project_dir}")
