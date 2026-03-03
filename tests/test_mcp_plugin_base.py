@@ -15,11 +15,11 @@ from typing import Dict
 
 import pytest
 
-# Add core/ to path so we can import
-CORE_DIR = Path(__file__).parent.parent / "core"
-sys.path.insert(0, str(CORE_DIR))
+# Add project root to path so we can import core as a package
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
-from mcp_plugin_base import MCPPluginBase
+from core.mcp_plugin_base import MCPPluginBase
 
 
 def _run(coro):

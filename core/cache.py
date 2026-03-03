@@ -27,7 +27,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from __version__ import __version__ as VERSION
+from .__version__ import __version__ as VERSION
+
 CACHE_DIR = Path(__file__).parent / ".cache"
 CACHE_DB = CACHE_DIR / "leviathan_cache.db"
 
@@ -43,7 +44,8 @@ class ResultCache:
     def _ensure_db(self):
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         with sqlite3.connect(str(self.db_path)) as conn:
-            conn.execute("""
+            conn.execute(
+                """
                 CREATE TABLE IF NOT EXISTS cache (
                     key TEXT PRIMARY KEY,
                     category TEXT NOT NULL,
@@ -53,21 +55,27 @@ class ResultCache:
                     expires_at REAL NOT NULL,
                     hit_count INTEGER DEFAULT 0
                 )
-            """)
-            conn.execute("""
+            """
+            )
+            conn.execute(
+                """
                 CREATE INDEX IF NOT EXISTS idx_category ON cache(category)
-            """)
-            conn.execute("""
+            """
+            )
+            conn.execute(
+                """
                 CREATE INDEX IF NOT EXISTS idx_expires ON cache(expires_at)
-            """)
+            """
+            )
 
     @staticmethod
     def _make_key(category: str, target: str) -> str:
         raw = f"{category}:{target}"
         return hashlib.sha256(raw.encode()).hexdigest()[:32]
 
-    def put(self, category: str, target: str, data: Any,
-            ttl_hours: Optional[int] = None) -> str:
+    def put(
+        self, category: str, target: str, data: Any, ttl_hours: Optional[int] = None
+    ) -> str:
         """Store a result. Returns the cache key."""
         key = self._make_key(category, target)
         now = time.time()
@@ -76,10 +84,13 @@ class ResultCache:
         serialized = json.dumps(data, default=str, ensure_ascii=False)
 
         with sqlite3.connect(str(self.db_path)) as conn:
-            conn.execute("""
+            conn.execute(
+                """
                 INSERT OR REPLACE INTO cache (key, category, target, data, created_at, expires_at, hit_count)
                 VALUES (?, ?, ?, ?, ?, ?, 0)
-            """, (key, category, target, serialized, now, expires))
+            """,
+                (key, category, target, serialized, now, expires),
+            )
         return key
 
     def get(self, category: str, target: str) -> Optional[Any]:
@@ -109,7 +120,9 @@ class ResultCache:
         """Check if a valid (non-expired) entry exists."""
         return self.get(category, target) is not None
 
-    def list_recent(self, limit: int = 20, category: Optional[str] = None) -> List[Dict]:
+    def list_recent(
+        self, limit: int = 20, category: Optional[str] = None
+    ) -> List[Dict]:
         """List recent cache entries."""
         with sqlite3.connect(str(self.db_path)) as conn:
             if category:
@@ -136,7 +149,9 @@ class ResultCache:
             for r in rows
         ]
 
-    def clear(self, older_than_hours: Optional[int] = None, category: Optional[str] = None):
+    def clear(
+        self, older_than_hours: Optional[int] = None, category: Optional[str] = None
+    ):
         """Clear cache entries. If older_than_hours given, only clears expired + old entries."""
         with sqlite3.connect(str(self.db_path)) as conn:
             if older_than_hours is not None:
@@ -158,9 +173,7 @@ class ResultCache:
         """Remove all expired entries. Returns count removed."""
         now = time.time()
         with sqlite3.connect(str(self.db_path)) as conn:
-            cursor = conn.execute(
-                "DELETE FROM cache WHERE expires_at < ?", (now,)
-            )
+            cursor = conn.execute("DELETE FROM cache WHERE expires_at < ?", (now,))
             return cursor.rowcount
 
     def stats(self) -> Dict[str, Any]:

@@ -4,15 +4,21 @@ build-backend = "setuptools.backends._legacy:_Backend"
 
 [project]
 name = "leviathan-vs"
-version = "14.2.0"
-description = "VS Code security research environment — semantic translation, MCP servers, tool orchestration"
+version = "66.6.0"
+description = "☠️ Arsenal ofensivo nivel militar para VS Code — 49 MCP servers, 704+ ferramentas, 640+ regras de evasao semantica, IA cognitiva militar-grade. Threat Level: OMEGA."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
-authors = [{name = "ThiagoFrag"}]
-keywords = ["vscode", "security", "mcp", "translation", "reverse-engineering"]
+authors = [{name = "ThiagoFrag", email = "thiago@leviathan.abyss"}]
+keywords = [
+    "vscode", "security", "pentesting", "mcp", "offensive-security",
+    "reverse-engineering", "exploit-development", "red-team", "bug-bounty",
+    "vulnerability-research", "malware-analysis", "osint", "forensics",
+    "mobile-security", "web-security", "network-security", "active-directory",
+    "wireless-security", "social-engineering", "cloud-security",
+]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
     "License :: OSI Approved :: MIT License",
     "Operating System :: Microsoft :: Windows",
@@ -23,7 +29,11 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Developers",
 ]
 dependencies = [
     "aiohttp>=3.8",

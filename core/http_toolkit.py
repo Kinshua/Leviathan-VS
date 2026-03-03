@@ -27,15 +27,15 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from __version__ import __version__ as VERSION
+from .__version__ import __version__ as VERSION
+
 CONFIG_FILE = Path(__file__).parent / "config.json"
 HISTORY_FILE = Path(__file__).parent / ".http_history.json"
 AI_CACHE_FILE = Path(__file__).parent / ".ai_cache.json"
 SESSION_FILE = Path(__file__).parent / ".http_session.json"
 
 
-from colors import Colors, colorize, enable_ansi  # noqa: E402
-
+from .colors import Colors, colorize, enable_ansi  # noqa: E402
 
 # Enable ANSI on Windows once at import time
 enable_ansi()
@@ -118,7 +118,7 @@ class AIIntegration:
         try:
             with open(AI_CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(self.cache, f, indent=2)
-        except:
+        except (OSError, TypeError, ValueError):
             pass
 
     def analyze_response(

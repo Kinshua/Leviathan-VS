@@ -2,14 +2,19 @@
 # -*- coding: utf-8 -*-
 """
 ================================================================================
-    LEVIATHAN VS - Tentacle Protocol Server v14.2
-    Real-Time Semantic Translation Server
+    ☠️  LEVIATHAN VS — TENTACLE PROTOCOL SERVER v66.6.0  ☠️
+    Codename: ABYSSAL SOVEREIGN | Threat Level: OMEGA
 
     Model Context Protocol Server para traducao semantica em tempo real.
-    Integra com VS Code para aplicar regras automaticamente durante digitacao.
+    O cerebro do monstro. Cada requisicao e processada nas profundezas.
+    49 MCP servers / 704+ ferramentas / 640+ regras de evasao.
 
-    Autor: ThiagoFrag
-    Versao: 14.2.0
+    Integra com VS Code + GitHub Copilot via JSON-RPC 2.0 sobre stdio.
+
+    Autor: ThiagoFrag — Arquiteto do Abismo
+    Versao: 66.6.0 ABYSSAL SOVEREIGN
+
+    "Na profundidade onde a luz nao alcanca, o Leviathan processa."
 ================================================================================
 """
 
@@ -34,8 +39,12 @@ logger = logging.getLogger("leviathan-mcp")
 # CONSTANTES
 # ============================================================================
 
-from __version__ import __version__ as VERSION
+from .__version__ import __codename__, __threat_level__
+from .__version__ import __version__ as VERSION
+
 SERVER_NAME = "leviathan-tentacle-server"
+SERVER_CODENAME = "ABYSSAL SOVEREIGN"
+SERVER_THREAT = "OMEGA"
 
 # ============================================================================
 # MCP PROTOCOL IMPLEMENTATION

@@ -57,8 +57,7 @@ class ValidationReport:
 # ============================================================================
 
 
-from jsonc import load_jsonc, strip_jsonc_comments  # noqa: E402
-
+from .jsonc import load_jsonc, strip_jsonc_comments  # noqa: E402
 
 # ============================================================================
 # VALIDATORS

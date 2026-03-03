@@ -1,28 +1,24 @@
 @echo off
 chcp 65001 >nul
-title THE HAND OF GOD - Super Instalador v2.0
-color 0A
+title ☠️ LEVIATHAN VS — ABYSSAL INSTALLER v66.6.0
+color 0C
 
 echo.
-echo ╔═══════════════════════════════════════════════════════════════════════════╗
-echo ║                                                                           ║
-echo ║   ████████╗██╗  ██╗███████╗    ██╗  ██╗ █████╗ ███╗   ██╗██████╗          ║
-echo ║   ╚══██╔══╝██║  ██║██╔════╝    ██║  ██║██╔══██╗████╗  ██║██╔══██╗         ║
-echo ║      ██║   ███████║█████╗      ███████║███████║██╔██╗ ██║██║  ██║         ║
-echo ║      ██║   ██╔══██║██╔══╝      ██╔══██║██╔══██║██║╚██╗██║██║  ██║         ║
-echo ║      ██║   ██║  ██║███████╗    ██║  ██║██║  ██║██║ ╚████║██████╔╝         ║
-echo ║      ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝          ║
-echo ║                                                                           ║
-echo ║                    ██████╗ ███████╗     ██████╗  ██████╗ ██████╗          ║
-echo ║                   ██╔═══██╗██╔════╝    ██╔════╝ ██╔═══██╗██╔══██╗         ║
-echo ║                   ██║   ██║█████╗      ██║  ███╗██║   ██║██║  ██║         ║
-echo ║                   ██║   ██║██╔══╝      ██║   ██║██║   ██║██║  ██║         ║
-echo ║                   ╚██████╔╝██║         ╚██████╔╝╚██████╔╝██████╔╝         ║
-echo ║                    ╚═════╝ ╚═╝          ╚═════╝  ╚═════╝ ╚═════╝          ║
-echo ║                                                                           ║
-echo ║           MEGAZORD-CODE: Sistema de Traducao Semantica + HTTP Toolkit     ║
-echo ║                              Super Instalador v2.0                        ║
-echo ╚═══════════════════════════════════════════════════════════════════════════╝
+echo [38;5;196m╔═══════════════════════════════════════════════════════════════════════════╗[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;196m██╗     ███████╗██╗   ██╗██╗ █████╗ ████████╗██╗  ██╗ █████╗ ███╗   ██║[0m
+echo [38;5;196m║[0m   [38;5;196m██║     ██╔════╝██║   ██║██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗████╗  ██║[0m
+echo [38;5;196m║[0m   [38;5;196m██║     █████╗  ██║   ██║██║███████║   ██║   ███████║███████║██╔██╗ ██║[0m
+echo [38;5;196m║[0m   [38;5;196m██║     ██╔══╝  ╚██╗ ██╔╝██║██╔══██║   ██║   ██╔══██║██╔══██║██║╚██╗██║[0m
+echo [38;5;196m║[0m   [38;5;196m███████╗███████╗ ╚████╔╝ ██║██║  ██║   ██║   ██║  ██║██║  ██║██║ ╚████║[0m
+echo [38;5;196m║[0m   [38;5;196m╚══════╝╚══════╝  ╚═══╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚══╝[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;160m☠️  ABYSSAL INSTALLER v66.6.0 — Invocando o Monstro[0m                   [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;208m"Cada dependencia instalada e um tentaculo a mais."[0m                  [38;5;196m║[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;82m49 MCP Servers[0m  [38;5;117m704+ Tools[0m  [38;5;220m640+ Rules[0m  [38;5;141m160+ Extensions[0m           [38;5;196m║[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m╚═══════════════════════════════════════════════════════════════════════════╝[0m
 echo.
 
 :: Verificar se está rodando como admin
@@ -112,28 +108,30 @@ echo [8/8] Abrindo VS Code com o projeto...
 start "" code "%CD%"
 
 echo.
-echo ╔═══════════════════════════════════════════════════════════════════════════╗
-echo ║                     INSTALACAO CONCLUIDA COM SUCESSO!                     ║
-echo ╠═══════════════════════════════════════════════════════════════════════════╣
-echo ║                                                                           ║
-echo ║   COMO USAR:                                                              ║
-echo ║                                                                           ║
-echo ║   1. No VS Code, pressione Ctrl+Shift+P                                   ║
-echo ║   2. Digite "Tasks: Run Task"                                             ║
-echo    3. Escolha uma task [LEVIATHAN] para executar
-echo
-echo    TASKS DISPONIVEIS:
-echo    - [LEVIATHAN] ENCODE    : Sanitiza codigo para IA
-echo    - [LEVIATHAN] RESTORE   : Restaura termos originais
-echo    - [LEVIATHAN] HTTP TOOLKIT : Interceptador de requisicoes
-echo    - [LEVIATHAN] MCP SERVER   : Servidor para GitHub Copilot
-echo ║                                                                           ║
-echo ║   MODO INTERATIVO:                                                        ║
-echo ║   python core\http_toolkit.py interactive                                 ║
-echo ║                                                                           ║
-echo    GitHub: https://github.com/ThiagoFrag/Leviathan-VS
-echo ║                                                                           ║
-echo ╚═══════════════════════════════════════════════════════════════════════════╝
+echo [38;5;196m╔═══════════════════════════════════════════════════════════════════════════╗[0m
+echo [38;5;196m║[0m              [38;5;82m☠️  INSTALACAO CONCLUIDA — O MONSTRO DESPERTA  ☠️[0m              [38;5;196m║[0m
+echo [38;5;196m╠═══════════════════════════════════════════════════════════════════════════╣[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;208mCOMO USAR:[0m                                                              [38;5;196m║[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;82m1.[0m No VS Code: [38;5;117mCtrl+Shift+P[0m                                          [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;82m2.[0m Digite: [38;5;117m"Tasks: Run Task"[0m                                          [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;82m3.[0m Escolha uma task [38;5;196m[LEVIATHAN][0m para executar                        [38;5;196m║[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m║[0m   [38;5;220mARSENAL COMPLETO:[0m                                                      [38;5;196m║[0m
+echo    [38;5;82m-[0m [38;5;117m[LEVIATHAN] ENCODE[0m     : KRAKEN ENGINE — sanitizar codigo
+echo    [38;5;82m-[0m [38;5;117m[LEVIATHAN] RESTORE[0m    : Restaurar termos originais
+echo    [38;5;82m-[0m [38;5;117m[LEVIATHAN] MCP ARSENAL[0m : Seletor interativo (49 servers)
+echo    [38;5;82m-[0m [38;5;117m[LEVIATHAN] Status[0m     : Healthcheck de profundidade
+echo.
+echo    [38;5;141mMODO INTERATIVO:[0m
+echo    [38;5;82mpython core\mcp_launcher.py[0m
+echo.
+echo    [38;5;240mGitHub: https://github.com/ThiagoFrag/Leviathan-VS[0m
+echo [38;5;196m║[0m                                                                           [38;5;196m║[0m
+echo [38;5;196m╚═══════════════════════════════════════════════════════════════════════════╝[0m
+echo.
+echo [38;5;160m"O abismo agora e seu ambiente de trabalho."[0m
 echo.
 
 pause

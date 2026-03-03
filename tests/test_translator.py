@@ -17,11 +17,11 @@ from pathlib import Path
 
 import pytest
 
-# Add core/ to path so we can import translator
-CORE_DIR = Path(__file__).parent.parent / "core"
-sys.path.insert(0, str(CORE_DIR))
+# Add project root to path so we can import core as a package
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
-from translator import Mode, SemanticTranslator, TranslationResult
+from core.translator import Mode, SemanticTranslator, TranslationResult
 
 # ============================================================================
 # FIXTURES
@@ -337,12 +337,12 @@ class TestDoctor:
     """Basic tests for doctor.py."""
 
     def test_import(self):
-        from doctor import DoctorReport, run_doctor
+        from core.doctor import DoctorReport, run_doctor
 
         assert callable(run_doctor)
 
     def test_run(self):
-        from doctor import run_doctor
+        from core.doctor import run_doctor
 
         report = run_doctor()
         assert report.timestamp
@@ -354,12 +354,12 @@ class TestConfigSchema:
     """Basic tests for config_schema.py."""
 
     def test_import(self):
-        from config_schema import validate_all
+        from core.config_schema import validate_all
 
         assert callable(validate_all)
 
     def test_validate_config(self):
-        from config_schema import validate_config_json
+        from core.config_schema import validate_config_json
 
         report = validate_config_json()
         assert hasattr(report, "valid")

@@ -2,16 +2,21 @@
 # -*- coding: utf-8 -*-
 """
 ================================================================================
-    LEVIATHAN VS — MCP Launcher Interativo
-    Terminal colorido com seletor de categorias e MCPs
+    ☠️  LEVIATHAN VS — ABYSSAL MCP ARSENAL v66.6.0  ☠️
+    Codename: ABYSSAL SOVEREIGN | Threat Level: OMEGA
+
+    Terminal cyberpunk com seletor interativo de MCPs.
+    49 servidores de ataque organizados em 13 dominios de guerra.
 
     Uso:
         python core/mcp_launcher.py
         python -m core.mcp_launcher
 
-    Mostra todos os 49 MCP servers organizados por categoria.
-    Ao selecionar uma categoria, exibe as ferramentas disponiveis
-    e gera o prompt de contexto para focar a conversa do Copilot.
+    Cada categoria e um tentaculo. Cada ferramenta, uma garra.
+    Selecione um dominio para ver o arsenal e copiar o prompt
+    de contexto que foca a conversa do Copilot no ataque.
+
+    "O arsenal aguarda. Escolha sua arma."
 ================================================================================
 """
 

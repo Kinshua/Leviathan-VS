@@ -2,18 +2,23 @@
 # -*- coding: utf-8 -*-
 """
 ================================================================================
-    LEVIATHAN VS - Doctor (Healthcheck & Diagnostics)
-    Verifica integridade do ambiente, dependencias, configs e ferramentas.
+    ☠️  LEVIATHAN VS — ABYSS DIAGNOSTIC v66.6.0  ☠️
+    Codename: ABYSSAL SOVEREIGN | Threat Level: OMEGA
+
+    Diagnostico de profundidade. Verifica integridade do abismo:
+    dependencias, configs de guerra, ferramentas de ataque, MCP servers.
 
     Uso:
-        python core/doctor.py              # full check
-        python core/doctor.py --json       # machine-readable output
-        python core/doctor.py --fix        # tenta corrigir problemas simples
+        python core/doctor.py              # diagnostico completo
+        python core/doctor.py --json       # output para automacao
+        python core/doctor.py --fix        # tentar corrigir automaticamente
 
     Exit codes:
-        0 = tudo OK
-        1 = erros criticos encontrados
-        2 = apenas avisos
+        0 = Arsenal operacional ✓
+        1 = Falhas criticas detectadas ✗
+        2 = Avisos (operacional com restricoes) !
+
+    "O medico do abismo nao cura. Ele diagnostica antes do ataque."
 ================================================================================
 """
 
@@ -28,7 +33,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from __version__ import __version__ as VERSION
+from .__version__ import __codename__, __threat_level__
+from .__version__ import __version__ as VERSION
+
 BASE_DIR = Path(__file__).parent.resolve()
 PROJECT_DIR = BASE_DIR.parent
 
@@ -420,13 +427,9 @@ def check_permissions(report: DoctorReport):
 # ============================================================================
 
 
-from jsonc import load_jsonc  # noqa: E402
-from jsonc import sanitize_json_escapes as _sanitize_json_escapes  # noqa: E402
-from jsonc import strip_jsonc_comments as _strip_jsonc_comments  # noqa: E402
-
-
-
-
+from .jsonc import load_jsonc  # noqa: E402
+from .jsonc import sanitize_json_escapes as _sanitize_json_escapes  # noqa: E402
+from .jsonc import strip_jsonc_comments as _strip_jsonc_comments  # noqa: E402
 
 # ============================================================================
 # MAIN DOCTOR

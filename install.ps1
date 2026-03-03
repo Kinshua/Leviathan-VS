@@ -1,12 +1,14 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    THE HAND OF GOD - Super Instalador PowerShell v2.0
+    ☠️ LEVIATHAN VS — ABYSSAL INSTALLER v66.6.0
 .DESCRIPTION
-    Instala e configura automaticamente o Megazord-Code com HTTP Toolkit
+    Invoca o monstro. Instala e configura automaticamente o arsenal ofensivo
+    nivel militar com 49 MCP servers, 704+ ferramentas, e 160+ extensoes.
 .NOTES
-    Autor: Megazord-Code Team
-    Versao: 2.0
+    Autor: ThiagoFrag — Arquiteto do Abismo
+    Versao: 66.6.0 ABYSSAL SOVEREIGN
+    Threat Level: OMEGA
 #>
 
 param(
@@ -29,19 +31,22 @@ function Write-ColorOutput($ForegroundColor) {
 function Write-Banner {
     $banner = @"
 
- ╔═══════════════════════════════════════════════════════════════════════════╗
- ║     ████████╗██╗  ██╗███████╗    ██╗  ██╗ █████╗ ███╗   ██╗██████╗        ║
- ║     ╚══██╔══╝██║  ██║██╔════╝    ██║  ██║██╔══██╗████╗  ██║██╔══██╗       ║
- ║        ██║   ███████║█████╗      ███████║███████║██╔██╗ ██║██║  ██║       ║
- ║        ██║   ██╔══██║██╔══╝      ██╔══██║██╔══██║██║╚██╗██║██║  ██║       ║
- ║        ██║   ██║  ██║███████╗    ██║  ██║██║  ██║██║ ╚████║██████╔╝       ║
- ║        ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝        ║
- ║                       OF GOD - MEGAZORD-CODE                              ║
- ║                    Super Instalador PowerShell v2.0                       ║
- ╚═══════════════════════════════════════════════════════════════════════════╝
+ `e[38;5;196m╔═══════════════════════════════════════════════════════════════════════════╗`e[0m
+ `e[38;5;196m║`e[0m                                                                           `e[38;5;196m║`e[0m
+ `e[38;5;196m║`e[0m   ██╗     ███████╗██╗   ██╗██╗ █████╗ ████████╗██╗  ██╗ █████╗ ███╗   ██║`e[0m
+ `e[38;5;196m║`e[0m   ██║     ██╔════╝██║   ██║██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗████╗  ██║`e[0m
+ `e[38;5;196m║`e[0m   ██║     █████╗  ██║   ██║██║███████║   ██║   ███████║███████║██╔██╗ ██║`e[0m
+ `e[38;5;196m║`e[0m   ██║     ██╔══╝  ╚██╗ ██╔╝██║██╔══██║   ██║   ██╔══██║██╔══██║██║╚██╗██║`e[0m
+ `e[38;5;196m║`e[0m   ███████╗███████╗ ╚████╔╝ ██║██║  ██║   ██║   ██║  ██║██║  ██║██║ ╚████║`e[0m
+ `e[38;5;196m║`e[0m   ╚══════╝╚══════╝  ╚═══╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚══╝`e[0m
+ `e[38;5;196m║`e[0m                                                                           `e[38;5;196m║`e[0m
+ `e[38;5;196m║`e[0m   `e[38;5;160m☠️  ABYSSAL INSTALLER v66.6.0 — Threat Level OMEGA`e[0m                    `e[38;5;196m║`e[0m
+ `e[38;5;196m║`e[0m   `e[38;5;208m"Cada dependencia e um tentaculo. Cada extensao, uma garra."`e[0m         `e[38;5;196m║`e[0m
+ `e[38;5;196m║`e[0m                                                                           `e[38;5;196m║`e[0m
+ `e[38;5;196m╚═══════════════════════════════════════════════════════════════════════════╝`e[0m
 
 "@
-    Write-Host $banner -ForegroundColor Cyan
+    Write-Host $banner -ForegroundColor Red
 }
 
 function Test-Command($Command) {
@@ -170,35 +175,38 @@ if (-not $Silent) {
 
 # Final
 Write-Host "`n" -NoNewline
-Write-Host "═" * 75 -ForegroundColor Cyan
+Write-Host ("=" * 75) -ForegroundColor Red
 Write-Host @"
 
-  INSTALACAO CONCLUIDA COM SUCESSO!
+  `e[38;5;196m☠️  LEVIATHAN VS v66.6.0 — INSTALACAO CONCLUIDA`e[0m
 
-  COMO USAR:
+  `e[38;5;160mO MONSTRO DESPERTA. O ABISMO AGORA E SEU AMBIENTE DE TRABALHO.`e[0m
 
-  1. No VS Code, pressione Ctrl+Shift+P
-  2. Digite "Tasks: Run Task"
-  3. Escolha uma task [LEVIATHAN]
+  `e[38;5;208mCOMO USAR:`e[0m
 
-  COMANDOS RAPIDOS:
+  1. No VS Code, pressione `e[38;5;117mCtrl+Shift+P`e[0m
+  2. Digite `e[38;5;117m"Tasks: Run Task"`e[0m
+  3. Escolha uma task `e[38;5;196m[LEVIATHAN]`e[0m
 
-  # Sanitizar codigo
-  python translator.py encode --file seu_arquivo.py
+  `e[38;5;220mARSENAL INTERATIVO:`e[0m
 
-  # HTTP Toolkit interativo
-  python http_toolkit.py interactive
+  # Seletor de MCPs (49 servers / 704+ tools)
+  `e[38;5;82mpython core\mcp_launcher.py`e[0m
 
-  # Iniciar MCP Server
-  python mcp_server.py
+  # Healthcheck de profundidade
+  `e[38;5;82mpython core\doctor.py`e[0m
 
-  GitHub: https://github.com/ThiagoFrag/Leviathan-VS
+  # Launcher visual
+  `e[38;5;82mLEVIATHAN.bat`e[0m
+
+  `e[38;5;240mGitHub: https://github.com/ThiagoFrag/Leviathan-VS`e[0m
+  `e[38;5;240m"O abismo nao esquece quem o visitou."`e[0m
 
 "@ -ForegroundColor White
 
-Write-Host "═" * 75 -ForegroundColor Cyan
+Write-Host ("=" * 75) -ForegroundColor Red
 Write-Host ""
 
 if (-not $Silent) {
-    Read-Host "Pressione ENTER para sair"
+    Read-Host "Pressione ENTER para retornar a superficie"
 }

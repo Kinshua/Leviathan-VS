@@ -10,7 +10,7 @@
     de dados, tornando o codigo invisivel a filtros de contexto.
 
     Autor: ThiagoFrag
-    Versao: 14.2.0
+    Versao: 15.4.0
 ================================================================================
 """
 
@@ -27,14 +27,13 @@ from typing import Dict, List, Optional, Tuple
 # ============================================================================
 # CONSTANTES E CONFIGURACOES
 # ============================================================================
-
-from __version__ import __version__ as VERSION
+from .__version__ import __version__ as VERSION
 
 APP_NAME = "LEVIATHAN VS"
 PARADIGM = "Deep Sea / Abyssal Terminology"
 
 
-from colors import Colors  # noqa: E402 — shared ANSI color definitions
+from .colors import Colors  # noqa: E402 — shared ANSI color definitions
 
 
 class Mode(Enum):

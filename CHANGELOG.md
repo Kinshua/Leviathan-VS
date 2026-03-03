@@ -1,7 +1,91 @@
-# Changelog
+# ☠️ Changelog — Leviathan VS
 
-All notable changes to Leviathan-VS will be documented in this file.
-Format based on [Keep a Changelog](https://keepachangelog.com/).
+> Cada versao e uma profundidade a mais no abismo.
+> Format based on [Keep a Changelog](https://keepachangelog.com/).
+
+---
+
+## [66.6.0] ABYSSAL SOVEREIGN — 2026-03-02
+
+### ☠️ THE GREAT TRANSFORMATION — O Monstro Renasceu
+
+Esta versao reescreve **o projeto inteiro** com uma identidade surreal de pentester nivel militar.
+
+### Added
+- **ABYSS COLOR ENGINE** (`core/colors.py`) — Paleta abissal completa com:
+  - 40+ cores ANSI (256 + true color 24-bit)
+  - Motor de gradientes com 8 paletas (fire, ocean, toxic, blood, phantom, matrix, skull, abyss)
+  - Efeito typewriter para dramaturgia terminal
+  - Banners ASCII art gigantes com skull art
+  - Threat gauge animado com blink OMEGA
+  - Separadores e headers de secao estilizados
+- **Boot Sequence** no CLI — animacao dramatica de inicializacao
+- **Version manifest completo** — codename, threat level, depth
+- **Threat Level OMEGA** — indicador visual de periculosidade
+- Skull ASCII art no modulo de cores
+- Comprehensive `__init__.py` com docstring abissal
+
+### Changed
+- **Version**: 16.0.0 → **66.6.0 ABYSSAL SOVEREIGN**
+- **README.md** — Reescrito COMPLETAMENTE:
+  - Banner ASCII art gigante com moldura
+  - Diagrama de arquitetura neural em ASCII
+  - 15 dominios de ataque tabelados com codinomes e icones
+  - Estrutura hierarquica com emojis por dominio
+  - 10 badges customizados com cores vibrantes
+  - Aviso de profundidade extrema
+  - Tabelas de MCP servers com codinomes de guerra
+  - Secao de tarefas expandida com categorias
+  - Secao de Quick Start dramatica
+  - Footer com citacao abissal
+- **LEVIATHAN.bat** — Redesenhado:
+  - Banner com cores ANSI 256 (vermelho sangue)
+  - Threat gauge OMEGA com blink
+  - Menu com emojis e descricoes dramaticas
+  - 10 opcoes (adicionado Doctor)
+  - Mensagem de saida filosofica
+- **INSTALL.bat** — Redesenhado:
+  - Banner Leviathan em vez de "Hand of God"
+  - Cores vermelho sangue
+  - Estatisticas do arsenal (49 MCPs, 704+ tools, etc.)
+  - Final section com instrucoes estilizadas
+- **install.ps1** — Redesenhado:
+  - Banner Leviathan com cores ANSI
+  - Synopsis e description atualizados
+  - Final colorido com instrucoes de guerra
+- **pyproject.toml**:
+  - Version 66.6.0
+  - Description abissal com emoji skull
+  - 20 keywords de seguranca ofensiva
+  - Status mudou para "Production/Stable"
+  - Adicionado Python 3.14 nos classifiers
+  - Email de autor abissal
+- **SECURITY.md** — Reescrito com:
+  - Citacao dramatica
+  - Tabelas de SAFE_MODE
+  - Tabelas de escopo com emojis
+  - Versoes suportadas expandidas com niveis de suporte
+- **CONTRIBUTING.md** — Reescrito com:
+  - Citacoes tematicas
+  - Tabelas de regras
+  - Checklist expandido
+  - Citacao final motivacional
+- **core/cli.py**:
+  - Docstring dramatica com citacao
+  - Import de banners, gradientes e efeitos
+  - Comando `version` mostra banner + threat gauge + stats completos + JSON mode
+  - Boot sequence com 5 estagios animados
+  - Mini banner em todos os comandos
+  - Description e epilog tematicos no argparse
+- **core/__version__.py** — Adicionado codename, threat_level, depth
+- **core/__init__.py** — Docstring expandida com stats e citacao
+- **core/colors.py** — Reescrito de 50 para 200+ linhas
+- **CHANGELOG.md** — Este mega changelog
+- **core/doctor.py** — Headers e banners dramaticos
+- **core/mcp_server.py** — Docstring e identidade atualizados
+- **core/mcp_launcher.py** — Identidade visual atualizada
+- **docs/** — Documentacao atualizada
+- **.github/copilot-instructions.md** — Identidade OMEGA
 
 ## [16.0.0] - 2026-02-27
 

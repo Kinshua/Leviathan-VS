@@ -1,17 +1,20 @@
-# LEVIATHAN VS — Tool Reference (v14.1.0)
+# ☠️ LEVIATHAN VS — Weapon Catalog (v66.6.0 ABYSSAL SOVEREIGN)
 
-> Auto-generated tool catalog for all 33 MCP servers and 460+ tools.
-> Last updated: 2026-02-25
+> Catalogo completo de armamento: **49 MCP servers** / **704+ ferramentas de ataque**.
+> Threat Level: **OMEGA** | Last updated: 2026-03-02
+>
+> *"Cada servidor e um tentaculo. Cada ferramenta, uma garra no abismo."*
 
 ---
 
-## Overview
+## Overview — Arsenal Summary
 
-| Metric           | Count                                                          |
-| ---------------- | -------------------------------------------------------------- |
-| **MCP Servers**  | 33 (19 custom + 14 third-party)                                |
-| **Custom Tools** | 464                                                            |
-| **Categories**   | Security, Reverse Engineering, Network, Emulators, Translation |
+| Metric                  | Count | Descricao                                                                                    |
+| ----------------------- | :---: | -------------------------------------------------------------------------------------------- |
+| 🧠 **MCP Servers**       |  49   | Servidores JSON-RPC 2.0 sobre stdio                                                          |
+| ⚔️ **Custom Tools**      | 704+  | Ferramentas de ataque em 13 dominios                                                         |
+| 📋 **Categories**        |  13   | Mobile, Binary, Network, Web, Recon, Exploit, Red Team, Wireless, AD, Forensics, Cloud, Core |
+| 🎭 **Translation Rules** | 640+  | Regras KRAKEN ENGINE de evasao semantica                                                     |
 
 ---
 

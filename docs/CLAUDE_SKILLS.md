@@ -1,6 +1,8 @@
-# LEVIATHAN VS - Claude Skills Integration
+# ☠️ LEVIATHAN VS — AI Cognitive Integration (v66.6.0 ABYSSAL SOVEREIGN)
 
-# LEVIATHAN v7.0 - NASA Level Configuration
+# LEVIATHAN v66.6.0 — Military-Grade AI Configuration | Threat Level: OMEGA
+
+> *"A inteligencia artificial nao e nossa ferramenta. E nosso tentaculo mais poderoso."*
 
 ## Skill Categories Integrated
 
@@ -71,18 +73,18 @@ Reference skills in your prompts:
 
 ## MCP Servers Active (mcp.json)
 
-| Server | Purpose |
-|--------|---------|
-| leviathan | LEVIATHAN semantic translation |
-| filesystem | File read/write operations |
-| memory | Persistent memory across sessions |
-| fetch | Web content fetching |
-| time | Date/time with Brazil timezone |
-| sqlite | Local database operations |
-| git | Advanced version control |
-| youtube-transcript | Video transcription |
-| everything | Fast file search (Windows) |
-| sequential-thinking | Chain-of-thought reasoning |
+| Server              | Purpose                           |
+| ------------------- | --------------------------------- |
+| leviathan           | LEVIATHAN semantic translation    |
+| filesystem          | File read/write operations        |
+| memory              | Persistent memory across sessions |
+| fetch               | Web content fetching              |
+| time                | Date/time with Brazil timezone    |
+| sqlite              | Local database operations         |
+| git                 | Advanced version control          |
+| youtube-transcript  | Video transcription               |
+| everything          | Fast file search (Windows)        |
+| sequential-thinking | Chain-of-thought reasoning        |
 
 ---
 

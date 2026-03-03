@@ -11,19 +11,19 @@
     "python.terminal.activateEnvironment": true,
     "python.analysis.typeCheckingMode": "standard",
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.variableTypes": false,
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.autoFormatStrings": true,
     "python.analysis.indexing": true,
     "python.analysis.importFormat": "relative",
-    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.callArgumentNames": "partial",
     "python.analysis.fixAll": [
         "source.unusedImports"
     ],
-    "python.analysis.userFileIndexingLimit": -1,
+    "python.analysis.userFileIndexingLimit": 2000,
     "python.languageServer": "Pylance",
     // ═══════════════════════════════════════════════════════════════════
     // ✏️ EDITOR - CONFIGURAÇÃO SUPREMA
@@ -40,7 +40,7 @@
     "editor.smoothScrolling": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.wordWrap": "on",
@@ -120,7 +120,7 @@
     "editor.experimental.asyncTokenization": true,
     "editor.tabCompletion": "on",
     "editor.suggestSelection": "recentlyUsedByPrefix",
-    "editor.quickSuggestionsDelay": 0,
+    "editor.quickSuggestionsDelay": 50,
     "editor.autoIndent": "full",
     "editor.wrappingIndent": "indent",
     "editor.wrappingStrategy": "advanced",
@@ -253,7 +253,7 @@
     "files.encoding": "utf8",
     "files.eol": "\n",
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
+    "files.autoSaveDelay": 2000,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -310,7 +310,7 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorWidth": 2,
-    "terminal.integrated.scrollback": 50000,
+    "terminal.integrated.scrollback": 10000,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.gpuAcceleration": "auto",
@@ -746,13 +746,6 @@
     // 📝 LINGUAGENS ESPECÍFICAS
     // ═══════════════════════════════════════════════════════════════════
     "[python]": {
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.formatOnSave": true,
-        "editor.rulers": [
-            80,
-            120
-        ],
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
@@ -760,17 +753,14 @@
     },
     "[json]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[typescript]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
@@ -778,164 +768,97 @@
     },
     "[typescriptreact]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascriptreact]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[css]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[scss]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[markdown]": {
         "editor.tabSize": 2,
-        "editor.wordWrap": "on",
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[rust]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
     "[go]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         }
     },
-    "[bat]": {
-        "editor.tabSize": 4
-    },
     "[yaml]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
-    },
-    "[dockerfile]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[lua]": {
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.wordWrap": "off",
-        "editor.rulers": [
-            80,
-            120
-        ]
+        "editor.wordWrap": "off"
     },
     "[smali]": {
         "editor.tabSize": 4,
         "editor.insertSpaces": false,
         "editor.wordWrap": "off"
     },
-    "[shellscript]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true
-    },
-    "[powershell]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true
-    },
+    "[shellscript]": {},
+    "[powershell]": {},
     "[xml]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true,
-        "editor.wordWrap": "on"
+        "editor.tabSize": 2
     },
     "[toml]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
-    },
-    "[ini]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[c]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "[cpp]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
-    },
-    "[java]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true
-    },
-    "[sql]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
-    },
-    "[graphql]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
     },
     "[vue]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "vue.volar"
     },
     "[astro]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "astro-build.astro-vscode"
     },
     "[svelte]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
     "[proto3]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
     "[terraform]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
     "[prisma]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
     "[php]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
     },
     "[ruby]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
-    "[kotlin]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": true
-    },
+    "[kotlin]": {},
     "[dart]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
     "[r]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.tabSize": 2
     },
     "[plaintext]": {
         "editor.wordWrap": "on",
@@ -1066,7 +989,7 @@
     "search.collapseResults": "auto",
     "search.searchEditor.doubleClickBehaviour": "openLocationToSide",
     "search.followSymlinks": false,
-    "search.maxResults": 20000,
+    "search.maxResults": 5000,
     "search.seedWithNearestWord": true,
     "search.defaultViewMode": "tree",
     "search.decorations.badges": true,
@@ -1116,66 +1039,9 @@
     // Every setting maxed. Every feature enabled. Zero restrictions.
     // ═══════════════════════════════════════════════════════════════════
     // --- Copilot Completions: ON for every language ---
+    // "*": true already enables Copilot for ALL languages
     "github.copilot.enable": {
-        "*": true,
-        "plaintext": true,
-        "markdown": true,
-        "scminput": true,
-        "yaml": true,
-        "json": true,
-        "jsonc": true,
-        "lua": true,
-        "shellscript": true,
-        "bat": true,
-        "powershell": true,
-        "c": true,
-        "cpp": true,
-        "java": true,
-        "smali": true,
-        "xml": true,
-        "html": true,
-        "css": true,
-        "sql": true,
-        "rust": true,
-        "go": true,
-        "proto3": true,
-        "dockerfile": true,
-        "toml": true,
-        "ini": true,
-        "properties": true,
-        "http": true,
-        "graphql": true,
-        "prisma": true,
-        "terraform": true,
-        "ruby": true,
-        "swift": true,
-        "kotlin": true,
-        "dart": true,
-        "r": true,
-        "perl": true,
-        "haskell": true,
-        "scala": true,
-        "elixir": true,
-        "clojure": true,
-        "ocaml": true,
-        "zig": true,
-        "nim": true,
-        "v": true,
-        "assembly": true,
-        "vue": true,
-        "svelte": true,
-        "astro": true,
-        "php": true,
-        "csharp": true,
-        "fsharp": true,
-        "typescriptreact": true,
-        "javascriptreact": true,
-        "less": true,
-        "scss": true,
-        "makefile": true,
-        "cmake": true,
-        "latex": true,
-        "bibtex": true
+        "*": true
     },
     // --- Copilot Chat: Brain at Maximum ---
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
@@ -1427,8 +1293,6 @@
     "extensions.experimental.affinity": {
         "github.copilot": 1,
         "github.copilot-chat": 1,
-        "continue.continue": 1,
-        "Codeium.codeium": 1,
         "ms-python.vscode-pylance": 2,
         "ms-python.python": 2,
         "charliermarsh.ruff": 2,
@@ -1448,7 +1312,7 @@
     "window.titleBarStyle": "custom",
     "window.menuBarVisibility": "compact",
     "window.zoomLevel": 0,
-    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}${separator}LEVIATHAN v15.3",
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}${separator}LEVIATHAN v15.4",
     "window.newWindowDimensions": "maximized",
     "window.restoreFullscreen": true,
     "window.commandCenter": true,
@@ -1477,7 +1341,7 @@
     ],
     // Jest Testing (JavaScript/TypeScript)
     "jest.autoRun": {
-        "watch": true,
+        "watch": false,
         "onSave": "test-src-file"
     },
     "jest.showCoverageOnLoad": true,
@@ -1519,7 +1383,7 @@
     "sonarlint.output.showVerboseLogs": false,
     "sonarlint.pathToNodeExecutable": "",
     // DeepScan
-    "deepscan.enable": true,
+    "deepscan.enable": false,
     "deepscan.ignorePatterns": [
         "node_modules",
         "dist",
@@ -1532,7 +1396,7 @@
     "snyk.advanced.additionalParameters": "",
     "snyk.features.openSourceSecurity": true,
     "snyk.features.codeSecurity": true,
-    "snyk.features.codeQuality": true,
+    "snyk.features.codeQuality": false,
     // ═══════════════════════════════════════════════════════════════════
     // 📊 CODE COVERAGE - COBERTURA DE CÓDIGO
     // ═══════════════════════════════════════════════════════════════════
@@ -1594,8 +1458,8 @@
     "go.lintFlags": [
         "--fast"
     ],
-    "go.lintOnSave": "workspace",
-    "go.vetOnSave": "workspace",
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "go.toolsManagement.autoUpdate": true,
@@ -1624,7 +1488,7 @@
         "reportPrivateUsage": "warning",
         "reportGeneralTypeIssues": "error"
     },
-    "pylint.enabled": true,
+    "pylint.enabled": false,
     "pylint.args": [
         "--max-line-length=120",
         "--disable=C0114,C0115,C0116",
@@ -1684,7 +1548,7 @@
         "performance-*",
         "readability-*"
     ],
-    "C_Cpp.codeAnalysis.runAutomatically": true,
+    "C_Cpp.codeAnalysis.runAutomatically": false,
     "c-cpp-flylint.cppcheck.enable": true,
     "c-cpp-flylint.clang.enable": true,
     "c-cpp-flylint.flexelint.enable": false,

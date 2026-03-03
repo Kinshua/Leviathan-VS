@@ -2,34 +2,45 @@
 # -*- coding: utf-8 -*-
 """
 ================================================================================
-    LEVIATHAN VS — Unified CLI Entrypoint
+    ☠️  LEVIATHAN VS — ABYSSAL COMMAND INTERFACE  ☠️
+    v66.6.0 ABYSSAL SOVEREIGN | Threat Level: OMEGA
+
     leviathan <command> [options]
 
     Commands:
-        translate   Encode/decode/preview/check via Kraken Engine
-        http        HTTP toolkit (dispatch/scan)
-        doctor      Healthcheck & diagnostics
-        validate    Validate configs (config.json, mcp.json, tasks.json)
-        report      Export environment report (JSON/Markdown)
-        version     Show version info
+        translate   Kraken Engine — encode/decode/preview/check
+        http        Depth Charge — HTTP warfare toolkit
+        doctor      Abyss Diagnostic — healthcheck de profundidade
+        validate    Config Integrity — validar configs de guerra
+        report      Intel Report — exportar relatorio do ambiente
+        version     Manifest — mostrar identidade do monstro
 
     Usage:
-        leviathan translate encode --file work.txt
+        leviathan translate encode --file target.txt
         leviathan doctor --json
         leviathan validate
         leviathan report --format json
+
+    "O abismo nao responde. Ele executa."
 ================================================================================
 """
 
 import argparse
 import json
-import os
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
-from __version__ import __version__ as VERSION
-from colors import enable_ansi
+from .__version__ import __codename__, __threat_level__
+from .__version__ import __version__ as VERSION
+from .colors import (
+    LEVIATHAN_MINI,
+    THREAT_GAUGE,
+    Colors,
+    enable_ansi,
+    print_separator,
+)
 
 BASE_DIR = Path(__file__).parent.resolve()
 PROJECT_DIR = BASE_DIR.parent
@@ -42,7 +53,7 @@ PROJECT_DIR = BASE_DIR.parent
 
 def cmd_translate(args):
     """Delegate to translator.py."""
-    from translator import CLI, SemanticTranslator
+    from .translator import CLI, SemanticTranslator
 
     cli = CLI(work_file=args.file)
     action = args.action
@@ -108,7 +119,7 @@ def cmd_translate(args):
 
 def cmd_http(args):
     """Delegate to http_toolkit.py."""
-    from http_toolkit import HOGDispatcher
+    from .http_toolkit import HOGDispatcher
 
     dispatcher = HOGDispatcher()
     action = args.action
@@ -141,7 +152,7 @@ def cmd_http(args):
 
 def cmd_doctor(args):
     """Run healthcheck."""
-    from doctor import print_report, run_doctor
+    from .doctor import print_report, run_doctor
 
     report = run_doctor(json_output=args.json_output)
     if args.json_output:
@@ -153,7 +164,7 @@ def cmd_doctor(args):
 
 def cmd_validate(args):
     """Validate config files."""
-    from config_schema import print_report, validate_all
+    from .config_schema import print_report, validate_all
 
     reports = validate_all()
     if args.json_output:
@@ -171,7 +182,7 @@ def cmd_validate(args):
 
 def cmd_report(args):
     """Export environment report."""
-    from doctor import run_doctor
+    from .doctor import run_doctor
 
     report = run_doctor()
 
@@ -227,23 +238,85 @@ def cmd_report(args):
 
 
 def cmd_version(args):
-    """Show version info."""
-    print(f"LEVIATHAN VS v{VERSION}")
-    print(f"Python {sys.version}")
-    print(f"Project: {PROJECT_DIR}")
+    """Show version info — manifest of the beast."""
+    if args.json_output:
+        print(
+            json.dumps(
+                {
+                    "name": "LEVIATHAN VS",
+                    "version": VERSION,
+                    "codename": __codename__,
+                    "threat_level": __threat_level__,
+                    "mcp_servers": 49,
+                    "tools": "704+",
+                    "translation_rules": "640+",
+                    "tasks": "180+",
+                    "extensions": "160+",
+                    "attack_domains": 13,
+                    "project": str(PROJECT_DIR),
+                    "python": sys.version,
+                },
+                indent=2,
+            )
+        )
+    else:
+        print(LEVIATHAN_MINI)
+        print(THREAT_GAUGE)
+        print(f"  {Colors.BOLD}{Colors.BLOOD}LEVIATHAN VS{Colors.RESET} v{VERSION}")
+        print(f"  {Colors.CRIMSON}Codename:{Colors.RESET}      {__codename__}")
+        print(
+            f"  {Colors.CRIMSON}Threat Level:{Colors.RESET}   {Colors.BLOOD}{Colors.BOLD}{__threat_level__}{Colors.RESET}"
+        )
+        print(f"  {Colors.CRIMSON}MCP Servers:{Colors.RESET}    49")
+        print(f"  {Colors.CRIMSON}Ferramentas:{Colors.RESET}    704+")
+        print(f"  {Colors.CRIMSON}Regras Evasao:{Colors.RESET}  640+")
+        print(f"  {Colors.CRIMSON}Tarefas:{Colors.RESET}        180+")
+        print(f"  {Colors.CRIMSON}Extensoes:{Colors.RESET}      160+")
+        print(f"  {Colors.CRIMSON}Dominios:{Colors.RESET}       13")
+        print(f"  {Colors.DIM}Python {sys.version}{Colors.RESET}")
+        print(f"  {Colors.DIM}Project: {PROJECT_DIR}{Colors.RESET}")
+        print()
+        print_separator()
     return 0
 
 
 # ============================================================================
-# MAIN
+# MAIN — BOOT SEQUENCE
 # ============================================================================
+
+
+def _boot_sequence():
+    """Dramatic boot sequence for the abyss."""
+    stages = [
+        ("Inicializando nucleo abissal", Colors.CRIMSON),
+        ("Carregando 640+ regras de evasao", Colors.BLOOD),
+        ("Ativando Tentacle Protocol (49 MCPs)", Colors.CYAN),
+        ("Calibrando 704+ ferramentas de ataque", Colors.GREEN),
+        ("Profundidade OMEGA alcancada", Colors.BLOOD),
+    ]
+    for msg, color in stages:
+        sys.stdout.write(f"  {color}▸ {msg}...{Colors.RESET}")
+        sys.stdout.flush()
+        time.sleep(0.08)
+        print(f" {Colors.GREEN}✓{Colors.RESET}")
 
 
 def main():
     enable_ansi()
+
+    # Show mini banner on any command
+    if len(sys.argv) > 1 and sys.argv[1] not in ("--help", "-h", "--json"):
+        print(
+            f"\n  {Colors.BLOOD}{Colors.BOLD}☠️  LEVIATHAN VS v{VERSION} — {__codename__}{Colors.RESET}"
+        )
+        print(
+            f"  {Colors.DIM}Threat Level: {__threat_level__} | 49 MCPs | 704+ Tools{Colors.RESET}\n"
+        )
+
     parser = argparse.ArgumentParser(
         prog="leviathan",
-        description="LEVIATHAN VS — Unified CLI for security research environment",
+        description="☠️ LEVIATHAN VS — Arsenal Ofensivo Nivel Militar para VS Code",
+        epilog='"O abismo nao responde. Ele executa."',
     )
     parser.add_argument(
         "--json",
