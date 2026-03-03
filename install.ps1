@@ -6,7 +6,7 @@
     Invoca o monstro. Instala e configura automaticamente o arsenal ofensivo
     Classification OMEGA-BLACK com 49 MCP servers, 704+ ferramentas, 640+ regras
     de evasao, 15 dominios de ataque, e 160+ extensoes VS Code.
-    
+
     Kill Chain: FULL | Evasion: 96.3% | Accuracy: 99.7%
     MITRE ATT&CK: 14/14 Tactics (TA0043 -> TA0040)
 .NOTES
