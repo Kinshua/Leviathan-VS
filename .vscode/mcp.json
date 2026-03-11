@@ -9,9 +9,9 @@
         // CORE - leviathan TRANSLATION ENGINE
         // ═══════════════════════════════════════════════════════════════════════
         "leviathan": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
-                "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS\\core\\mcp_server.py"
+                "core/mcp_server.py"
             ],
             "env": {
                 "PYTHONIOENCODING": "utf-8"
@@ -25,9 +25,9 @@
             "args": [
                 "-y",
                 "@modelcontextprotocol/server-filesystem",
-                "C:\\Users\\Kishi\\Desktop",
-                "C:\\Users\\Kishi\\Documents",
-                "C:\\Users\\Kishi\\Downloads"
+                "${userHome}/Desktop",
+                "${userHome}/Documents",
+                "${userHome}/Downloads"
             ],
             "env": {
                 "NODE_OPTIONS": "--no-warnings"
@@ -50,7 +50,7 @@
         // FETCH - Busca de Conteudo Web
         // ═══════════════════════════════════════════════════════════════════════
         "fetch": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "mcp_server_fetch"
@@ -63,7 +63,7 @@
         // TIME - Data e Hora com Timezone
         // ═══════════════════════════════════════════════════════════════════════
         "time": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "mcp_server_time",
@@ -78,12 +78,12 @@
         // SQLITE - Banco de Dados Local
         // ═══════════════════════════════════════════════════════════════════════
         "sqlite": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "mcp_server_sqlite",
                 "--db-path",
-                "C:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS\\leviathan.db"
+                "leviathan.db"
             ],
             "env": {
                 "PYTHONIOENCODING": "utf-8"
@@ -93,12 +93,12 @@
         // GIT - Controle de Versao Avancado
         // ═══════════════════════════════════════════════════════════════════════
         "git": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "mcp_server_git",
                 "--repository",
-                "C:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS"
+                "."
             ],
             "env": {
                 "PYTHONIOENCODING": "utf-8"
@@ -108,7 +108,7 @@
         // YOUTUBE - Transcricoes de Videos
         // ═══════════════════════════════════════════════════════════════════════
         "youtube-transcript": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "mcp_youtube_transcript"
@@ -147,12 +147,12 @@
         // LDPLAYER - Emulador Android + Frida
         // ═══════════════════════════════════════════════════════════════════════
         "ldplayer": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.ldplayer.mcp_ldplayer"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -227,12 +227,12 @@
         // ADB - Android Debug Bridge (31 tools: shell, install, logcat, input...)
         // ═══════════════════════════════════════════════════════════════════════
         "adb": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.adb.mcp_adb"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -242,12 +242,12 @@
         // Hook Java/Native, bypass SSL/root/emulator/frida, memory scan, XXTEA
         // ═══════════════════════════════════════════════════════════════════════
         "frida-standalone": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.frida_mcp.mcp_frida"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -256,12 +256,12 @@
         // JADX - APK Decompiler (16 tools: decompile, search, manifest, crypto, smali, diff)
         // ═══════════════════════════════════════════════════════════════════════
         "jadx": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.jadx.mcp_jadx"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -271,12 +271,12 @@
         // Decompile, xrefs, exports, imports, strings, sections, classes, bytes, entry points
         // ═══════════════════════════════════════════════════════════════════════
         "ghidra": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.ghidra.mcp_ghidra"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -285,12 +285,12 @@
         // BLUESTACKS - BlueStacks Emulator Control (17 tools: launch, install, shell, rotate, shake)
         // ═══════════════════════════════════════════════════════════════════════
         "bluestacks": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.bluestacks.mcp_bluestacks"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -299,12 +299,12 @@
         // MEMU - MEmu Emulator Control (19 tools: memuc.exe CLI, rotate, import)
         // ═══════════════════════════════════════════════════════════════════════
         "memu": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.memu.mcp_memu"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -314,12 +314,12 @@
         // Capture, filter, follow streams, DNS, HTTP, TLS, credentials, expert, RTP, VoIP, GeoIP
         // ═══════════════════════════════════════════════════════════════════════
         "wireshark": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.wireshark.mcp_wireshark"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -329,12 +329,12 @@
         // Instances, apps, config, GPS, macros, screenshots, input
         // ═══════════════════════════════════════════════════════════════════════
         "nox": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.nox.mcp_nox"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -344,12 +344,12 @@
         // Scan, spider, intruder, repeater, proxy, decoder, scope, export
         // ═══════════════════════════════════════════════════════════════════════
         "burpsuite": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.burpsuite.mcp_burpsuite"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8",
                 "BURP_API_URL": "http://127.0.0.1:1337"
@@ -360,12 +360,12 @@
         // nuclei, sqlmap, nmap, dirb, ffuf, nikto, whatweb, subfinder, httpx
         // ═══════════════════════════════════════════════════════════════════════
         "nuclei": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.nuclei.mcp_nuclei"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -375,12 +375,12 @@
         // SSL bypass, root bypass, hooking, keystore, memory, SQLite, patchapk
         // ═══════════════════════════════════════════════════════════════════════
         "objection": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.objection.mcp_objection"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -390,12 +390,12 @@
         // start/stop proxy, dump traffic, create scripts, replay, HAR export
         // ═══════════════════════════════════════════════════════════════════════
         "mitmproxy": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.mitmproxy.mcp_mitmproxy"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -405,12 +405,12 @@
         // decode, build, sign, zipalign, patch smali/manifest, inject, diff
         // ═══════════════════════════════════════════════════════════════════════
         "apktool": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.apktool.mcp_apktool"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -420,12 +420,12 @@
         // permissions, components, strings, certificate, xrefs, security audit
         // ═══════════════════════════════════════════════════════════════════════
         "androguard": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.androguard.mcp_androguard"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -435,12 +435,12 @@
         // craft, send, sniff, traceroute, arp scan, port scan, dns, fuzzing
         // ═══════════════════════════════════════════════════════════════════════
         "scapy": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.scapy.mcp_scapy"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -450,12 +450,12 @@
         // analyze, functions, strings, xrefs, disasm, hex, patches, emulate
         // ═══════════════════════════════════════════════════════════════════════
         "radare2": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.r2.mcp_r2"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -465,12 +465,12 @@
         // crack, identify, benchmark, wordlist, rules, combinator, brute-force
         // ═══════════════════════════════════════════════════════════════════════
         "hashcat": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.hashcat.mcp_hashcat"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -480,12 +480,12 @@
         // amass, gobuster, masscan, whatweb, dnsrecon, wafw00f, fierce, theHarvester
         // ═══════════════════════════════════════════════════════════════════════
         "recon": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.recon.mcp_recon"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -495,12 +495,12 @@
         // searchsploit, msfvenom, hydra, john, medusa, responder, enum4linux
         // ═══════════════════════════════════════════════════════════════════════
         "exploit": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.exploit.mcp_exploit"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -510,12 +510,12 @@
         // shodan, maigret, sherlock, holehe, dnstwist, spiderfoot, phoneinfoga
         // ═══════════════════════════════════════════════════════════════════════
         "osint": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.osint.mcp_osint"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -525,12 +525,12 @@
         // volatility3, yara, binwalk, capa, foremost, bulk_extractor, exiftool
         // ═══════════════════════════════════════════════════════════════════════
         "forensics": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.forensics.mcp_forensics"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -540,12 +540,12 @@
         // xsstrike, wfuzz, arjun, gospider, commix, dalfox, jwt_tool, nosqlmap
         // ═══════════════════════════════════════════════════════════════════════
         "webapp": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.webapp.mcp_webapp"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -555,12 +555,12 @@
         // trivy, gitleaks, trufflehog, semgrep, checkov, prowler, grype, syft
         // ═══════════════════════════════════════════════════════════════════════
         "cloud": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.cloud.mcp_cloud"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -570,12 +570,12 @@
         // aircrack-ng suite, wifite, reaver, bettercap wifi/ble, kismet, cowpatty
         // ═══════════════════════════════════════════════════════════════════════
         "wireless": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.wireless.mcp_wireless"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -585,12 +585,12 @@
         // bloodhound, impacket suite, netexec, evil-winrm, mimikatz, rubeus
         // ═══════════════════════════════════════════════════════════════════════
         "active_directory": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.active_directory.mcp_ad"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -600,12 +600,12 @@
         // steghide, zsteg, openstego, outguess, snow, stegseek, exiftool
         // ═══════════════════════════════════════════════════════════════════════
         "stego": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.stego.mcp_stego"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -615,12 +615,12 @@
         // setoolkit, gophish, evilginx2, beef-xss, modlishka, wifiphisher
         // ═══════════════════════════════════════════════════════════════════════
         "social_eng": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.social_eng.mcp_social_eng"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -630,12 +630,12 @@
         // bettercap, ettercap, hping3, arp-scan, mitm6, sslscan, snort
         // ═══════════════════════════════════════════════════════════════════════
         "netattack": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.netattack.mcp_netattack"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -645,12 +645,12 @@
         // rustscan, autorecon, feroxbuster, dirsearch, katana, wpscan, eyewitness
         // ═══════════════════════════════════════════════════════════════════════
         "adv_recon": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.adv_recon.mcp_adv_recon"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -660,12 +660,12 @@
         // gdb, pwntools, angr, checksec, ROPgadget, afl, boofuzz, msfvenom
         // ═══════════════════════════════════════════════════════════════════════
         "exploit_dev": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.exploit_dev.mcp_exploit_dev"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -675,12 +675,12 @@
         // sliver, mythic, empire, havoc, covenant, donut, scarecrow, veil
         // ═══════════════════════════════════════════════════════════════════════
         "redteam": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.redteam.mcp_redteam"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -690,12 +690,12 @@
         // cewl, crunch, cupp, john, hashid, ophcrack, patator, kwprocessor
         // ═══════════════════════════════════════════════════════════════════════
         "wordlist": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.wordlist.mcp_wordlist"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }
@@ -705,12 +705,12 @@
         // objdump, readelf, binwalk, yara, capa, oletools, pefile, upx
         // ═══════════════════════════════════════════════════════════════════════
         "reveng": {
-            "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "command": "python",
             "args": [
                 "-m",
                 "core.reveng.mcp_reveng"
             ],
-            "cwd": "c:\\Users\\Kishi\\Desktop\\Trabalhos\\Leviathan-VS",
+            "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONIOENCODING": "utf-8"
             }

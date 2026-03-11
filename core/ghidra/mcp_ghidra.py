@@ -51,7 +51,7 @@ logger = logging.getLogger("leviathan-ghidra-mcp")
 
 VERSION = "1.0.0"
 SERVER_NAME = "leviathan-ghidra-server"
-PROJECT_DIR = Path(r"C:\Users\Kishi\Desktop\Trabalhos\ghidra_projects")
+PROJECT_DIR = Path(os.path.expanduser("~")) / "ghidra_projects"
 SCRIPTS_DIR = Path(__file__).parent / "scripts"
 
 
@@ -59,7 +59,7 @@ def _find_ghidra() -> str:
     candidates = [
         r"C:\ghidra\support\analyzeHeadless.bat",
         r"C:\Tools\ghidra\support\analyzeHeadless.bat",
-        r"C:\Users\Kishi\Tools\ghidra\support\analyzeHeadless.bat",
+        str(Path(os.path.expanduser("~")) / "Tools" / "ghidra" / "support" / "analyzeHeadless.bat"),
         r"C:\Program Files\ghidra\support\analyzeHeadless.bat",
         r"C:\ghidra_11.0\support\analyzeHeadless.bat",
         r"C:\ghidra_11.1\support\analyzeHeadless.bat",
@@ -74,7 +74,7 @@ def _find_ghidra() -> str:
         if c and Path(c).exists():
             return str(c)
     # Search in common parent dirs
-    for base in [r"C:\\", r"C:\Tools", r"C:\Users\Kishi"]:
+    for base in [r"C:\\", r"C:\Tools", os.path.expanduser("~")]:
         p = Path(base)
         if p.exists():
             for d in p.iterdir():

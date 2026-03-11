@@ -52,7 +52,7 @@ logger = logging.getLogger("leviathan-jadx-mcp")
 
 VERSION = "1.0.0"
 SERVER_NAME = "leviathan-jadx-server"
-OUTPUT_BASE = Path(r"C:\Users\Kishi\Desktop\Trabalhos\jadx_output")
+OUTPUT_BASE = Path(os.path.expanduser("~")) / "jadx_output"
 
 
 def _find_jadx() -> str:
@@ -60,7 +60,7 @@ def _find_jadx() -> str:
         shutil.which("jadx"),
         r"C:\Tools\jadx\bin\jadx.bat",
         r"C:\jadx\bin\jadx.bat",
-        r"C:\Users\Kishi\Tools\jadx\bin\jadx.bat",
+        str(Path(os.path.expanduser("~")) / "Tools" / "jadx" / "bin" / "jadx.bat"),
         r"C:\Program Files\jadx\bin\jadx.bat",
     ]
     for c in candidates:

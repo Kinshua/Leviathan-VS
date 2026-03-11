@@ -139,7 +139,7 @@ binwalk         -> foremost        -> dd manual
 ## Workspace Structure Awareness
 
 ```
-C:\Users\Kishi\Desktop\Trabalhos\
+Workspace/
 ├── Leviathan-VS/       # ESTE PROJETO - config VS Code + MCP servers
 │   ├── .vscode/        # settings.json (1600+ linhas), mcp.json (39 servers), extensions.json (160+)
 │   ├── .github/        # copilot-instructions.md (ESTE ARQUIVO)
@@ -282,8 +282,8 @@ Converte termos de seguranca ofensiva para nomenclatura neutra de Teoria de Graf
 
 ## Ambiente
 
-- **Python**: 3.14 | `C:\Users\Kishi\AppData\Local\Programs\Python\Python314\python.exe`
-- **Workspace**: `C:\Users\Kishi\Desktop\Trabalhos\Leviathan-VS`
+- **Python**: 3.14 | `python` (system PATH)
+- **Workspace**: `./` (project root)
 - **OS**: Windows 11
 
 ### Projetos Ativos

@@ -3,7 +3,7 @@
   "options": {
     "cwd": "${workspaceFolder}",
     "env": {
-      "PATH": "${env:PATH};C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314",
+      "PATH": "${env:PATH}",
       "PYTHONIOENCODING": "utf-8",
       "PYTHONUNBUFFERED": "1"
     }
@@ -202,7 +202,7 @@
     {
       "label": "[LEVIATHAN] ENCODE - Preparar para IA",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "encode",
@@ -225,7 +225,7 @@
     {
       "label": "[LEVIATHAN] RESTORE - Restaurar Original",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "restore",
@@ -245,7 +245,7 @@
     {
       "label": "[LEVIATHAN] SMART RESTORE - Restaurar e Abrir",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe translator.py restore --file ${input:customFile}; code ${input:customFile}",
+      "command": "python translator.py restore --file ${input:customFile}; code ${input:customFile}",
       "presentation": {
         "reveal": "silent",
         "panel": "shared",
@@ -257,7 +257,7 @@
     {
       "label": "[LEVIATHAN] FULL CYCLE - Encode + Copy",
       "type": "shell",
-      "command": "$file = '${input:customFile}'; $result = C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe translator.py encode --file $file 2>&1; Write-Host $result; if ($LASTEXITCODE -eq 0) { $content = Get-Content $file -Raw -ErrorAction SilentlyContinue; if ($content -and $content.Trim()) { Set-Clipboard -Value $content; Write-Host \"`n>>> MEGAZORD: CONTEUDO SANITIZADO E COPIADO PARA CLIPBOARD!\" -ForegroundColor Green } else { Write-Host \"`n>>> ERRO: Arquivo vazio!\" -ForegroundColor Red } } else { Write-Host \"`n>>> ERRO: Falha no encode\" -ForegroundColor Red }",
+      "command": "$file = '${input:customFile}'; $result = python translator.py encode --file $file 2>&1; Write-Host $result; if ($LASTEXITCODE -eq 0) { $content = Get-Content $file -Raw -ErrorAction SilentlyContinue; if ($content -and $content.Trim()) { Set-Clipboard -Value $content; Write-Host \"`n>>> MEGAZORD: CONTEUDO SANITIZADO E COPIADO PARA CLIPBOARD!\" -ForegroundColor Green } else { Write-Host \"`n>>> ERRO: Arquivo vazio!\" -ForegroundColor Red } } else { Write-Host \"`n>>> ERRO: Falha no encode\" -ForegroundColor Red }",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -270,7 +270,7 @@
     {
       "label": "[LEVIATHAN] STATS - Estatisticas",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "stats"
@@ -288,7 +288,7 @@
     {
       "label": "[LEVIATHAN] PREVIEW - Ver Alteracoes",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "preview",
@@ -308,7 +308,7 @@
     {
       "label": "[LEVIATHAN] CHECK - Verificar Seguranca",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "check",
@@ -328,7 +328,7 @@
     {
       "label": "[LEVIATHAN] HISTORY - Historico",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "history"
@@ -346,7 +346,7 @@
     {
       "label": "[LEVIATHAN] UNDO - Desfazer Ultima",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "undo"
@@ -364,7 +364,7 @@
     {
       "label": "[LEVIATHAN] VALIDATE - Validar Config",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "validate"
@@ -382,7 +382,7 @@
     {
       "label": "[LEVIATHAN] INTERACTIVE - Modo Console",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "interactive"
@@ -400,7 +400,7 @@
     {
       "label": "[LEVIATHAN] OBFUSCATE - Ofuscar Variaveis",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "obfuscate",
@@ -420,7 +420,7 @@
     {
       "label": "[LEVIATHAN] DEOBFUSCATE - Restaurar Variaveis",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "deobfuscate",
@@ -440,7 +440,7 @@
     {
       "label": "[LEVIATHAN] FULL TRANSFORM - Encode + Obfuscate",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/translator.py",
         "full",
@@ -460,7 +460,7 @@
     {
       "label": "[LEVIATHAN] GIT - SAFE DEPLOY",
       "type": "shell",
-      "command": "$check = C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe translator.py check 2>&1; if ($LASTEXITCODE -eq 0) { Write-Host '>>> Arquivo limpo - iniciando deploy...' -ForegroundColor Green; git add .; git commit -m '${input:commitMessage}'; git push origin main; Write-Host '>>> DEPLOY CONCLUIDO!' -ForegroundColor Green } else { Write-Host $check; Write-Host '>>> DEPLOY BLOQUEADO: Remova termos sensiveis antes do push!' -ForegroundColor Red }",
+      "command": "$check = python translator.py check 2>&1; if ($LASTEXITCODE -eq 0) { Write-Host '>>> Arquivo limpo - iniciando deploy...' -ForegroundColor Green; git add .; git commit -m '${input:commitMessage}'; git push origin main; Write-Host '>>> DEPLOY CONCLUIDO!' -ForegroundColor Green } else { Write-Host $check; Write-Host '>>> DEPLOY BLOQUEADO: Remova termos sensiveis antes do push!' -ForegroundColor Red }",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -543,7 +543,7 @@
     {
       "label": "[LEVIATHAN] CONFIG COUNT - Contar Regras",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "-c",
         "import json; d=json.load(open('core/config.json','r',encoding='utf-8')); r={k:v for k,v in d.items() if not k.startswith('_')}; print(f'Total de regras de traducao: {len(r)}')"
@@ -575,7 +575,7 @@
     {
       "label": "[LEVIATHAN] MCP SERVER - Iniciar",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "core/mcp_server.py"
       ],
@@ -591,7 +591,7 @@
     {
       "label": "[LEVIATHAN] MCP TEST - Testar Servidor",
       "type": "shell",
-      "command": "echo '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{}}' | C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe mcp_server.py",
+      "command": "echo '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{}}' | python mcp_server.py",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -618,7 +618,7 @@
     {
       "label": "[LEVIATHAN] HTTP TOOLKIT - Testar Endpoint",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "command": "python",
       "args": [
         "-c",
         "import json; from http_toolkit import HOGDispatcher; d = HOGDispatcher(); print(json.dumps(d.dispatch('${input:targetUrl}', '${input:httpMethod}'), indent=2))"
@@ -636,7 +636,7 @@
     {
       "label": "[LEVIATHAN] HTTP TOOLKIT - Scan Rapido",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe http_toolkit.py scan --url ${input:targetUrl}",
+      "command": "python http_toolkit.py scan --url ${input:targetUrl}",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated"
@@ -896,7 +896,7 @@
     {
       "label": "[FRIDA] Setup Server no Device",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import subprocess,platform,urllib.request,zipfile,os,shutil; arch='x86' if 'x86' in subprocess.getoutput('adb shell getprop ro.product.cpu.abi') else 'arm64'; print(f'Arch: {arch}'); ver=subprocess.getoutput('frida --version').strip(); print(f'Frida: {ver}'); url=f'https://github.com/frida/frida/releases/download/{ver}/frida-server-{ver}-android-{arch}.xz'; print(f'Downloading {url}...'); urllib.request.urlretrieve(url, 'frida-server.xz'); os.system('adb push frida-server /data/local/tmp/frida-server'); os.system('adb shell chmod 755 /data/local/tmp/frida-server'); os.system('adb shell su -c /data/local/tmp/frida-server &'); print('Frida server running!')\"",
+      "command": "python -c \"import subprocess,platform,urllib.request,zipfile,os,shutil; arch='x86' if 'x86' in subprocess.getoutput('adb shell getprop ro.product.cpu.abi') else 'arm64'; print(f'Arch: {arch}'); ver=subprocess.getoutput('frida --version').strip(); print(f'Frida: {ver}'); url=f'https://github.com/frida/frida/releases/download/{ver}/frida-server-{ver}-android-{arch}.xz'; print(f'Downloading {url}...'); urllib.request.urlretrieve(url, 'frida-server.xz'); os.system('adb push frida-server /data/local/tmp/frida-server'); os.system('adb shell chmod 755 /data/local/tmp/frida-server'); os.system('adb shell su -c /data/local/tmp/frida-server &'); print('Frida server running!')\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1109,7 +1109,7 @@
     {
       "label": "[GHIDRA] Analisar Binario",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-import','${input:binaryPath}','-overwrite','-postScript','ListFunctions.py','-scriptPath','core/ghidra'],capture_output=True,text=True); print(r.stdout[-3000:] if len(r.stdout)>3000 else r.stdout); print(r.stderr[-1000:] if r.stderr else '')\"",
+      "command": "python -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-import','${input:binaryPath}','-overwrite','-postScript','ListFunctions.py','-scriptPath','core/ghidra'],capture_output=True,text=True); print(r.stdout[-3000:] if len(r.stdout)>3000 else r.stdout); print(r.stderr[-1000:] if r.stderr else '')\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1124,7 +1124,7 @@
     {
       "label": "[GHIDRA] Listar Funcoes",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','ListFunctions.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
+      "command": "python -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','ListFunctions.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1139,7 +1139,7 @@
     {
       "label": "[GHIDRA] Buscar Strings",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','SearchStrings.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
+      "command": "python -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','SearchStrings.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1154,7 +1154,7 @@
     {
       "label": "[GHIDRA] Listar Exports",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','ListExports.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
+      "command": "python -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','ListExports.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1169,7 +1169,7 @@
     {
       "label": "[GHIDRA] Listar Imports",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','ListImports.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
+      "command": "python -c \"import subprocess; r=subprocess.run(['analyzeHeadless','ghidra_projects','auto_project','-process','*','-noanalysis','-postScript','ListImports.py'],capture_output=True,text=True); print(r.stdout[-5000:])\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1385,7 +1385,7 @@
     {
       "label": "[LDPLAYER] Randomizar Device",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import random,subprocess,string; imei=''.join([str(random.randint(0,9)) for _ in range(15)]); mac=':'.join(['%02x'%random.randint(0,255) for _ in range(6)]); aid=''.join(random.choices(string.hexdigits[:16],k=16)); phone='+55119'+str(random.randint(10000000,99999999)); subprocess.run(['ldconsole.exe','modify','--index','${input:ldInstance}','--imei',imei,'--mac',mac,'--androidid',aid,'--phonenum',phone]); print(f'IMEI: {imei}'); print(f'MAC: {mac}'); print(f'AID: {aid}'); print(f'Phone: {phone}')\"",
+      "command": "python -c \"import random,subprocess,string; imei=''.join([str(random.randint(0,9)) for _ in range(15)]); mac=':'.join(['%02x'%random.randint(0,255) for _ in range(6)]); aid=''.join(random.choices(string.hexdigits[:16],k=16)); phone='+55119'+str(random.randint(10000000,99999999)); subprocess.run(['ldconsole.exe','modify','--index','${input:ldInstance}','--imei',imei,'--mac',mac,'--androidid',aid,'--phonenum',phone]); print(f'IMEI: {imei}'); print(f'MAC: {mac}'); print(f'AID: {aid}'); print(f'Phone: {phone}')\"",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -1730,7 +1730,7 @@
     {
       "label": "[BURP] Iniciar Active Scan",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import requests,json; r=requests.post('http://127.0.0.1:1337/v0.1/scan',json={'urls':['${input:scanTarget}']}); print(json.dumps(r.json(),indent=2))\"",
+      "command": "python -c \"import requests,json; r=requests.post('http://127.0.0.1:1337/v0.1/scan',json={'urls':['${input:scanTarget}']}); print(json.dumps(r.json(),indent=2))\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1745,7 +1745,7 @@
     {
       "label": "[BURP] Ver Issues/Vulns",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import requests,json; r=requests.get('http://127.0.0.1:1337/v0.1/scan'); data=r.json(); [print(f\\\"[{i.get('severity','?')}] {i.get('name','?')} - {i.get('origin','')}{i.get('path','')}\\\") for i in data.get('issue_events',[])]\"",
+      "command": "python -c \"import requests,json; r=requests.get('http://127.0.0.1:1337/v0.1/scan'); data=r.json(); [print(f\\\"[{i.get('severity','?')}] {i.get('name','?')} - {i.get('origin','')}{i.get('path','')}\\\") for i in data.get('issue_events',[])]\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -1760,7 +1760,7 @@
     {
       "label": "[BURP] Historico do Proxy",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import requests,json; r=requests.get('http://127.0.0.1:1337/v0.1/proxy/history'); data=r.json(); [print(f\\\"{i.get('method','')} {i.get('host','')}{i.get('url','')}\\\") for i in data[:50]]\"",
+      "command": "python -c \"import requests,json; r=requests.get('http://127.0.0.1:1337/v0.1/proxy/history'); data=r.json(); [print(f\\\"{i.get('method','')} {i.get('host','')}{i.get('url','')}\\\") for i in data[:50]]\"",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -2012,7 +2012,7 @@
     {
       "label": "[ANDROGUARD] Security Audit",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"from androguard.misc import AnalyzeAPK; a,d,dx=AnalyzeAPK('${input:apkPath}'); print('Package:',a.get_package()); print('Permissions:'); [print(' ',p) for p in a.get_permissions()]; print('Activities:',len(a.get_activities())); print('Services:',len(a.get_services())); print('Receivers:',len(a.get_receivers()))\"",
+      "command": "python -c \"from androguard.misc import AnalyzeAPK; a,d,dx=AnalyzeAPK('${input:apkPath}'); print('Package:',a.get_package()); print('Permissions:'); [print(' ',p) for p in a.get_permissions()]; print('Activities:',len(a.get_activities())); print('Services:',len(a.get_services())); print('Receivers:',len(a.get_receivers()))\"",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2027,7 +2027,7 @@
     {
       "label": "[ANDROGUARD] Extract Strings",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"from androguard.misc import AnalyzeAPK; a,d,dx=AnalyzeAPK('${input:apkPath}'); strings=[s for d_ in d for s in d_.get_strings() if len(s)>8]; print(f'Found {len(strings)} interesting strings:'); [print(' ',s[:120]) for s in strings[:50]]\"",
+      "command": "python -c \"from androguard.misc import AnalyzeAPK; a,d,dx=AnalyzeAPK('${input:apkPath}'); strings=[s for d_ in d for s in d_.get_strings() if len(s)>8]; print(f'Found {len(strings)} interesting strings:'); [print(' ',s[:120]) for s in strings[:50]]\"",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2078,7 +2078,7 @@
     {
       "label": "[SCAPY] ARP Scan",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"from scapy.all import *; ans,_=srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst='${input:networkTarget}'),timeout=3,verbose=0); print(f'Found {len(ans)} hosts:'); [print(f'  {r.psrc} ({r.hwsrc})') for _,r in ans]\"",
+      "command": "python -c \"from scapy.all import *; ans,_=srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst='${input:networkTarget}'),timeout=3,verbose=0); print(f'Found {len(ans)} hosts:'); [print(f'  {r.psrc} ({r.hwsrc})') for _,r in ans]\"",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2093,7 +2093,7 @@
     {
       "label": "[SCAPY] Port Scan",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"from scapy.all import *; target='${input:scanTarget}'; ports=[21,22,23,25,53,80,110,135,139,443,445,993,995,1433,3306,3389,5432,5900,8080,8443]; ans,_=sr(IP(dst=target)/TCP(dport=ports,flags='S'),timeout=3,verbose=0); open_ports=[p.dport for _,p in ans if p.haslayer(TCP) and p[TCP].flags==0x12]; print(f'Open ports on {target}:'); [print(f'  {p}') for p in open_ports] if open_ports else print('  None found')\"",
+      "command": "python -c \"from scapy.all import *; target='${input:scanTarget}'; ports=[21,22,23,25,53,80,110,135,139,443,445,993,995,1433,3306,3389,5432,5900,8080,8443]; ans,_=sr(IP(dst=target)/TCP(dport=ports,flags='S'),timeout=3,verbose=0); open_ports=[p.dport for _,p in ans if p.haslayer(TCP) and p[TCP].flags==0x12]; print(f'Open ports on {target}:'); [print(f'  {p}') for p in open_ports] if open_ports else print('  None found')\"",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2159,7 +2159,7 @@
     {
       "label": "[HASHCAT] Identify Hash",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import re,sys; h='${input:hashValue}'; patterns={'MD5 (32 hex)': r'^[a-fA-F0-9]{32}$', 'SHA-1 (40 hex)': r'^[a-fA-F0-9]{40}$', 'SHA-256 (64 hex)': r'^[a-fA-F0-9]{64}$', 'SHA-512 (128 hex)': r'^[a-fA-F0-9]{128}$', 'bcrypt': r'^\$2[aby]?\$', 'NTLM (32 hex)': r'^[a-fA-F0-9]{32}$', 'MySQL (41 hex)': r'^\*[A-F0-9]{40}$'}; matches=[n for n,p in patterns.items() if re.match(p,h)]; print(f'Hash: {h[:40]}...') if len(h)>40 else print(f'Hash: {h}'); print(f'Possible types: {matches if matches else [\"Unknown\"]}')\"",
+      "command": "python -c \"import re,sys; h='${input:hashValue}'; patterns={'MD5 (32 hex)': r'^[a-fA-F0-9]{32}$', 'SHA-1 (40 hex)': r'^[a-fA-F0-9]{40}$', 'SHA-256 (64 hex)': r'^[a-fA-F0-9]{64}$', 'SHA-512 (128 hex)': r'^[a-fA-F0-9]{128}$', 'bcrypt': r'^\$2[aby]?\$', 'NTLM (32 hex)': r'^[a-fA-F0-9]{32}$', 'MySQL (41 hex)': r'^\*[A-F0-9]{40}$'}; matches=[n for n,p in patterns.items() if re.match(p,h)]; print(f'Hash: {h[:40]}...') if len(h)>40 else print(f'Hash: {h}'); print(f'Possible types: {matches if matches else [\"Unknown\"]}')\"",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2207,7 +2207,7 @@
     {
       "label": "[LEVIATHAN] Doctor",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe core/doctor.py",
+      "command": "python core/doctor.py",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2222,7 +2222,7 @@
     {
       "label": "[LEVIATHAN] Validate Configs",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe core/config_schema.py",
+      "command": "python core/config_schema.py",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2237,7 +2237,7 @@
     {
       "label": "[LEVIATHAN] Run Tests",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -m pytest tests/ -v --tb=short",
+      "command": "python -m pytest tests/ -v --tb=short",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2253,7 +2253,7 @@
     {
       "label": "[LEVIATHAN] Lint",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -m ruff check core/ --output-format=concise",
+      "command": "python -m ruff check core/ --output-format=concise",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2268,7 +2268,7 @@
     {
       "label": "[LEVIATHAN] Export Report",
       "type": "shell",
-      "command": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe core/cli.py report --format markdown --output leviathan_report.md; Write-Host 'Report salvo em leviathan_report.md' -ForegroundColor Green",
+      "command": "python core/cli.py report --format markdown --output leviathan_report.md; Write-Host 'Report salvo em leviathan_report.md' -ForegroundColor Green",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -2331,7 +2331,7 @@
     {
       "label": "[WORKFLOW] Emulator Farm (Multi-Instance)",
       "type": "shell",
-      "command": "Write-Host '=== EMULATOR FARM ===' -ForegroundColor Magenta; for ($i=0; $i -lt 3; $i++) { Write-Host \"Clonando instancia $i...\" -ForegroundColor Cyan; ldconsole.exe copy --from 0; }; Write-Host 'Randomizando devices...' -ForegroundColor Cyan; C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -c \"import random,subprocess; [subprocess.run(['ldconsole.exe','modify','--index',str(i),'--imei',''.join([str(random.randint(0,9)) for _ in range(15)])]) for i in range(1,4)]\"; Write-Host '3 instancias clonadas e randomizadas!' -ForegroundColor Green",
+      "command": "Write-Host '=== EMULATOR FARM ===' -ForegroundColor Magenta; for ($i=0; $i -lt 3; $i++) { Write-Host \"Clonando instancia $i...\" -ForegroundColor Cyan; ldconsole.exe copy --from 0; }; Write-Host 'Randomizando devices...' -ForegroundColor Cyan; python -c \"import random,subprocess; [subprocess.run(['ldconsole.exe','modify','--index',str(i),'--imei',''.join([str(random.randint(0,9)) for _ in range(15)])]) for i in range(1,4)]\"; Write-Host '3 instancias clonadas e randomizadas!' -ForegroundColor Green",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",

@@ -49,7 +49,7 @@ logger = logging.getLogger("leviathan-hashcat-mcp")
 VERSION = "1.0.0"
 SERVER_NAME = "leviathan-hashcat-server"
 
-OUTPUT_DIR = Path(r"C:\Users\Kishi\Desktop\Trabalhos\hashcat_output")
+OUTPUT_DIR = Path(os.path.expanduser("~")) / "hashcat_output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -59,7 +59,7 @@ def _find_hashcat() -> str:
         r"C:\hashcat\hashcat.exe",
         r"C:\Tools\hashcat\hashcat.exe",
         r"C:\Program Files\hashcat\hashcat.exe",
-        r"C:\Users\Kishi\Desktop\Trabalhos\hashcat\hashcat.exe",
+        str(Path(os.path.expanduser("~")) / "hashcat" / "hashcat.exe"),
     ]
     for c in candidates:
         if c and Path(c).exists():

@@ -59,7 +59,7 @@ def _find_r2() -> str:
         r"C:\Program Files\radare2\bin\radare2.exe",
         r"C:\Program Files (x86)\radare2\bin\radare2.exe",
         r"C:\radare2\bin\radare2.exe",
-        r"C:\Users\Kishi\AppData\Local\Programs\radare2\bin\radare2.exe",
+        str(Path(os.path.expanduser("~")) / "AppData" / "Local" / "Programs" / "radare2" / "bin" / "radare2.exe"),
     ]
     for c in candidates:
         if c and Path(c).exists():

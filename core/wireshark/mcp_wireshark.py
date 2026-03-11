@@ -72,7 +72,7 @@ def _find_tshark() -> str:
 
 
 TSHARK = _find_tshark()
-CAPTURES_DIR = r"C:\Users\Kishi\Desktop\Trabalhos\captures"
+CAPTURES_DIR = str(Path(os.path.expanduser("~")) / "captures")
 Path(CAPTURES_DIR).mkdir(parents=True, exist_ok=True)
 
 

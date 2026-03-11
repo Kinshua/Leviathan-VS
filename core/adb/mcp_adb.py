@@ -85,7 +85,7 @@ def _find_adb() -> str:
     """Find ADB executable in common locations."""
     candidates = [
         shutil.which("adb"),
-        r"C:\Users\Kishi\AppData\Local\Android\Sdk\platform-tools\adb.exe",
+        str(Path(os.path.expanduser("~")) / "AppData" / "Local" / "Android" / "Sdk" / "platform-tools" / "adb.exe"),
         r"C:\Android\platform-tools\adb.exe",
         r"C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe",
         r"C:\LDPlayer\LDPlayer9\adb.exe",

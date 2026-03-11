@@ -683,7 +683,7 @@ class GitCheckpointManager:
 
         try:
             self._run_git("init")
-            self._run_git("config", "user.email", "siren@leviathan.vs")
+            self._run_git("config", "user.email", "dev@leviathan.local")
             self._run_git("config", "user.name", "SIREN Pipeline")
             # Initial commit
             self._run_git("add", "-A")

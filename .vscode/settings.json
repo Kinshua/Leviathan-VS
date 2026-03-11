@@ -7,7 +7,7 @@
     // ═══════════════════════════════════════════════════════════════════
     // 🐍 PYTHON - CONFIGURAÇÃO AVANÇADA
     // ═══════════════════════════════════════════════════════════════════
-    "python.defaultInterpreterPath": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "python.defaultInterpreterPath": "python",
     "python.terminal.activateEnvironment": true,
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.autoImportCompletions": true,
@@ -347,7 +347,7 @@
             "icon": "terminal-cmd"
         },
         "Python 3.14 REPL": {
-            "path": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+            "path": "python",
             "icon": "symbol-python"
         }
     },
@@ -911,7 +911,7 @@
     "git.confirmSync": false,
     "git.decorations.enabled": true,
     "git.openRepositoryInParentFolders": "always",
-    "git.defaultCloneDirectory": "C:\\Users\\Kishi\\Desktop",
+    "git.defaultCloneDirectory": "${userHome}/Desktop",
     "git.showPushSuccessNotification": true,
     "git.followTagsWhenSync": true,
     "git.pruneOnFetch": true,
@@ -1447,7 +1447,7 @@
     // 🎯 PROJECT MANAGER
     // ═══════════════════════════════════════════════════════════════════
     "projectManager.git.baseFolders": [
-        "C:\\Users\\Kishi\\Desktop"
+        "${userHome}/Desktop"
     ],
     "projectManager.sortList": "Recent",
     // ═══════════════════════════════════════════════════════════════════

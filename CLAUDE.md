@@ -6,7 +6,7 @@
 
 O motor de inteligência autônoma (**Shannon Engine**, em `core/shannon/`) fornece inferência Bayesiana, genética de vulnerabilidades, síntese de exploit chains via A*, simulação de personas de ataque, e auto-evolução por ELO.
 
-> **Nota**: O projeto SIREN (Shannon Intelligence Recon & Exploitation Nexus) agora é um repositório separado em `github.com/Kinshua/Siren`. O Shannon Engine permanece no Leviathan como módulo interno.
+> **Nota**: O projeto SIREN (Shannon Intelligence Recon & Exploitation Nexus) agora é um repositório separado. O Shannon Engine permanece no Leviathan como módulo interno.
 
 ---
 
@@ -115,7 +115,7 @@ python core/mcp_server.py
 
 ## CONTEXTO
 
-- Desenvolvedor: ThiagoFrag (GitHub: Kinshua)
+- Desenvolvedor: ThiagoFrag
 - Idioma: código em inglês, docs em português
 - Filosofia: "O abismo não responde. Ele executa."
-- SIREN: projeto separado em github.com/Kinshua/Siren
+- SIREN: projeto separado

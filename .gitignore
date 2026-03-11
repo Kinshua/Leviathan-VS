@@ -34,6 +34,11 @@ desktop.ini
 # Project specific
 backups/
 .history.json
+core/.http_history.json
+audit-logs/
+siren-output/
+add_path.ps1
+TERMINAL_INSTRUCTIONS.md
 
 # Temporary files
 *.tmp
