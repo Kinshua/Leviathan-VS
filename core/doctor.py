@@ -463,19 +463,66 @@ def run_doctor(json_output: bool = False, fix_mode: bool = False) -> DoctorRepor
 
     # External tools (non-blocking)
     tools = [
+        # Mobile & Instrumentation
         ("ADB", "adb"),
         ("Frida", "frida"),
-        ("Ghidra (analyzeHeadless)", "analyzeHeadless"),
+        ("Objection", "objection"),
         ("JADX", "jadx"),
         ("APKTool", "apktool"),
-        ("Radare2", "radare2"),
+        # Reverse Engineering
+        ("Ghidra (analyzeHeadless)", "analyzeHeadless"),
+        ("Radare2", "r2"),
+        # Network & Traffic
         ("Wireshark (tshark)", "tshark"),
         ("MITMProxy", "mitmproxy"),
-        ("Nuclei", "nuclei"),
         ("Nmap", "nmap"),
+        ("Masscan", "masscan"),
+        ("Scapy", "scapy"),
+        # Recon & OSINT
+        ("Amass", "amass"),
+        ("Gobuster", "gobuster"),
+        ("Feroxbuster", "feroxbuster"),
+        ("Nuclei", "nuclei"),
+        ("WhatWeb", "whatweb"),
+        ("Shodan CLI", "shodan"),
+        ("theHarvester", "theHarvester"),
+        # Exploitation
+        ("Metasploit (msfconsole)", "msfconsole"),
+        ("Hydra", "hydra"),
         ("Hashcat", "hashcat"),
-        ("Objection", "objection"),
         ("John the Ripper", "john"),
+        ("SearchSploit", "searchsploit"),
+        # Binary Exploitation
+        ("GDB", "gdb"),
+        ("ROPgadget", "ROPgadget"),
+        ("Checksec", "checksec"),
+        # Wireless
+        ("Aircrack-ng", "aircrack-ng"),
+        # C2 Frameworks
+        ("Sliver", "sliver"),
+        # Secrets Scanning
+        ("TruffleHog", "trufflehog"),
+        ("Gitleaks", "gitleaks"),
+        ("detect-secrets", "detect-secrets"),
+        # Container Security
+        ("Trivy", "trivy"),
+        ("Grype", "grype"),
+        ("Syft", "syft"),
+        ("Hadolint", "hadolint"),
+        ("kube-bench", "kube-bench"),
+        ("kubectl", "kubectl"),
+        # IaC Scanning
+        ("tfsec", "tfsec"),
+        ("Checkov", "checkov"),
+        ("Terrascan", "terrascan"),
+        ("Semgrep", "semgrep"),
+        ("tflint", "tflint"),
+        # Tunneling
+        ("Chisel", "chisel"),
+        ("Ligolo-ng", "ligolo-proxy"),
+        ("socat", "socat"),
+        ("sshuttle", "sshuttle"),
+        ("proxychains", "proxychains4"),
     ]
     for display, cmd in tools:
         check_external_tool(report, display, cmd)

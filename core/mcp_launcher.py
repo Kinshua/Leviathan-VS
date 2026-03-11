@@ -24,6 +24,7 @@ import os
 import shutil
 import sys
 import textwrap
+from functools import lru_cache
 
 # ============================================================================
 # ANSI COLORS
@@ -349,12 +350,68 @@ CATEGORIES = [
         "name": "CLOUD & SUPPLY CHAIN",
         "icon": "☁️",
         "color": C.PURPLE,
-        "desc": "Seguranca cloud, containers, IaC, secrets scanning",
+        "desc": "Seguranca cloud, IAM, privilege escalation, resource enumeration",
         "servers": [
             {
                 "name": "Cloud",
                 "tools": 14,
-                "desc": "Cloud security — trivy, gitleaks, trufflehog, semgrep, prowler, checkov, syft, grype",
+                "desc": "Cloud security — AWS/Azure/GCP enumeration, IAM analysis, resource audit",
+            },
+        ],
+    },
+    {
+        "id": "secrets",
+        "name": "SECRETS & CREDENTIALS",
+        "icon": "🔑",
+        "color": C.GOLD,
+        "desc": "Deteccao de credenciais vazadas, API keys, tokens em codigo e repos",
+        "servers": [
+            {
+                "name": "Secrets",
+                "tools": 12,
+                "desc": "TruffleHog, Gitleaks, detect-secrets, git-secrets — varredura de credenciais em git, filesystem, S3, GitHub orgs",
+            },
+        ],
+    },
+    {
+        "id": "container",
+        "name": "CONTAINER & K8S",
+        "icon": "🐳",
+        "color": C.CYAN,
+        "desc": "Seguranca de containers Docker, Kubernetes, SBOM, CIS Benchmarks",
+        "servers": [
+            {
+                "name": "Container",
+                "tools": 14,
+                "desc": "Trivy, Grype, Syft, Hadolint, kube-bench — scan de imagens, SBOM, CIS K8s, RBAC, network policies",
+            },
+        ],
+    },
+    {
+        "id": "iac",
+        "name": "IAC SCANNER",
+        "icon": "🏗️",
+        "color": C.ORANGE,
+        "desc": "Scan de Infrastructure as Code — Terraform, CloudFormation, K8s manifests, Dockerfile",
+        "servers": [
+            {
+                "name": "IaC",
+                "tools": 12,
+                "desc": "tfsec, Checkov, Terrascan, Semgrep, KICS, tflint, cfn-lint — misconfigurations em IaC",
+            },
+        ],
+    },
+    {
+        "id": "tunneling",
+        "name": "TUNNELING & PIVOTING",
+        "icon": "🔗",
+        "color": C.TEAL,
+        "desc": "Tuneis, port forwarding, proxychains, DNS tunneling para pivoting em engagements",
+        "servers": [
+            {
+                "name": "Tunneling",
+                "tools": 14,
+                "desc": "Chisel, Ligolo-ng, socat, sshuttle, SSH tunnels, proxychains, DNS tunneling (iodine/dnscat2)",
             },
         ],
     },
@@ -378,6 +435,131 @@ CATEGORIES = [
         ],
     },
 ]
+
+
+# ============================================================================
+# TOOL AVAILABILITY — Mapeamento de cada server para seus binarios
+# ============================================================================
+
+# Cada server MCP -> lista de comandos CLI que ele precisa
+SERVER_TOOLS = {
+    "ADB": ["adb"],
+    "Frida": ["frida"],
+    "Objection": ["objection"],
+    "JADX": ["jadx"],
+    "Androguard": ["androguard"],
+    "APKTool": ["apktool"],
+    "LDPlayer": ["ldconsole", "ldconsole.exe"],
+    "Nox": ["Nox", "NoxConsole"],
+    "MEmu": ["memuc", "memuc.exe"],
+    "BlueStacks": ["HD-Player", "HD-Player.exe"],
+    "Ghidra": ["analyzeHeadless"],
+    "Radare2": ["r2"],
+    "RevEng": ["objdump", "readelf", "binwalk"],
+    "Wireshark": ["tshark"],
+    "MITMProxy": ["mitmproxy"],
+    "Scapy": ["scapy"],
+    "NetAttack": ["bettercap", "ettercap", "hping3"],
+    "Nuclei": ["nuclei"],
+    "Burp Suite": [],  # GUI / API — sem CLI direto
+    "WebApp": ["xsstrike", "wfuzz", "dalfox"],
+    "Recon": ["amass", "gobuster", "masscan", "nmap"],
+    "Adv Recon": ["rustscan", "feroxbuster", "katana"],
+    "OSINT": ["shodan", "theHarvester"],
+    "Exploit": ["searchsploit", "msfvenom", "hydra"],
+    "Exploit Dev": ["checksec", "ROPgadget", "gdb"],
+    "Hashcat": ["hashcat", "john"],
+    "Wordlist": ["cewl", "crunch"],
+    "Red Team": ["sliver"],
+    "Social Eng": ["setoolkit", "gophish"],
+    "Wireless": ["aircrack-ng", "wifite"],
+    "Active Directory": ["bloodhound-python", "impacket-secretsdump", "netexec", "evil-winrm"],
+    "Forensics": ["vol", "volatility3", "yara", "foremost"],
+    "Stego": ["steghide", "zsteg", "exiftool"],
+    "Cloud": [],  # AWS CLI, az, gcloud — variavel
+    "Secrets": ["trufflehog", "gitleaks", "detect-secrets"],
+    "Container": ["trivy", "grype", "syft", "hadolint", "kubectl"],
+    "IaC": ["tfsec", "checkov", "terrascan", "semgrep", "tflint"],
+    "Tunneling": ["chisel", "socat", "sshuttle", "proxychains4", "ssh"],
+    "Leviathan": [],  # Core interno Python
+    "HTTP Toolkit": [],  # Core interno Python
+}
+
+
+@lru_cache(maxsize=256)
+def _tool_exists(cmd: str) -> bool:
+    """Checa se um comando existe no PATH (cached)."""
+    return shutil.which(cmd) is not None
+
+
+def check_server_status(server_name: str):
+    """
+    Retorna (installed, total, missing_list) para um server MCP.
+    Se o server nao tem tools externas (pure Python), retorna (0, 0, []) — "internal".
+    """
+    tools = SERVER_TOOLS.get(server_name, [])
+    if not tools:
+        return (0, 0, [])  # Internal/no CLI deps
+    found = 0
+    missing = []
+    # Para servers com alternativas (ex: LDPlayer tem ldconsole ou ldconsole.exe),
+    # considerar OK se QUALQUER um existir
+    checked_any = False
+    for cmd in tools:
+        checked_any = True
+        if _tool_exists(cmd):
+            found += 1
+        else:
+            missing.append(cmd)
+    return (found, len(tools), missing)
+
+
+def get_status_indicator(server_name: str) -> str:
+    """Retorna indicador visual: ● verde (all), ◐ amarelo (partial), ○ vermelho (none), ◆ cyan (internal)."""
+    installed, total, missing = check_server_status(server_name)
+    if total == 0:
+        return f"{C.CYAN}◆{C.RST}"  # Internal — no external deps
+    if installed == total:
+        return f"{C.GREEN}●{C.RST}"  # All tools installed
+    if installed > 0:
+        return f"{C.YELLOW}◐{C.RST}"  # Partial
+    return f"{C.RED}○{C.RST}"  # Nothing installed
+
+
+def get_category_status(cat) -> str:
+    """Retorna status agregado de uma categoria inteira."""
+    all_installed = 0
+    all_total = 0
+    for s in cat["servers"]:
+        installed, total, _ = check_server_status(s["name"])
+        all_installed += installed
+        all_total += total
+    if all_total == 0:
+        return f"{C.CYAN}◆{C.RST}"
+    if all_installed == all_total:
+        return f"{C.GREEN}●{C.RST}"
+    if all_installed > 0:
+        return f"{C.YELLOW}◐{C.RST}"
+    return f"{C.RED}○{C.RST}"
+
+
+def format_status_summary(cat) -> str:
+    """Retorna string como '3/5 tools' com cor apropriada."""
+    all_installed = 0
+    all_total = 0
+    for s in cat["servers"]:
+        installed, total, _ = check_server_status(s["name"])
+        all_installed += installed
+        all_total += total
+    if all_total == 0:
+        return f"{C.CYAN}built-in{C.RST}"
+    if all_installed == all_total:
+        color = C.GREEN
+    elif all_installed > 0:
+        color = C.YELLOW
+    else:
+        color = C.RED
+    return f"{color}{all_installed}/{all_total} tools{C.RST}"
 
 
 # ============================================================================
@@ -410,24 +592,27 @@ def print_banner():
     subtitle = "MCP LAUNCHER — Seletor de Ferramentas"
     print(f"{C.DIM}{'─' * w}{C.RST}")
     print(f"{C.BOLD}{C.WHITE}    {subtitle}{C.RST}")
-    print(f"{C.DIM}    49 Servidores MCP  |  704+ Ferramentas  |  13 Categorias{C.RST}")
+    print(f"{C.DIM}    40 Servidores MCP  |  752+ Ferramentas  |  17 Categorias{C.RST}")
+    print(f"{C.DIM}    {C.RST}{C.GREEN}●{C.RST} Pronto  {C.YELLOW}◐{C.RST} Parcial  {C.RED}○{C.RST} Ausente  {C.CYAN}◆{C.RST} Built-in")
     print(f"{C.DIM}{'─' * w}{C.RST}")
     print()
 
 
 def print_categories():
-    """Exibe todas as categorias numeradas."""
+    """Exibe todas as categorias numeradas com status de ferramentas."""
     total_tools = 0
     for i, cat in enumerate(CATEGORIES, 1):
         tools = sum(s["tools"] for s in cat["servers"])
         total_tools += tools
         servers_count = len(cat["servers"])
+        status = get_category_status(cat)
+        status_summary = format_status_summary(cat)
         num = f"{C.BOLD}{cat['color']}[{i:2d}]{C.RST}"
         icon = cat["icon"]
         name = f"{C.BOLD}{cat['color']}{cat['name']}{C.RST}"
         info = f"{C.DIM}({servers_count} MCP{'s' if servers_count > 1 else ''}, {tools} ferramentas){C.RST}"
         desc = f"{C.DIM}{cat['desc']}{C.RST}"
-        print(f"    {num}  {icon}  {name}  {info}")
+        print(f"    {num}  {icon}  {name}  {info}  {status} {status_summary}")
         print(f"         {desc}")
         print()
 
@@ -455,13 +640,25 @@ def print_category_detail(cat):
     print()
 
     for s in cat["servers"]:
+        indicator = get_status_indicator(s["name"])
+        installed, total, missing = check_server_status(s["name"])
+        if total == 0:
+            status_txt = f"{C.CYAN}built-in{C.RST}"
+        elif installed == total:
+            status_txt = f"{C.GREEN}{installed}/{total} instalados{C.RST}"
+        else:
+            status_txt = f"{C.YELLOW}{installed}/{total} instalados{C.RST}"
         print(
-            f"    {C.BOLD}{cat['color']}■ {s['name']}{C.RST}  {C.DIM}({s['tools']} ferramentas){C.RST}"
+            f"    {indicator} {C.BOLD}{cat['color']}{s['name']}{C.RST}  {C.DIM}({s['tools']} ferramentas){C.RST}  {status_txt}"
         )
         # Word wrap a descricao
         wrapped = textwrap.fill(s["desc"], width=w - 10)
         for line in wrapped.split("\n"):
             print(f"      {C.WHITE}{line}{C.RST}")
+        # Mostrar tools faltando
+        if missing:
+            missing_str = ", ".join(missing)
+            print(f"      {C.RED}Faltando: {missing_str}{C.RST}")
         print()
 
     print(f"{C.DIM}{'─' * w}{C.RST}")
@@ -492,8 +689,9 @@ def print_all_tools():
         print(f"  {C.DIM}{'─' * (w - 4)}{C.RST}")
         for s in cat["servers"]:
             server_count += 1
+            indicator = get_status_indicator(s["name"])
             print(
-                f"    {cat['color']}▸{C.RST} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {C.DIM}{s['desc']}{C.RST}"
+                f"    {indicator} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {C.DIM}{s['desc']}{C.RST}"
             )
         print()
 
@@ -501,6 +699,8 @@ def print_all_tools():
     print(
         f"    {C.BOLD}{C.WHITE}TOTAL: {server_count} servidores MCP  |  {grand_total} ferramentas{C.RST}"
     )
+    print()
+    print(f"    {C.GREEN}●{C.RST} Todas as tools instaladas   {C.YELLOW}◐{C.RST} Parcialmente instalado   {C.RED}○{C.RST} Nenhuma instalada   {C.CYAN}◆{C.RST} Built-in (sem deps)")
     print(f"{C.DIM}{'═' * w}{C.RST}")
     print()
 
@@ -609,8 +809,28 @@ CATEGORY_CONTEXTS = {
     },
     "cloud": {
         "greeting": "Modo CLOUD & SUPPLY CHAIN ativado. Auditoria de infra cloud.",
-        "focus": "Trivy, gitleaks, trufflehog, semgrep, prowler, checkov, syft, grype",
-        "pipeline": "trivy scan -> gitleaks detect -> semgrep audit -> prowler assess -> checkov iac",
+        "focus": "AWS/Azure/GCP enumeration, IAM analysis, resource audit, privilege escalation",
+        "pipeline": "cloud enumerate -> iam_analyze -> resource_audit -> privesc_check",
+    },
+    "secrets": {
+        "greeting": "Modo SECRETS & CREDENTIALS ativado. Caca a credenciais vazadas.",
+        "focus": "TruffleHog (git, filesystem, S3, GitHub org), Gitleaks (detect, protect, report), detect-secrets, git-secrets",
+        "pipeline": "trufflehog git_scan -> gitleaks detect -> detect-secrets baseline -> git-secrets hooks",
+    },
+    "container": {
+        "greeting": "Modo CONTAINER & K8S ativado. Seguranca de containers e clusters.",
+        "focus": "Trivy (image, fs, k8s), Grype, Syft SBOM, Hadolint Dockerfile, kube-bench CIS, kubectl audit/secrets/RBAC/netpol",
+        "pipeline": "trivy image -> grype scan -> syft sbom -> hadolint check -> kube-bench run -> kubectl audit",
+    },
+    "iac": {
+        "greeting": "Modo IAC SCANNER ativado. Scan de Infrastructure as Code.",
+        "focus": "tfsec (Terraform), Checkov (multi-framework), Terrascan, Semgrep SAST, KICS, tflint, cfn-lint (CloudFormation)",
+        "pipeline": "tfsec scan -> checkov scan -> terrascan scan -> semgrep audit -> kics scan",
+    },
+    "tunneling": {
+        "greeting": "Modo TUNNELING & PIVOTING ativado. Tuneis e redirecionamento de trafego.",
+        "focus": "Chisel (reverse tunnels), Ligolo-ng (pivot), socat (relay), sshuttle (VPN), SSH tunnels (-L/-R/-D), proxychains, DNS tunneling",
+        "pipeline": "chisel server -> chisel client -> proxychains config -> proxychains nmap -> sshuttle vpn",
     },
     "core": {
         "greeting": "Modo CORE LEVIATHAN. Motor de traducao e toolkit HTTP.",
@@ -644,9 +864,19 @@ def context_mode(cat):
     print()
     print(f"    {C.BOLD}Servidores MCP nesta categoria:{C.RST}")
     for s in cat["servers"]:
+        indicator = get_status_indicator(s["name"])
+        installed, total, missing = check_server_status(s["name"])
+        if total == 0:
+            st = f"{C.CYAN}built-in{C.RST}"
+        elif installed == total:
+            st = f"{C.GREEN}{installed}/{total}{C.RST}"
+        else:
+            st = f"{C.YELLOW}{installed}/{total}{C.RST}"
         print(
-            f"    {cat['color']}▸{C.RST} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] — {s['desc']}"
+            f"    {indicator} {C.BOLD}{s['name']}{C.RST} [{s['tools']}] {st} — {s['desc']}"
         )
+        if missing:
+            print(f"      {C.RED}Faltando: {', '.join(missing)}{C.RST}")
     print()
     print(f"{C.DIM}{'─' * w}{C.RST}")
     print()

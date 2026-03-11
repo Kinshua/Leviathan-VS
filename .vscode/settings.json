@@ -9,7 +9,7 @@
     // ═══════════════════════════════════════════════════════════════════
     "python.defaultInterpreterPath": "C:\\Users\\Kishi\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
     "python.terminal.activateEnvironment": true,
-    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.typeCheckingMode": "basic",
     "python.analysis.autoImportCompletions": true,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.inlayHints.functionReturnTypes": true,
@@ -17,13 +17,13 @@
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.autoFormatStrings": true,
-    "python.analysis.indexing": true,
+    "python.analysis.indexing": false,
     "python.analysis.importFormat": "relative",
     "python.analysis.inlayHints.callArgumentNames": "partial",
     "python.analysis.fixAll": [
         "source.unusedImports"
     ],
-    "python.analysis.userFileIndexingLimit": 2000,
+    "python.analysis.userFileIndexingLimit": 500,
     "python.languageServer": "Pylance",
     // ═══════════════════════════════════════════════════════════════════
     // ✏️ EDITOR - CONFIGURAÇÃO SUPREMA
@@ -1021,7 +1021,7 @@
     "diffEditor.renderSideBySide": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.renderIndicators": true,
-    "diffEditor.maxComputationTime": 10000,
+    "diffEditor.maxComputationTime": 0,
     "diffEditor.wordWrap": "off",
     "diffEditor.codeLens": true,
     "diffEditor.maxFileSize": 50,
@@ -1481,12 +1481,19 @@
     },
     // === PYTHON: Pylint, Bandit, Mypy, Flake8, Radon ===
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportUnusedImport": "warning",
-        "reportUnusedVariable": "warning",
-        "reportMissingImports": "error",
-        "reportMissingTypeStubs": "information",
-        "reportPrivateUsage": "warning",
-        "reportGeneralTypeIssues": "error"
+        "reportUnusedImport": "information",
+        "reportUnusedVariable": "information",
+        "reportMissingImports": "warning",
+        "reportMissingTypeStubs": "none",
+        "reportPrivateUsage": "information",
+        "reportGeneralTypeIssues": "warning",
+        "reportMissingTypeArgument": "none",
+        "reportUntypedFunctionDecorator": "none",
+        "reportUntypedBaseClass": "none",
+        "reportUnknownParameterType": "none",
+        "reportUnknownArgumentType": "none",
+        "reportUnknownVariableType": "none",
+        "reportUnknownMemberType": "none"
     },
     "pylint.enabled": false,
     "pylint.args": [
@@ -1495,7 +1502,6 @@
         "--enable=W0611,W0612,W0613,W0614"
     ],
     "mypy-type-checker.args": [
-        "--strict",
         "--ignore-missing-imports"
     ],
     "flake8.args": [

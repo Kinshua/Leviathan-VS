@@ -5,7 +5,7 @@
     LEVIATHAN VS - MCP Nuclei + SQLMap + Nmap Server v1.0
 
     Vulnerability scanning MCP server.
-    Integrates nuclei, sqlmap, nmap, nikto, dirb, ffuf, whatweb CLIs.
+    Integrates nuclei, sqlmap, nmap, nikto, dirb, ffuf CLIs.
     JSON-RPC 2.0 over stdio with Content-Length framing.
 
     Tools:
@@ -23,7 +23,6 @@
         - dirb_scan: Directory brute-force scan
         - ffuf_fuzz: Web fuzzing with ffuf
         - nikto_scan: Run nikto web scanner
-        - whatweb_scan: Identify web technologies
         - subfinder_enum: Subdomain enumeration
         - httpx_probe: HTTP probing of hosts
 
@@ -297,21 +296,6 @@ TOOLS = [
         },
     },
     {
-        "name": "whatweb_scan",
-        "description": "Identifica tecnologias web com whatweb",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "target": {"type": "string"},
-                "aggression": {
-                    "type": "integer",
-                    "description": "1-4 (1=stealthy, 4=heavy)",
-                },
-            },
-            "required": ["target"],
-        },
-    },
-    {
         "name": "subfinder_enum",
         "description": "Enumeracao de subdominios com subfinder",
         "inputSchema": {
@@ -550,13 +534,6 @@ async def dispatch_tool(name: str, args: Dict) -> str:
             cmd += ["-p", str(args["port"])]
         if args.get("ssl"):
             cmd.append("-ssl")
-        r = _run_tool(cmd, timeout)
-        return r["stdout"] if r["success"] else r.get("error", "")
-
-    elif name == "whatweb_scan":
-        cmd = [_find_tool("whatweb"), args["target"]]
-        if args.get("aggression"):
-            cmd += ["-a", str(args["aggression"])]
         r = _run_tool(cmd, timeout)
         return r["stdout"] if r["success"] else r.get("error", "")
 
